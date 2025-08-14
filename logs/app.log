@@ -1,0 +1,1 @@
+2025-08-14 09:15:55 ERROR [JavaFX Application Thread] c.c.c.controller.LoginController - Email sending failed: jakarta.mail.NoSuchProviderException: No provider for Address type: rfc822
