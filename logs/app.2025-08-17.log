@@ -1,0 +1,18 @@
+2025-08-17 18:35:48 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-17 18:36:11 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@721d76ab
+2025-08-17 18:36:11 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-17 19:21:01 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-17 19:21:28 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@7c4b88c2
+2025-08-17 19:21:28 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-17 19:31:29 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-17 19:31:41 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@7dc6223a
+2025-08-17 19:31:41 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-17 19:40:30 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-17 19:40:45 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@22274b6f
+2025-08-17 19:40:45 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-17 19:52:49 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-17 19:53:07 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@7d00a31b
+2025-08-17 19:53:08 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-17 19:56:44 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - Invalid password attempt for username=kev
+2025-08-17 19:56:59 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=kev userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f schoolId=9d47203f-4e54-47ac-a560-eeb277794e76
+2025-08-17 19:56:59 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'kev' logged in successfully (userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)

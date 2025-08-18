@@ -1,0 +1,10 @@
+/* styles.css */
+.password-visible {
+    -fx-background-color: #f5f5f5;
+    -fx-border-color: #ccc;
+}
+
+/* Make ComboBox/TextField consistent */
+.combo-box, .text-field {
+    -fx-pref-height: 30px;
+}
