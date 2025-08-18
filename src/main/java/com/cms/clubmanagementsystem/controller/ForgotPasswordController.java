@@ -43,10 +43,6 @@ public class ForgotPasswordController {
         public UUID getId() {
             return schoolId;
         }
-
-        public String getSchoolName() {
-            return schoolName;
-        }
     }
 
     @FXML
@@ -79,10 +75,6 @@ public class ForgotPasswordController {
                 }
             }
 
-            if (schools.isEmpty()) {
-                showAlert(Alert.AlertType.INFORMATION, "No schools found in the database.");
-            }
-
         } catch (SQLException e) {
             showAlert(Alert.AlertType.ERROR, "Error loading schools: " + e.getMessage());
         }
@@ -99,7 +91,6 @@ public class ForgotPasswordController {
         }
 
         try (Connection conn = DatabaseConnector.getConnection()) {
-            // Set tenant context
             TenantContext.setTenant(conn, selectedSchool.getId().toString());
 
             PasswordResetService service = new PasswordResetService();
@@ -111,11 +102,18 @@ public class ForgotPasswordController {
                 return;
             }
 
-            // Send email and open reset screen
-            new EmailService().sendEmail(email, "Password Reset",
-                    "Your reset token: " + generatedToken);
+            // Send email with token
+            new EmailService().sendEmail(email, "Password Reset Token",
+                    "Your password reset token is: " + generatedToken + "\n\n" +
+                            "Please enter this token in the reset password form.");
 
-            openResetPasswordScreen(generatedToken, email, selectedSchool.getId());
+            showAlert(Alert.AlertType.INFORMATION,
+                    "A reset token has been sent to your email.\n" +
+                            "Please check your email and copy-paste the token in the " +
+                            "Enter Reset Token field.");
+
+            // Open reset password screen (empty token)
+            openResetPasswordScreen();
 
         } catch (SQLException e) {
             showAlert(Alert.AlertType.ERROR, "Database error: " + e.getMessage());
@@ -126,29 +124,15 @@ public class ForgotPasswordController {
         }
     }
 
-    private void debugVerifyTenantContext(Connection conn) throws SQLException {
-        try (Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery("SELECT current_setting('app.current_school_id')")) {
-            if (rs.next()) {
-                System.out.println("Current tenant context: " + rs.getString(1));
-            }
-        }
-    }
-
-    private void openResetPasswordScreen(String token, String email, UUID schoolId) {
+    private void openResetPasswordScreen() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/reset-password.fxml"));
-            Parent root = loader.load();
-
-            ResetPasswordController controller = loader.getController();
-            controller.setResetToken(token, email, schoolId);
-
             Stage stage = (Stage) emailField.getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/reset-password.fxml"));
             stage.setScene(new Scene(root));
             stage.setTitle("Reset Password");
-
         } catch (IOException e) {
             showAlert(Alert.AlertType.ERROR, "Failed to load reset password screen.");
+            e.printStackTrace();
         }
     }
 
