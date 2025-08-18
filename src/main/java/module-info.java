@@ -25,6 +25,8 @@ module com.cms.clubmanagementsystem {
     exports com.cms.clubmanagementsystem;
     exports com.cms.clubmanagementsystem.controller;
     exports com.cms.clubmanagementsystem.utils;
+    exports com.cms.clubmanagementsystem.dao;
+    exports com.cms.clubmanagementsystem.model;
 
     // Open packages to JavaFX for reflection (FXML loading)
     opens com.cms.clubmanagementsystem to javafx.fxml;

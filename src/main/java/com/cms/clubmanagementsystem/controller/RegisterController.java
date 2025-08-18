@@ -7,9 +7,14 @@ import com.google.i18n.phonenumbers.Phonenumber;
 import com.google.i18n.phonenumbers.NumberParseException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 import org.mindrot.jbcrypt.BCrypt;
 
+import java.io.IOException;
 import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -373,5 +378,24 @@ public class RegisterController {
     private void showSuccess(String message) {
         messageLabel.setStyle("-fx-text-fill: green;");
         messageLabel.setText(message);
+    }
+
+    @FXML
+    private void handleBackToLogin() {
+        try {
+            Stage stage = (Stage) emailField.getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
+            stage.setScene(new Scene(root));
+            stage.setTitle("Login");
+        } catch (IOException e) {
+            showAlert(Alert.AlertType.ERROR, "Failed to load login screen.");
+        }
+    }
+
+    private void showAlert(Alert.AlertType type, String message) {
+        Alert alert = new Alert(type);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }
