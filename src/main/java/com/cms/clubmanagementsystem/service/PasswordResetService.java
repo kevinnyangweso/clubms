@@ -1,113 +1,117 @@
 package com.cms.clubmanagementsystem.service;
 
-import com.cms.clubmanagementsystem.utils.TenantContext;
-import com.cms.clubmanagementsystem.utils.TokenGenerator;
+import org.mindrot.jbcrypt.BCrypt;
 
-import java.sql.*;
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
+import java.security.SecureRandom;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.UUID;
 
 public class PasswordResetService {
-    // Configuration constants
-    private static final int TOKEN_EXPIRY_HOURS = 1;
-    private static final int MAX_ATTEMPTS = 5;
-    private static final int TOKEN_LENGTH = 32;
+    private static final SecureRandom random = new SecureRandom();
+    private static final int TOKEN_LENGTH = 6; // 6-digit number
+    private static final int TOKEN_EXPIRY_MINUTES = 30; // Token expires in 30 minutes
 
     public String generateResetToken(Connection conn, String email) throws SQLException {
-        // 1. Verify tenant context
-        TenantContext.ensureTenantSet(conn);
+        // Generate 6-digit numeric token
+        String token = generateNumericToken();
 
-        // 2. Check request rate limit
-        if (isRateLimited(conn, email)) {
-            throw new SecurityException("Too many reset attempts. Please try again later.");
-        }
+        // Calculate expiry time
+        java.sql.Timestamp expiryTime = new java.sql.Timestamp(
+                System.currentTimeMillis() + (TOKEN_EXPIRY_MINUTES * 60 * 1000)
+        );
 
-        // 3. Verify user exists in current tenant
-        UUID userId = getUserId(conn, email);
-        if (userId == null) {
-            return null; // Silent fail for security
-        }
-
-        // 4. Generate secure token (using your TokenGenerator)
-        String token = TokenGenerator.generateToken(TOKEN_LENGTH);
-        Instant expiry = Instant.now().plus(TOKEN_EXPIRY_HOURS, ChronoUnit.HOURS);
-
-        // 5. Store token and log attempt
-        storeToken(conn, userId, token, expiry);
-        logAttempt(conn, userId);
-
-        return token;
-    }
-
-    public boolean validateToken(Connection conn, String email, String token) throws SQLException {
-        String sql = "SELECT user_id, reset_token_expiry FROM users " +
-                "WHERE email = ? AND school_id = ? AND reset_token = ?";
-
-        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, email.toLowerCase());
-            stmt.setObject(2, UUID.fromString(TenantContext.getCurrentSchoolId()));
-            stmt.setString(3, token);
-
-            ResultSet rs = stmt.executeQuery();
-            if (!rs.next()) return false;
-
-            // Check expiration
-            Timestamp expiry = rs.getTimestamp("reset_token_expiry");
-            return expiry.toInstant().isAfter(Instant.now());
-        }
-    }
-
-    public void invalidateToken(Connection conn, String email) throws SQLException {
-        String sql = "UPDATE users SET reset_token = NULL, reset_token_expiry = NULL " +
-                "WHERE email = ? AND school_id = ?";
-
-        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, email.toLowerCase());
-            stmt.setObject(2, UUID.fromString(TenantContext.getCurrentSchoolId()));
-            stmt.executeUpdate();
-        }
-    }
-
-    private UUID getUserId(Connection conn, String email) throws SQLException {
-        String sql = "SELECT user_id FROM users WHERE email = ? AND school_id = ?";
-        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, email.toLowerCase());
-            stmt.setObject(2, UUID.fromString(TenantContext.getCurrentSchoolId()));
-            ResultSet rs = stmt.executeQuery();
-            return rs.next() ? (UUID) rs.getObject("user_id") : null;
-        }
-    }
-
-    private void storeToken(Connection conn, UUID userId, String token, Instant expiry) throws SQLException {
-        String sql = "UPDATE users SET reset_token = ?, reset_token_expiry = ? WHERE user_id = ?";
+        // Update the user record with the token and expiry time
+        String sql = "UPDATE users SET reset_token = ?, reset_token_expiry = ? WHERE email = ?";
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, token);
-            stmt.setTimestamp(2, Timestamp.from(expiry));
-            stmt.setObject(3, userId);
-            stmt.executeUpdate();
+            stmt.setTimestamp(2, expiryTime);
+            stmt.setString(3, email);
+
+            int rowsUpdated = stmt.executeUpdate();
+            return rowsUpdated > 0 ? token : null;
         }
     }
 
-    private void logAttempt(Connection conn, UUID userId) throws SQLException {
-        String sql = "INSERT INTO password_reset_attempts (user_id, attempt_time) VALUES (?, ?)";
-        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setObject(1, userId);
-            stmt.setTimestamp(2, Timestamp.from(Instant.now()));
-            stmt.executeUpdate();
-        }
+    /**
+     * Generates a 6-digit numeric token (000000 to 999999)
+     */
+    private String generateNumericToken() {
+        int number = random.nextInt(1_000_000); // 0 to 999,999
+        return String.format("%06d", number); // Pad with leading zeros to make 6 digits
     }
 
-    private boolean isRateLimited(Connection conn, String email) throws SQLException {
-        String sql = "SELECT COUNT(*) FROM password_reset_attempts a " +
-                "JOIN users u ON a.user_id = u.user_id " +
-                "WHERE u.email = ? AND a.attempt_time > ?";
+    /**
+     * Validates if a reset token is valid and not expired
+     */
+    public boolean validateResetToken(Connection conn, String email, String token) throws SQLException {
+        String sql = "SELECT reset_token_expiry FROM users WHERE email = ? AND reset_token = ?";
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, email);
+            stmt.setString(2, token);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    java.sql.Timestamp expiryTime = rs.getTimestamp("reset_token_expiry");
+                    // Check if token is not expired
+                    return expiryTime != null && expiryTime.after(new java.sql.Timestamp(System.currentTimeMillis()));
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Validates password against history and updates if valid
+     */
+    public boolean resetPasswordWithHistory(Connection conn, String email, UUID schoolId,
+                                            String newPassword, String resetToken) throws SQLException {
+        // First get user ID
+        UUID userId = getUserIdByEmail(conn, email);
+        if (userId == null) {
+            return false;
+        }
+
+        // Hash the new password
+        String hashedPassword = BCrypt.hashpw(newPassword, BCrypt.gensalt());
+
+        // Check password history
+        PasswordHistoryService historyService = new PasswordHistoryService();
+        if (historyService.isPasswordInHistory(conn, userId, schoolId, newPassword)) {
+            throw new SecurityException("Password has been used recently. Please choose a different password.");
+        }
+
+        // Update password
+        String sql = "UPDATE users SET password_hash = ?, is_active = TRUE, " +
+                "reset_token = NULL, reset_token_expiry = NULL " +
+                "WHERE email = ? AND reset_token = ?";
 
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, email.toLowerCase());
-            stmt.setTimestamp(2, Timestamp.from(Instant.now().minus(1, ChronoUnit.HOURS)));
-            ResultSet rs = stmt.executeQuery();
-            return rs.next() && rs.getInt(1) >= MAX_ATTEMPTS;
+            stmt.setString(1, hashedPassword);
+            stmt.setString(2, email);
+            stmt.setString(3, resetToken);
+
+            int rowsUpdated = stmt.executeUpdate();
+            if (rowsUpdated > 0) {
+                // Add to password history
+                historyService.addToPasswordHistory(conn, userId, schoolId, hashedPassword);
+                // Clean up old history
+                historyService.cleanupOldPasswordHistory(conn, userId, schoolId);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private UUID getUserIdByEmail(Connection conn, String email) throws SQLException {
+        String sql = "SELECT user_id FROM users WHERE email = ?";
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, email);
+            try (ResultSet rs = stmt.executeQuery()) {
+                return rs.next() ? (UUID) rs.getObject("user_id") : null;
+            }
         }
     }
 }

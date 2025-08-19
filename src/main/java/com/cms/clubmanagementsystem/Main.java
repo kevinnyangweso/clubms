@@ -1,6 +1,7 @@
 package com.cms.clubmanagementsystem;
 
 import com.cms.clubmanagementsystem.utils.EnvLoader; // <-- Added import
+import com.cms.clubmanagementsystem.utils.SessionManager;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -11,8 +12,13 @@ import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class Main extends Application {
+
+    private ScheduledExecutorService cleanupScheduler;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -24,6 +30,9 @@ public class Main extends Application {
             showErrorAlert("Configuration Error", "Could not load .env file:\n" + ex.getMessage());
             return; // Stop launching if .env is missing
         }
+
+        // Start the periodic cleanup scheduler for expired transient data
+        startCleanupScheduler();
 
         // Set up global exception handling for JavaFX thread
         Thread.currentThread().setUncaughtExceptionHandler((thread, throwable) -> {
@@ -46,6 +55,66 @@ public class Main extends Application {
         });
 
         launch();
+    }
+
+    /**
+     * Starts the scheduled executor service for periodic cleanup of expired transient data
+     */
+    private void startCleanupScheduler() {
+        cleanupScheduler = Executors.newSingleThreadScheduledExecutor(r -> {
+            Thread thread = new Thread(r);
+            thread.setName("SessionManager-Cleanup-Thread");
+            thread.setDaemon(true); // Make it a daemon thread so it doesn't prevent JVM shutdown
+            return thread;
+        });
+
+        // Schedule cleanup to run every 5 minutes
+        cleanupScheduler.scheduleAtFixedRate(() -> {
+            try {
+                SessionManager.cleanupExpiredData();
+                System.out.println("Periodic cleanup of expired transient data completed.");
+            } catch (Exception e) {
+                System.err.println("Error during periodic cleanup: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }, 1, 5, TimeUnit.MINUTES); // Initial delay 1 minute, then every 5 minutes
+
+        System.out.println("Started periodic cleanup scheduler for expired transient data.");
+    }
+
+    /**
+     * Gracefully shuts down the cleanup scheduler
+     */
+    private void shutdownCleanupScheduler() {
+        if (cleanupScheduler != null && !cleanupScheduler.isShutdown()) {
+            try {
+                System.out.println("Shutting down cleanup scheduler...");
+                cleanupScheduler.shutdown();
+
+                // Wait a bit for ongoing tasks to complete
+                if (!cleanupScheduler.awaitTermination(5, TimeUnit.SECONDS)) {
+                    System.out.println("Forcing shutdown of cleanup scheduler...");
+                    cleanupScheduler.shutdownNow();
+                }
+            } catch (InterruptedException e) {
+                System.err.println("Cleanup scheduler shutdown interrupted: " + e.getMessage());
+                cleanupScheduler.shutdownNow();
+                Thread.currentThread().interrupt();
+            }
+        }
+    }
+
+    @Override
+    public void stop() throws Exception {
+        // Shutdown cleanup scheduler when application stops
+        shutdownCleanupScheduler();
+
+        // Clean up any remaining session data
+        SessionManager.closeSession();
+        SessionManager.clearTransientData();
+
+        System.out.println("Application stopped. Cleaned up session data.");
+        super.stop();
     }
 
     private static void handleGlobalException(Throwable throwable) {
@@ -83,5 +152,31 @@ public class Main extends Application {
         stage.setTitle(title);
         stage.setScene(new Scene(root));
         stage.show();
+    }
+
+    private void navigateToClubManagement(ActionEvent event) {
+        try {
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/club-management.fxml"));
+
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Club Management System - Club Management");
+            stage.centerOnScreen(); // Center the window on screen
+            stage.show();
+
+        } catch (IOException e) {
+            logger.error("Failed to load club management screen", e);
+            showAlert(Alert.AlertType.ERROR,
+                    "Failed to load club management screen. Please try again or contact support if the problem persists.");
+        }
+    }
+
+
+    private void showAlert(Alert.AlertType type, String message) {
+        Alert alert = new Alert(type);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }
