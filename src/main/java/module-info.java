@@ -33,4 +33,7 @@ module com.cms.clubmanagementsystem {
     opens com.cms.clubmanagementsystem.controller to javafx.fxml;
     exports com.cms.clubmanagementsystem.service;
     opens com.cms.clubmanagementsystem.service to javafx.fxml;
+
+    opens css to javafx.fxml;
+    opens fxml to javafx.fxml;
 }

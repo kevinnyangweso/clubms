@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.cms.clubmanagementsystem.controller.TeacherDashboardController"
+            stylesheets="@../css/teacher-dashboard.css">
+
+    <!-- Top Header - Improved Layout -->
+    <top>
+        <HBox style="-fx-background-color: #27ae60; -fx-padding: 15 20;" spacing="20" alignment="CENTER_LEFT">
+            <Label text="👨‍🏫" style="-fx-font-size: 24px;"/>
+
+            <!-- Left Section: Dashboard Title and Club Info -->
+            <VBox spacing="2" HBox.hgrow="ALWAYS">
+                <Label fx:id="dashboardTitleLabel" text="Teacher Dashboard"
+                       style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;"/>
+                <Label fx:id="welcomeLabel" text="Welcome, Teacher"
+                       style="-fx-text-fill: #ecf0f1; -fx-font-size: 12px;"/>
+            </VBox>
+
+            <!-- Right Section: Club Name (Prominent) and Logout -->
+            <VBox spacing="2" alignment="CENTER_RIGHT">
+                <Label fx:id="clubInfoLabel" text="Assigned Club: "
+                       style="-fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-color: rgba(0,0,0,0.2); -fx-padding: 5 10; -fx-background-radius: 5;"/>
+                <Button text="🚪 Logout" onAction="#handleLogout"
+                        style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 3 8; -fx-font-size: 11px;"/>
+            </VBox>
+        </HBox>
+    </top>
+
+    <!-- Center Content Area (unchanged) -->
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <!-- My Club Tab -->
+            <Tab text="📋 My Club">
+                <VBox spacing="20" style="-fx-padding: 20;">
+                    <Label text="Club Overview" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+                    <!-- Club Statistics -->
+                    <HBox spacing="20" alignment="CENTER_LEFT">
+                        <VBox style="-fx-background-color: #f8f9fa; -fx-padding: 15; -fx-background-radius: 10;">
+                            <Label text="Total Learners" style="-fx-font-weight: bold;"/>
+                            <Label fx:id="totalLearnersLabel" text="0" style="-fx-font-size: 24px; -fx-text-fill: #27ae60;"/>
+                        </VBox>
+
+                        <VBox style="-fx-background-color: #f8f9fa; -fx-padding: 15; -fx-background-radius: 10;">
+                            <Label text="Attendance Today" style="-fx-font-weight: bold;"/>
+                            <Label fx:id="attendanceTodayLabel" text="0/0" style="-fx-font-size: 24px; -fx-text-fill: #3498db;"/>
+                        </VBox>
+                    </HBox>
+
+                    <!-- Quick Actions -->
+                    <VBox spacing="10">
+                        <Label text="Quick Actions" style="-fx-font-weight: bold;"/>
+                        <HBox spacing="10">
+                            <Button text="📝 Take Attendance" onAction="#handleTakeAttendance"
+                                    style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+                            <Button text="👥 View Learners" onAction="#handleViewLearners"
+                                    style="-fx-background-color: #2ecc71; -fx-text-fill: white;"/>
+                            <Button text="📊 View Reports" onAction="#handleViewReports"
+                                    style="-fx-background-color: #9b59b6; -fx-text-fill: white;"/>
+                        </HBox>
+                    </VBox>
+                </VBox>
+            </Tab>
+
+            <!-- Attendance Tab -->
+            <Tab text="✅ Attendance">
+                <VBox spacing="15" style="-fx-padding: 20;">
+                    <Label text="Attendance Management" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <!-- Attendance content will be loaded here -->
+                </VBox>
+            </Tab>
+
+            <!-- Learners Tab -->
+            <Tab text="👥 Learners">
+                <VBox spacing="15" style="-fx-padding: 20;">
+                    <Label text="Learner Management" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <!-- Learners content will be loaded here -->
+                </VBox>
+            </Tab>
+        </TabPane>
+    </center>
+
+</BorderPane>

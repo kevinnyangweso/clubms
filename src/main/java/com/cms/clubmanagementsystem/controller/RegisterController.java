@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -37,12 +38,19 @@ public class RegisterController {
     @FXML private TextField confirmPasswordVisibleField;
     @FXML private CheckBox showPasswordCheckBox;
 
+    //Select Club
+    @FXML private ComboBox<String> clubComboBox;
+    @FXML private VBox clubSelectionBox;
+
+    private final Map<String, UUID> clubMap = new HashMap<>();
+
     private final Map<String, UUID> schoolMap = new HashMap<>();
     private final PhoneNumberUtil phoneUtil = PhoneNumberUtil.getInstance();
 
     @FXML
     public void initialize() {
         phoneField.setPromptText("International format (e.g., +1 212 555 1234)");
+        clubSelectionBox.setVisible(false); // Hide initially
         loadRoles();
         loadSchools();
     }
@@ -57,10 +65,79 @@ public class RegisterController {
             while (rs.next()) {
                 roleComboBox.getItems().add(rs.getString("role"));
             }
+
+            roleComboBox.valueProperty().addListener((obs, oldVal, newVal) -> {
+                onRoleSelected(newVal);
+            });
+
         } catch (SQLException e) {
             roleComboBox.getItems().addAll("coordinator", "teacher");
             e.printStackTrace();
         }
+    }
+
+    private void onRoleSelected(String role) {
+        if ("teacher".equals(role)) {
+            clubSelectionBox.setVisible(true);
+            loadAvailableClubs();
+        } else {
+            clubSelectionBox.setVisible(false);
+        }
+    }
+
+    private void loadAvailableClubs() {
+        clubComboBox.getItems().clear();
+        clubMap.clear();
+
+        UUID schoolId = getSelectedSchoolId();
+        if (schoolId == null) {
+            showError("Please select a school first");
+            return;
+        }
+
+        try (Connection conn = DatabaseConnector.getConnection()) {
+
+            // Set tenant for this session
+            TenantContext.setTenant(conn, schoolId.toString());
+
+            String sql = "SELECT club_id, club_name FROM clubs WHERE school_id = ? " +
+                    "AND is_active = true";
+
+            try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+                stmt.setObject(1, schoolId);
+                ResultSet rs = stmt.executeQuery();
+
+                while (rs.next()) {
+                    String clubName = rs.getString("club_name");
+                    UUID clubId = (UUID) rs.getObject("club_id");
+                    if (clubName != null && clubId != null) {
+                        clubMap.put(clubName, clubId);
+                        clubComboBox.getItems().add(clubName);
+                    }
+                }
+
+                if (clubComboBox.getItems().isEmpty()) {
+                    showError("No clubs available for this school");
+                }
+
+            }
+        } catch (SQLException e) {
+            showError("Failed to load clubs");
+            e.printStackTrace();
+        }
+    }
+
+    private UUID getSelectedSchoolId() {
+        if (schoolComboBox.getValue() == null) {
+            showError("Please select a school first");
+            return null;
+        }
+        UUID schoolId = schoolMap.get(schoolComboBox.getValue());
+        if (schoolId == null) {
+            showError("Invalid school selection");
+            return null;
+        }
+        return schoolId;
     }
 
     private void loadSchools() {
@@ -80,9 +157,13 @@ public class RegisterController {
                 }
             }
 
-            if (schoolComboBox.getItems().isEmpty()) {
-                showError("No schools available for registration");
-            }
+            // Add listener for school changes to reload clubs
+            schoolComboBox.valueProperty().addListener((obs, oldVal, newVal) -> {
+                if ("teacher".equals(roleComboBox.getValue())) {
+                    loadAvailableClubs();
+                }
+            });
+
         } catch (SQLException e) {
             showError("Failed to load schools");
             e.printStackTrace();
@@ -215,7 +296,15 @@ public class RegisterController {
             return false;
         }
 
+        // Club validation for teachers
+        String role = roleComboBox.getValue();
+        if ("teacher".equals(role) && clubComboBox.getValue() == null) {
+            showError("Please select a club for teacher registration");
+            return false;
+        }
+
         return true;
+
     }
 
     private String validateAndFormatPhone(String phoneNumber) throws IllegalArgumentException {
@@ -249,6 +338,14 @@ public class RegisterController {
                               String password, String phone, UUID schoolId, String role)
             throws IllegalArgumentException, SQLException {
 
+        UUID clubId = null;
+        if ("teacher".equals(role)) {
+            clubId = clubMap.get(clubComboBox.getValue());
+            if (clubId == null) {
+                throw new IllegalArgumentException("Invalid club selection");
+            }
+        }
+
         try (Connection conn = DatabaseConnector.getConnection()) {
             conn.setAutoCommit(false);
 
@@ -265,18 +362,21 @@ public class RegisterController {
                     throw new IllegalArgumentException("Phone number already registered");
                 }
 
-                String sql = "INSERT INTO users (full_name, email, username, password_hash, phone, school_id, role, is_active) " +
-                        "VALUES (?, ?, ?, ?, ?, ?, ?::user_role, ?)";
+                String sql = "INSERT INTO users (full_name, email, username, password_hash, phone, school_id, role, club_id, is_active) " +
+                        "VALUES (?, ?, ?, ?, ?, ?, ?::user_role, ?, ?)";
+
 
                 try (PreparedStatement stmt = conn.prepareStatement(sql)) {
                     stmt.setString(1, fullName);
                     stmt.setString(2, email);
                     stmt.setString(3, username);
                     stmt.setString(4, BCrypt.hashpw(password, BCrypt.gensalt(12)));
-                    stmt.setString(5, phone);  // Already formatted by validateAndFormatPhone
+                    stmt.setString(5, phone);
                     stmt.setObject(6, schoolId);
                     stmt.setString(7, role);
-                    stmt.setBoolean(8, true);
+                    stmt.setObject(8, clubId);
+                    stmt.setBoolean(9, true);
+                    stmt.executeUpdate();
 
                     stmt.executeUpdate();
                 }

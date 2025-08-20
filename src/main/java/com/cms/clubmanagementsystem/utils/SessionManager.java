@@ -17,6 +17,8 @@ public final class SessionManager {
     private static UUID currentUserId;
     private static UUID currentSchoolId;
     private static String currentUsername;
+    private static String currentUserRole;
+    private static String currentSchoolName;
     private static Connection sessionConnection; // dedicated connection for the logged-in user
 
     // Transient Data Storage with timeout support
@@ -47,22 +49,38 @@ public final class SessionManager {
 
     private SessionManager() {}
 
-    public static synchronized void createSession(UUID userId, String username, UUID schoolId, Connection conn) {
+    /**
+     * Get current user role
+     */
+    public static synchronized String getCurrentUserRole() {
+        return currentUserRole;
+    }
+
+    public static synchronized void createSession(UUID userId, String username, UUID schoolId,
+                                                  String schoolName, Connection conn, String role) {
         closeSession();
         currentUserId = userId;
         currentUsername = username;
         currentSchoolId = schoolId;
+        currentSchoolName = schoolName;
+        currentUserRole = role;
         sessionConnection = conn;
-        logger.info("Session created for username={} userId={} schoolId={}", username, userId, schoolId);
+        logger.info("Session created for username={} userId={} schoolId={} role={}",
+                username, userId, schoolId, role);
     }
 
+    public static synchronized String getCurrentSchoolName() {
+        return currentSchoolName;
+    }
     public static synchronized Connection getSessionConnection() {
         return sessionConnection;
     }
-
-    public static synchronized UUID getCurrentUserId() { return currentUserId; }
-    public static synchronized UUID getCurrentSchoolId() { return currentSchoolId; }
-    public static synchronized String getCurrentUsername() { return currentUsername; }
+    public static synchronized UUID getCurrentUserId() {
+        return currentUserId; }
+    public static synchronized UUID getCurrentSchoolId() {
+        return currentSchoolId; }
+    public static synchronized String getCurrentUsername() {
+        return currentUsername; }
 
     public static synchronized void closeSession() {
         // Clear all transient data when the user session ends (logs out)
@@ -86,6 +104,7 @@ public final class SessionManager {
                 currentUserId = null;
                 currentSchoolId = null;
                 currentUsername = null;
+                currentUserRole = null;
                 logger.info("Session closed");
             }
         }

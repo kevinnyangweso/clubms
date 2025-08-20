@@ -5,6 +5,7 @@ import com.cms.clubmanagementsystem.utils.SessionManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -20,9 +21,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Enumeration;
+import java.util.ResourceBundle;
 import java.util.UUID;
 
-public class LoginController {
+public class LoginController implements Initializable {
     private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
     @FXML private TextField usernameField;
@@ -34,10 +37,11 @@ public class LoginController {
     @FXML private Hyperlink forgotPasswordLink;
     @FXML private Label messageLabel;
 
-    @FXML
-    public void initialize() {
+
+    public void initialize(URL location, ResourceBundle resources) {
         passwordVisibleField.setVisible(false);
         passwordVisibleField.setManaged(false);
+
     }
 
     @FXML
@@ -97,14 +101,16 @@ public class LoginController {
                 }
 
                 final String selectSql =
-                        "SELECT user_id, password_hash, is_active, school_id, role " +
-                                "FROM users WHERE username = ? LIMIT 1";
+                        "SELECT u.user_id, u.password_hash, u.is_active, u.school_id, u.role, s.school_name " +
+                                "FROM users u LEFT JOIN schools s ON u.school_id = s.school_id " +
+                                "WHERE u.username = ? LIMIT 1";
 
                 UUID userId;
                 String storedHash;
                 boolean isActive;
                 UUID schoolId;
                 String role;
+                String schoolName;
 
                 try (PreparedStatement ps = conn.prepareStatement(selectSql)) {
                     ps.setString(1, username);
@@ -120,6 +126,7 @@ public class LoginController {
                         isActive = rs.getBoolean("is_active");
                         schoolId = (UUID) rs.getObject("school_id");
                         role = rs.getString("role");
+                        schoolName = rs.getString("school_name");
                     }
                 }
 
@@ -174,13 +181,21 @@ public class LoginController {
                     throw e;
                 }
 
-                SessionManager.createSession(userId, username, schoolId, sessionConn);
+                SessionManager.createSession(userId, username, schoolId, schoolName, sessionConn, role);
 
                 logger.info("User '{}' logged in successfully (userId={}, schoolId={}, role={})",
                         username, userId, schoolId, role);
 
-                // Go to dashboard
-                switchScene(event, "/fxml/dashboard.fxml", "Club Management Dashboard");
+                // Redirect based on user role
+                if ("coordinator".equalsIgnoreCase(role)) {
+                    switchScene(event, "/fxml/coordinator-dashboard.fxml", "Coordinator Dashboard");
+                } else if ("teacher".equalsIgnoreCase(role)) {
+                    switchScene(event, "/fxml/teacher-dashboard.fxml", "Teacher Dashboard");
+                } else {
+                    // Fallback for unknown roles or if role is null
+                    logger.warn("Unknown role '{}' for user {}, redirecting to coordinator dashboard", role, username);
+                    switchScene(event, "/fxml/coordinator-dashboard.fxml", "Coordinator Dashboard");
+                }
 
             } catch (Exception ex) {
                 try { conn.rollback(); } catch (SQLException ignored) {}
@@ -213,14 +228,23 @@ public class LoginController {
             if (url == null) {
                 throw new IOException("Cannot find FXML at " + fxmlPath);
             }
+
+            // Load the FXML
             Parent root = FXMLLoader.load(url);
+
+            // Create the scene first
+            Scene scene = new Scene(root);
+
+            // Get the stage and set the scene with CSS
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
+            stage.setScene(scene);
             stage.setTitle(title);
             stage.show();
+
         } catch (IOException e) {
             logger.error("Error loading {}: {}", fxmlPath, e.getMessage(), e);
             messageLabel.setText("Error loading screen. Please try again.");
         }
     }
+
 }

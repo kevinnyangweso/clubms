@@ -153,30 +153,4 @@ public class Main extends Application {
         stage.setScene(new Scene(root));
         stage.show();
     }
-
-    private void navigateToClubManagement(ActionEvent event) {
-        try {
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/club-management.fxml"));
-
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.setTitle("Club Management System - Club Management");
-            stage.centerOnScreen(); // Center the window on screen
-            stage.show();
-
-        } catch (IOException e) {
-            logger.error("Failed to load club management screen", e);
-            showAlert(Alert.AlertType.ERROR,
-                    "Failed to load club management screen. Please try again or contact support if the problem persists.");
-        }
-    }
-
-
-    private void showAlert(Alert.AlertType type, String message) {
-        Alert alert = new Alert(type);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
 }

@@ -1,0 +1,40 @@
+/* teacher-dashboard.css */
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.tab-pane {
+    -fx-font-size: 14px;
+}
+
+.tab {
+    -fx-padding: 10 15;
+}
+
+.tab:selected {
+    -fx-background-color: #27ae60;
+}
+
+.tab:selected .tab-label {
+    -fx-text-fill: white;
+}
+
+.button {
+    -fx-background-radius: 6;
+    -fx-padding: 10 20;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-opacity: 0.9;
+}
+
+/* Statistics panels */
+.vbox.stat-panel {
+    -fx-background-color: #f8f9fa;
+    -fx-background-radius: 10;
+    -fx-padding: 20;
+    -fx-border-radius: 10;
+    -fx-border-color: #e0e0e0;
+}
