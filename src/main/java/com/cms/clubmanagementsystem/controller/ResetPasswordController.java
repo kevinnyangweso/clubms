@@ -247,10 +247,10 @@ public class ResetPasswordController {
 
         // Validate token against database (check expiry) and update password
         try (Connection conn = DatabaseConnector.getConnection()) {
-            TenantContext.setTenant(conn, userSchoolId.toString());
+
 
             PasswordResetService service = new PasswordResetService();
-            if (!service.validateResetToken(conn, userEmail, enteredToken)) {
+            if (!service.validateResetToken(conn, userEmail, enteredToken, userSchoolId)) {
                 showAlert(Alert.AlertType.ERROR, "Token has expired or is invalid. Please request a new one.");
                 return;
             }

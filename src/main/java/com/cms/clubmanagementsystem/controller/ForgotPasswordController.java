@@ -108,11 +108,11 @@ public class ForgotPasswordController {
         }
 
         try (Connection conn = DatabaseConnector.getConnection()) {
-            // Set tenant context
-            TenantContext.setTenant(conn, selectedSchool.getId().toString());
-
             PasswordResetService service = new PasswordResetService();
-            String generatedToken = service.generateResetToken(conn, email);
+            String generatedToken = service.generateResetToken(conn, email, selectedSchool.getId());
+
+            //PasswordResetService service = new PasswordResetService();
+            //String generatedToken = service.generateResetToken(conn, email);
 
             if (generatedToken == null) {
                 showAlert(Alert.AlertType.ERROR,

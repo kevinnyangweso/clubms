@@ -14,7 +14,7 @@ public class PasswordResetService {
     private static final int TOKEN_LENGTH = 6; // 6-digit number
     private static final int TOKEN_EXPIRY_MINUTES = 30; // Token expires in 30 minutes
 
-    public String generateResetToken(Connection conn, String email) throws SQLException {
+    public String generateResetToken(Connection conn, String email, UUID schoolId) throws SQLException {
         // Generate 6-digit numeric token
         String token = generateNumericToken();
 
@@ -46,7 +46,7 @@ public class PasswordResetService {
     /**
      * Validates if a reset token is valid and not expired
      */
-    public boolean validateResetToken(Connection conn, String email, String token) throws SQLException {
+    public boolean validateResetToken(Connection conn, String email, String token, UUID userSchoolId) throws SQLException {
         String sql = "SELECT reset_token_expiry FROM users WHERE email = ? AND reset_token = ?";
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, email);
@@ -105,13 +105,17 @@ public class PasswordResetService {
         return false;
     }
 
+
     private UUID getUserIdByEmail(Connection conn, String email) throws SQLException {
         String sql = "SELECT user_id FROM users WHERE email = ?";
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, email);
             try (ResultSet rs = stmt.executeQuery()) {
-                return rs.next() ? (UUID) rs.getObject("user_id") : null;
+                if (rs.next()) {
+                    return (UUID) rs.getObject("user_id");
+                }
             }
         }
+        return null;
     }
 }

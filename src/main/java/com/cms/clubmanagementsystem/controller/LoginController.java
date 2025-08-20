@@ -2,6 +2,7 @@ package com.cms.clubmanagementsystem.controller;
 
 import com.cms.clubmanagementsystem.utils.DatabaseConnector;
 import com.cms.clubmanagementsystem.utils.SessionManager;
+import com.cms.clubmanagementsystem.utils.TenantContext;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -163,25 +164,18 @@ public class LoginController implements Initializable {
 
                 conn.commit();
 
-                // Keep a session-scoped connection with tenant set
-                Connection sessionConn = DatabaseConnector.getConnection();
-                try {
-                    if (schoolId == null) {
-                        messageLabel.setText("No school assigned to this user.");
-                        sessionConn.close();
-                        return;
-                    }
-                    try (PreparedStatement setTenant = sessionConn.prepareStatement(
-                            "SELECT set_config('app.current_school_id', ?, false)")) {
-                        setTenant.setString(1, schoolId.toString());
-                        setTenant.execute();
-                    }
-                } catch (SQLException e) {
-                    try { sessionConn.close(); } catch (Exception ignore) {}
-                    throw e;
+                if (schoolId == null) {
+                    messageLabel.setText("No school assigned to this user.");
+                    return;
                 }
 
-                SessionManager.createSession(userId, username, schoolId, schoolName, sessionConn, role);
+// Set the tenant context using the proper method
+                try (Connection tenantConn = DatabaseConnector.getConnection()) {
+                    TenantContext.setTenant(tenantConn, schoolId.toString(), userId.toString());
+                }
+
+// Create session WITHOUT storing the connection (let DatabaseConnector handle it)
+                SessionManager.createSession(username, userId, schoolId, role);
 
                 logger.info("User '{}' logged in successfully (userId={}, schoolId={}, role={})",
                         username, userId, schoolId, role);

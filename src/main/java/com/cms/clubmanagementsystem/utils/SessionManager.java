@@ -56,15 +56,12 @@ public final class SessionManager {
         return currentUserRole;
     }
 
-    public static synchronized void createSession(UUID userId, String username, UUID schoolId,
-                                                  String schoolName, Connection conn, String role) {
+    public static synchronized void createSession(String username, UUID userId, UUID schoolId, String role) {
         closeSession();
         currentUserId = userId;
         currentUsername = username;
         currentSchoolId = schoolId;
-        currentSchoolName = schoolName;
         currentUserRole = role;
-        sessionConnection = conn;
         logger.info("Session created for username={} userId={} schoolId={} role={}",
                 username, userId, schoolId, role);
     }

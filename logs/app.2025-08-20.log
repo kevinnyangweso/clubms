@@ -1,0 +1,1139 @@
+2025-08-20 05:32:28 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 05:32:40 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@13919a44
+2025-08-20 05:32:40 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 05:32:44 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - Login failed - username not found (or RLS blocked): nyangwesokevin1@gmail.com
+2025-08-20 05:33:21 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - Login failed - username not found (or RLS blocked): nyangwesokevin1@gmail.com
+2025-08-20 05:34:01 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=kev userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f schoolId=9d47203f-4e54-47ac-a560-eeb277794e76
+2025-08-20 05:34:01 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'kev' logged in successfully (userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-20 05:34:02 ERROR [JavaFX Application Thread] c.c.c.controller.LoginController - Error loading /fxml/club-management.fxml: Invalid resource: /css/club-management.css not found on the classpath
+/C:/Users/user/Desktop/ClubMS/Club-Management-System/target/classes/fxml/club-management.fxml:130
+
+javafx.fxml.LoadException: Invalid resource: /css/club-management.css not found on the classpath
+/C:/Users/user/Desktop/ClubMS/Club-Management-System/target/classes/fxml/club-management.fxml:130
+
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2718)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$Element.resolvePrefixedValue(FXMLLoader.java:411)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$Element.processValue(FXMLLoader.java:375)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$Element.processPropertyAttribute(FXMLLoader.java:337)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$Element.processInstancePropertyAttributes(FXMLLoader.java:248)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$ValueElement.processStartElement(FXMLLoader.java:762)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2853)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2649)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3376)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3332)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3300)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3272)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3248)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.load(FXMLLoader.java:3241)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.controller.LoginController.switchScene(LoginController.java:216)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.controller.LoginController.handleLogin(LoginController.java:183)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at javafx.base@21.0.7/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:270)
+	at javafx.fxml@21.0.7/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1853)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1726)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@21.0.7/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.7/javafx.scene.Node.fireEvent(Node.java:8875)
+	at javafx.controls@21.0.7/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@21.0.7/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@21.0.7/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@21.0.7/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.7/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+	at javafx.graphics@21.0.7/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+	at javafx.graphics@21.0.7/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-08-20 05:38:43 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 05:38:45 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@2704b2a0
+2025-08-20 05:38:45 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 05:38:46 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=kev userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f schoolId=9d47203f-4e54-47ac-a560-eeb277794e76
+2025-08-20 05:38:46 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'kev' logged in successfully (userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-20 05:38:46 ERROR [JavaFX Application Thread] c.c.c.controller.LoginController - Error loading /fxml/club-management.fxml: Invalid resource: /css/club-management.css not found on the classpath
+/C:/Users/user/Desktop/ClubMS/Club-Management-System/target/classes/fxml/club-management.fxml:130
+
+javafx.fxml.LoadException: Invalid resource: /css/club-management.css not found on the classpath
+/C:/Users/user/Desktop/ClubMS/Club-Management-System/target/classes/fxml/club-management.fxml:130
+
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2718)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$Element.resolvePrefixedValue(FXMLLoader.java:411)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$Element.processValue(FXMLLoader.java:375)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$Element.processPropertyAttribute(FXMLLoader.java:337)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$Element.processInstancePropertyAttributes(FXMLLoader.java:248)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$ValueElement.processStartElement(FXMLLoader.java:762)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2853)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2649)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3376)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3332)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3300)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3272)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3248)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.load(FXMLLoader.java:3241)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.controller.LoginController.switchScene(LoginController.java:216)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.controller.LoginController.handleLogin(LoginController.java:183)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at javafx.base@21.0.7/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:270)
+	at javafx.fxml@21.0.7/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1853)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1726)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@21.0.7/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.7/javafx.scene.Node.fireEvent(Node.java:8875)
+	at javafx.controls@21.0.7/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@21.0.7/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@21.0.7/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@21.0.7/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.7/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+	at javafx.graphics@21.0.7/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+	at javafx.graphics@21.0.7/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-08-20 05:40:23 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 05:40:24 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@413279f8
+2025-08-20 05:40:24 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 05:40:25 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=kev userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f schoolId=9d47203f-4e54-47ac-a560-eeb277794e76
+2025-08-20 05:40:25 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'kev' logged in successfully (userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-20 05:40:26 ERROR [JavaFX Application Thread] c.c.c.controller.LoginController - Unexpected error during login for kev: Cannot invoke "String.endsWith(String)" because "<parameter1>" is null
+java.lang.NullPointerException: Cannot invoke "String.endsWith(String)" because "<parameter1>" is null
+	at javafx.graphics@21.0.7/com.sun.javafx.css.StyleManager.lambda$loadStylesheetUnPrivileged$3(StyleManager.java:1083)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:319)
+	at javafx.graphics@21.0.7/com.sun.javafx.css.StyleManager.loadStylesheetUnPrivileged(StyleManager.java:1077)
+	at javafx.graphics@21.0.7/com.sun.javafx.css.StyleManager.loadStylesheet(StyleManager.java:952)
+	at javafx.graphics@21.0.7/com.sun.javafx.css.StyleManager.processStylesheets(StyleManager.java:1615)
+	at javafx.graphics@21.0.7/com.sun.javafx.css.StyleManager.gatherParentStylesheets(StyleManager.java:1653)
+	at javafx.graphics@21.0.7/com.sun.javafx.css.StyleManager.findMatchingStyles(StyleManager.java:1705)
+	at javafx.graphics@21.0.7/javafx.scene.CssStyleHelper.createStyleHelper(CssStyleHelper.java:113)
+	at javafx.graphics@21.0.7/javafx.scene.Node.reapplyCss(Node.java:9482)
+	at javafx.graphics@21.0.7/javafx.scene.Node.reapplyCSS(Node.java:9445)
+	at javafx.graphics@21.0.7/javafx.scene.Node.invalidatedScenes(Node.java:1068)
+	at javafx.graphics@21.0.7/javafx.scene.Node.setScenes(Node.java:1133)
+	at javafx.graphics@21.0.7/javafx.scene.Parent.scenesChanged(Parent.java:773)
+	at javafx.graphics@21.0.7/javafx.scene.Node.invalidatedScenes(Node.java:1066)
+	at javafx.graphics@21.0.7/javafx.scene.Node.setScenes(Node.java:1133)
+	at javafx.graphics@21.0.7/javafx.scene.Parent.scenesChanged(Parent.java:773)
+	at javafx.graphics@21.0.7/javafx.scene.Node.invalidatedScenes(Node.java:1066)
+	at javafx.graphics@21.0.7/javafx.scene.Node.setScenes(Node.java:1133)
+	at javafx.graphics@21.0.7/javafx.scene.Scene$8.invalidated(Scene.java:1244)
+	at javafx.base@21.0.7/javafx.beans.property.ObjectPropertyBase.markInvalid(ObjectPropertyBase.java:112)
+	at javafx.base@21.0.7/javafx.beans.property.ObjectPropertyBase.set(ObjectPropertyBase.java:147)
+	at javafx.graphics@21.0.7/javafx.scene.Scene.setRoot(Scene.java:1196)
+	at javafx.graphics@21.0.7/javafx.scene.Scene.<init>(Scene.java:360)
+	at javafx.graphics@21.0.7/javafx.scene.Scene.<init>(Scene.java:211)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.controller.LoginController.switchScene(LoginController.java:218)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.controller.LoginController.handleLogin(LoginController.java:183)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at javafx.base@21.0.7/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:270)
+	at javafx.fxml@21.0.7/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1853)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1726)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@21.0.7/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.7/javafx.scene.Node.fireEvent(Node.java:8875)
+	at javafx.controls@21.0.7/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@21.0.7/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@21.0.7/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@21.0.7/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.7/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+	at javafx.graphics@21.0.7/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+	at javafx.graphics@21.0.7/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-08-20 05:50:59 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 05:51:01 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@19d28aa5
+2025-08-20 05:51:01 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 05:51:02 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=kev userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f schoolId=9d47203f-4e54-47ac-a560-eeb277794e76
+2025-08-20 05:51:02 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'kev' logged in successfully (userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-20 05:51:03 ERROR [JavaFX Application Thread] c.c.c.controller.LoginController - Error loading /fxml/club-management.fxml: Invalid resource: /css/club-management.css not found on the classpath
+/C:/Users/user/Desktop/ClubMS/Club-Management-System/target/classes/fxml/club-management.fxml:130
+
+javafx.fxml.LoadException: Invalid resource: /css/club-management.css not found on the classpath
+/C:/Users/user/Desktop/ClubMS/Club-Management-System/target/classes/fxml/club-management.fxml:130
+
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2718)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$Element.resolvePrefixedValue(FXMLLoader.java:411)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$Element.processValue(FXMLLoader.java:375)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$Element.processPropertyAttribute(FXMLLoader.java:337)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$Element.processInstancePropertyAttributes(FXMLLoader.java:248)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$ValueElement.processStartElement(FXMLLoader.java:762)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2853)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2649)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3376)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3332)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3300)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3272)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3248)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.load(FXMLLoader.java:3241)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.controller.LoginController.switchScene(LoginController.java:216)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.controller.LoginController.handleLogin(LoginController.java:183)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at javafx.base@21.0.7/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:270)
+	at javafx.fxml@21.0.7/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1853)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1726)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@21.0.7/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.7/javafx.scene.Node.fireEvent(Node.java:8875)
+	at javafx.controls@21.0.7/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@21.0.7/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@21.0.7/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@21.0.7/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.7/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+	at javafx.graphics@21.0.7/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+	at javafx.graphics@21.0.7/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-08-20 05:56:49 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 05:56:50 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@784c3afc
+2025-08-20 05:56:50 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 05:56:50 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=kev userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f schoolId=9d47203f-4e54-47ac-a560-eeb277794e76
+2025-08-20 05:56:50 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'kev' logged in successfully (userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-20 05:56:50 ERROR [JavaFX Application Thread] c.c.c.controller.LoginController - Error loading /fxml/club-management.fxml: 
+/C:/Users/user/Desktop/ClubMS/Club-Management-System/target/classes/fxml/club-management.fxml:130
+
+javafx.fxml.LoadException: 
+/C:/Users/user/Desktop/ClubMS/Club-Management-System/target/classes/fxml/club-management.fxml:130
+
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2722)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2700)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3376)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3332)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3300)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3272)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3248)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.load(FXMLLoader.java:3241)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.controller.LoginController.switchScene(LoginController.java:216)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.controller.LoginController.handleLogin(LoginController.java:183)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at javafx.base@21.0.7/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:270)
+	at javafx.fxml@21.0.7/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1853)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1726)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@21.0.7/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.7/javafx.scene.Node.fireEvent(Node.java:8875)
+	at javafx.controls@21.0.7/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@21.0.7/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@21.0.7/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@21.0.7/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.7/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+	at javafx.graphics@21.0.7/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+	at javafx.graphics@21.0.7/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.RuntimeException: java.net.MalformedURLException: no protocol: css/club-management.css
+	at javafx.fxml@21.0.7/com.sun.javafx.fxml.builder.URLBuilder.build(URLBuilder.java:83)
+	at javafx.fxml@21.0.7/com.sun.javafx.fxml.builder.URLBuilder.build(URLBuilder.java:38)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$ValueElement.processEndElement(FXMLLoader.java:776)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.processEndElement(FXMLLoader.java:2969)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2654)
+	... 63 common frames omitted
+Caused by: java.net.MalformedURLException: no protocol: css/club-management.css
+	at java.base/java.net.URL.<init>(URL.java:772)
+	at java.base/java.net.URL.<init>(URL.java:654)
+	at java.base/java.net.URL.<init>(URL.java:590)
+	at javafx.fxml@21.0.7/com.sun.javafx.fxml.builder.URLBuilder.build(URLBuilder.java:81)
+	... 67 common frames omitted
+2025-08-20 06:00:13 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 06:00:15 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@6a3c3854
+2025-08-20 06:00:15 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 06:00:15 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=kev userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f schoolId=9d47203f-4e54-47ac-a560-eeb277794e76
+2025-08-20 06:00:15 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'kev' logged in successfully (userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-20 06:00:15 ERROR [JavaFX Application Thread] c.c.c.controller.LoginController - Error loading /fxml/club-management.fxml: 
+/C:/Users/user/Desktop/ClubMS/Club-Management-System/target/classes/fxml/club-management.fxml:130
+
+javafx.fxml.LoadException: 
+/C:/Users/user/Desktop/ClubMS/Club-Management-System/target/classes/fxml/club-management.fxml:130
+
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2722)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2700)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3376)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3332)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3300)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3272)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3248)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.load(FXMLLoader.java:3241)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.controller.LoginController.switchScene(LoginController.java:216)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.controller.LoginController.handleLogin(LoginController.java:183)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at javafx.base@21.0.7/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:270)
+	at javafx.fxml@21.0.7/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1853)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1726)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@21.0.7/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.7/javafx.scene.Node.fireEvent(Node.java:8875)
+	at javafx.controls@21.0.7/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@21.0.7/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@21.0.7/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@21.0.7/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.7/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+	at javafx.graphics@21.0.7/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+	at javafx.graphics@21.0.7/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.RuntimeException: java.net.MalformedURLException: no protocol: css/club-management.css
+	at javafx.fxml@21.0.7/com.sun.javafx.fxml.builder.URLBuilder.build(URLBuilder.java:83)
+	at javafx.fxml@21.0.7/com.sun.javafx.fxml.builder.URLBuilder.build(URLBuilder.java:38)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$ValueElement.processEndElement(FXMLLoader.java:776)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.processEndElement(FXMLLoader.java:2969)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2654)
+	... 63 common frames omitted
+Caused by: java.net.MalformedURLException: no protocol: css/club-management.css
+	at java.base/java.net.URL.<init>(URL.java:772)
+	at java.base/java.net.URL.<init>(URL.java:654)
+	at java.base/java.net.URL.<init>(URL.java:590)
+	at javafx.fxml@21.0.7/com.sun.javafx.fxml.builder.URLBuilder.build(URLBuilder.java:81)
+	... 67 common frames omitted
+2025-08-20 06:14:04 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 06:14:13 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@25802c1
+2025-08-20 06:14:13 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 06:14:15 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=kev userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f schoolId=9d47203f-4e54-47ac-a560-eeb277794e76
+2025-08-20 06:14:15 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'kev' logged in successfully (userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-20 06:14:15 ERROR [JavaFX Application Thread] c.c.c.controller.LoginController - Error loading /fxml/club-management.fxml: 
+/C:/Users/user/Desktop/ClubMS/Club-Management-System/target/classes/fxml/club-management.fxml:130
+
+javafx.fxml.LoadException: 
+/C:/Users/user/Desktop/ClubMS/Club-Management-System/target/classes/fxml/club-management.fxml:130
+
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2722)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2700)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3376)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3332)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3300)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3272)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3248)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.load(FXMLLoader.java:3241)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.controller.LoginController.switchScene(LoginController.java:237)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.controller.LoginController.handleLogin(LoginController.java:204)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at javafx.base@21.0.7/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:270)
+	at javafx.fxml@21.0.7/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1853)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1726)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@21.0.7/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.7/javafx.scene.Node.fireEvent(Node.java:8875)
+	at javafx.controls@21.0.7/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@21.0.7/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@21.0.7/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@21.0.7/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.7/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+	at javafx.graphics@21.0.7/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+	at javafx.graphics@21.0.7/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.RuntimeException: java.net.MalformedURLException: no protocol: css/club-management.css
+	at javafx.fxml@21.0.7/com.sun.javafx.fxml.builder.URLBuilder.build(URLBuilder.java:83)
+	at javafx.fxml@21.0.7/com.sun.javafx.fxml.builder.URLBuilder.build(URLBuilder.java:38)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$ValueElement.processEndElement(FXMLLoader.java:776)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.processEndElement(FXMLLoader.java:2969)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2654)
+	... 63 common frames omitted
+Caused by: java.net.MalformedURLException: no protocol: css/club-management.css
+	at java.base/java.net.URL.<init>(URL.java:772)
+	at java.base/java.net.URL.<init>(URL.java:654)
+	at java.base/java.net.URL.<init>(URL.java:590)
+	at javafx.fxml@21.0.7/com.sun.javafx.fxml.builder.URLBuilder.build(URLBuilder.java:81)
+	... 67 common frames omitted
+2025-08-20 06:16:21 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 06:16:28 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@67820a79
+2025-08-20 06:16:28 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 06:16:29 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=kev userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f schoolId=9d47203f-4e54-47ac-a560-eeb277794e76
+2025-08-20 06:16:29 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'kev' logged in successfully (userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-20 06:16:29 ERROR [JavaFX Application Thread] c.c.c.controller.LoginController - Error loading /fxml/club-management.fxml: Invalid resource: /css/club-management.css not found on the classpath
+/C:/Users/user/Desktop/ClubMS/Club-Management-System/target/classes/fxml/club-management.fxml:130
+
+javafx.fxml.LoadException: Invalid resource: /css/club-management.css not found on the classpath
+/C:/Users/user/Desktop/ClubMS/Club-Management-System/target/classes/fxml/club-management.fxml:130
+
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2718)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$Element.resolvePrefixedValue(FXMLLoader.java:411)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$Element.processValue(FXMLLoader.java:375)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$Element.processPropertyAttribute(FXMLLoader.java:337)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$Element.processInstancePropertyAttributes(FXMLLoader.java:248)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$ValueElement.processStartElement(FXMLLoader.java:762)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2853)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2649)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3376)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3332)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3300)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3272)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3248)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.load(FXMLLoader.java:3241)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.controller.LoginController.switchScene(LoginController.java:237)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.controller.LoginController.handleLogin(LoginController.java:204)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at javafx.base@21.0.7/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:270)
+	at javafx.fxml@21.0.7/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1853)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1726)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@21.0.7/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.7/javafx.scene.Node.fireEvent(Node.java:8875)
+	at javafx.controls@21.0.7/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@21.0.7/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@21.0.7/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@21.0.7/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.7/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+	at javafx.graphics@21.0.7/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+	at javafx.graphics@21.0.7/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-08-20 06:24:17 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 06:24:27 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@1bc3ffa7
+2025-08-20 06:24:27 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 06:24:29 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=kev userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f schoolId=9d47203f-4e54-47ac-a560-eeb277794e76
+2025-08-20 06:24:29 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'kev' logged in successfully (userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-20 06:24:30 ERROR [JavaFX Application Thread] c.c.c.controller.LoginController - Error loading /fxml/club-management.fxml: Invalid resource: /css/club-management.css not found on the classpath
+/C:/Users/user/Desktop/ClubMS/Club-Management-System/target/classes/fxml/club-management.fxml:130
+
+javafx.fxml.LoadException: Invalid resource: /css/club-management.css not found on the classpath
+/C:/Users/user/Desktop/ClubMS/Club-Management-System/target/classes/fxml/club-management.fxml:130
+
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2718)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$Element.resolvePrefixedValue(FXMLLoader.java:411)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$Element.processValue(FXMLLoader.java:375)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$Element.processPropertyAttribute(FXMLLoader.java:337)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$Element.processInstancePropertyAttributes(FXMLLoader.java:248)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$ValueElement.processStartElement(FXMLLoader.java:762)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2853)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2649)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3376)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3332)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3300)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3272)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3248)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.load(FXMLLoader.java:3241)
+	at com.cms.clubmanagementsystem@1.0-SNAPSHOT/com.cms.clubmanagementsystem.controller.LoginController.switchScene(LoginController.java:237)
+	at com.cms.clubmanagementsystem@1.0-SNAPSHOT/com.cms.clubmanagementsystem.controller.LoginController.handleLogin(LoginController.java:204)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at javafx.base@21.0.7/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:270)
+	at javafx.fxml@21.0.7/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1853)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1726)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@21.0.7/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.7/javafx.scene.Node.fireEvent(Node.java:8875)
+	at javafx.controls@21.0.7/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@21.0.7/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@21.0.7/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@21.0.7/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.7/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+	at javafx.graphics@21.0.7/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+	at javafx.graphics@21.0.7/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-08-20 06:27:33 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 06:27:36 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@7a7a61ee
+2025-08-20 06:27:36 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 06:27:37 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=kev userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f schoolId=9d47203f-4e54-47ac-a560-eeb277794e76
+2025-08-20 06:27:37 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'kev' logged in successfully (userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-20 06:33:52 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 06:33:55 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@102b0214
+2025-08-20 06:33:55 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 06:33:57 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=kev userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f schoolId=9d47203f-4e54-47ac-a560-eeb277794e76
+2025-08-20 06:33:57 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'kev' logged in successfully (userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-20 06:37:22 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 06:37:24 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@c30e33f
+2025-08-20 06:37:24 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 06:37:25 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=kev userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f schoolId=9d47203f-4e54-47ac-a560-eeb277794e76
+2025-08-20 06:37:25 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'kev' logged in successfully (userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-20 07:13:15 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session closed
+2025-08-20 08:14:32 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 08:14:38 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@31ce0c12
+2025-08-20 08:14:38 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 08:14:40 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=kev userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=coordinator
+2025-08-20 08:14:40 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'kev' logged in successfully (userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-20 08:14:41 ERROR [JavaFX Application Thread] c.c.c.controller.LoginController - Error loading /fxml/coordinator-dashboard.fxml: Invalid resource: /css/dashboard.css not found on the classpath
+/C:/Users/user/Desktop/ClubMS/Club-Management-System/target/classes/fxml/coordinator-dashboard.fxml:66
+
+javafx.fxml.LoadException: Invalid resource: /css/dashboard.css not found on the classpath
+/C:/Users/user/Desktop/ClubMS/Club-Management-System/target/classes/fxml/coordinator-dashboard.fxml:66
+
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2718)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$Element.resolvePrefixedValue(FXMLLoader.java:411)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$Element.populateListFromString(FXMLLoader.java:512)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$Element.processValue(FXMLLoader.java:366)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$Element.processPropertyAttribute(FXMLLoader.java:337)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$Element.processInstancePropertyAttributes(FXMLLoader.java:248)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$ValueElement.processEndElement(FXMLLoader.java:780)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.processEndElement(FXMLLoader.java:2969)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2654)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3376)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3332)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3300)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3272)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3248)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.load(FXMLLoader.java:3241)
+	at com.cms.clubmanagementsystem@1.0-SNAPSHOT/com.cms.clubmanagementsystem.controller.LoginController.switchScene(LoginController.java:250)
+	at com.cms.clubmanagementsystem@1.0-SNAPSHOT/com.cms.clubmanagementsystem.controller.LoginController.handleLogin(LoginController.java:208)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at javafx.base@21.0.7/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:270)
+	at javafx.fxml@21.0.7/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1853)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1726)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@21.0.7/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.7/javafx.scene.Node.fireEvent(Node.java:8875)
+	at javafx.controls@21.0.7/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@21.0.7/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@21.0.7/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@21.0.7/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.7/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+	at javafx.graphics@21.0.7/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+	at javafx.graphics@21.0.7/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-08-20 08:20:23 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 08:20:24 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@3d90962f
+2025-08-20 08:20:24 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 08:20:25 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=kev userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=coordinator
+2025-08-20 08:20:25 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'kev' logged in successfully (userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-20 08:20:25 ERROR [JavaFX Application Thread] c.c.c.controller.LoginController - Error loading /fxml/coordinator-dashboard.fxml: 
+/C:/Users/user/Desktop/ClubMS/Club-Management-System/target/classes/fxml/coordinator-dashboard.fxml
+
+javafx.fxml.LoadException: 
+/C:/Users/user/Desktop/ClubMS/Club-Management-System/target/classes/fxml/coordinator-dashboard.fxml
+
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2722)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2700)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2563)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3376)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3332)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3300)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3272)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3248)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.load(FXMLLoader.java:3241)
+	at com.cms.clubmanagementsystem@1.0-SNAPSHOT/com.cms.clubmanagementsystem.controller.LoginController.switchScene(LoginController.java:250)
+	at com.cms.clubmanagementsystem@1.0-SNAPSHOT/com.cms.clubmanagementsystem.controller.LoginController.handleLogin(LoginController.java:208)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at javafx.base@21.0.7/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:270)
+	at javafx.fxml@21.0.7/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1853)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1726)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@21.0.7/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.7/javafx.scene.Node.fireEvent(Node.java:8875)
+	at javafx.controls@21.0.7/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@21.0.7/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@21.0.7/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.7/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.7/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@21.0.7/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.7/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+	at javafx.graphics@21.0.7/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+	at javafx.graphics@21.0.7/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@21.0.7/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@21.0.7/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.NullPointerException: Cannot invoke "javafx.scene.control.Button.setStyle(String)" because "button" is null
+	at com.cms.clubmanagementsystem@1.0-SNAPSHOT/com.cms.clubmanagementsystem.controller.CoordinatorDashboardController.clearButtonStyles(CoordinatorDashboardController.java:123)
+	at com.cms.clubmanagementsystem@1.0-SNAPSHOT/com.cms.clubmanagementsystem.controller.CoordinatorDashboardController.loadOverview(CoordinatorDashboardController.java:53)
+	at com.cms.clubmanagementsystem@1.0-SNAPSHOT/com.cms.clubmanagementsystem.controller.CoordinatorDashboardController.initialize(CoordinatorDashboardController.java:39)
+	at javafx.fxml@21.0.7/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+	... 63 common frames omitted
+2025-08-20 08:24:33 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 08:24:33 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@20730c5c
+2025-08-20 08:24:33 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 08:24:34 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=kev userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=coordinator
+2025-08-20 08:24:34 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'kev' logged in successfully (userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-20 08:27:16 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session closed
+2025-08-20 08:42:01 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 08:42:15 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@49cfafad
+2025-08-20 08:42:15 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 08:42:50 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=kev userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=coordinator
+2025-08-20 08:42:50 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'kev' logged in successfully (userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-20 08:51:49 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 08:51:52 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@6a3c3854
+2025-08-20 08:51:52 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 08:51:53 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=kev userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=coordinator
+2025-08-20 08:51:53 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'kev' logged in successfully (userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-20 09:22:28 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 09:22:33 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@7fccd8fe
+2025-08-20 09:22:33 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 09:22:35 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=kev userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=coordinator
+2025-08-20 09:22:35 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'kev' logged in successfully (userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-20 09:39:24 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 09:39:30 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@16972c08
+2025-08-20 09:39:30 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 09:39:32 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=kev userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=coordinator
+2025-08-20 09:39:32 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'kev' logged in successfully (userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-20 09:50:49 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 09:51:03 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@688520d1
+2025-08-20 09:51:03 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 09:51:06 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=kev userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=coordinator
+2025-08-20 09:51:06 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'kev' logged in successfully (userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-20 09:52:29 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session closed
+2025-08-20 09:57:18 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 09:57:21 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@4e41bef0
+2025-08-20 09:57:21 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 09:57:22 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=kev userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=coordinator
+2025-08-20 09:57:22 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'kev' logged in successfully (userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-20 10:37:51 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 10:37:57 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@360cba46
+2025-08-20 10:37:57 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 10:37:59 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=kev userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=coordinator
+2025-08-20 10:37:59 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'kev' logged in successfully (userId=a6b141ee-6e82-4f69-ac8c-653fbf7ea71f, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-20 10:38:51 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session closed
+2025-08-20 11:08:23 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 11:08:26 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@28bba424
+2025-08-20 11:08:26 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 11:18:48 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 11:18:58 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@3979dcc6
+2025-08-20 11:18:58 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 11:20:40 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 11:20:40 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@13074d35
+2025-08-20 11:20:40 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 11:34:05 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 11:34:18 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@75f7c735
+2025-08-20 11:34:18 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 11:38:20 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 11:38:23 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@2774c821
+2025-08-20 11:38:23 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 11:40:17 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 11:40:20 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@5f490d75
+2025-08-20 11:40:20 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 11:43:32 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 11:43:40 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@93a05fb
+2025-08-20 11:43:40 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 11:50:42 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 11:50:43 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@3c5a2135
+2025-08-20 11:50:43 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 16:06:14 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 16:06:21 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@34ccc34d
+2025-08-20 16:06:21 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 16:29:13 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 16:29:16 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@61232237
+2025-08-20 16:29:16 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 17:07:06 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 17:07:09 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@7f5af8ec
+2025-08-20 17:07:09 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 17:07:10 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=andrew userId=8f1b80d4-c9f1-4916-8e73-0274aff46403 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=teacher
+2025-08-20 17:07:10 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'andrew' logged in successfully (userId=8f1b80d4-c9f1-4916-8e73-0274aff46403, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-08-20 17:25:38 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 17:25:42 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@13a88a33
+2025-08-20 17:25:42 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 17:25:43 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=andrew userId=8f1b80d4-c9f1-4916-8e73-0274aff46403 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=teacher
+2025-08-20 17:25:43 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'andrew' logged in successfully (userId=8f1b80d4-c9f1-4916-8e73-0274aff46403, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-08-20 17:46:29 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 17:46:32 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@465035bc
+2025-08-20 17:46:32 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 18:18:35 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 18:18:43 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@3055a192
+2025-08-20 18:18:43 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 18:29:03 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 18:29:26 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@3c5a2135
+2025-08-20 18:29:26 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 19:55:38 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 19:55:40 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@44fdad2
+2025-08-20 19:55:40 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 21:28:27 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 21:28:29 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@13fc62ce
+2025-08-20 21:28:29 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 21:40:00 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 21:40:02 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@76928e36
+2025-08-20 21:40:02 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 21:45:27 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 21:45:28 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@5fc52378
+2025-08-20 21:45:28 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 21:50:48 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 21:50:50 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@5b141257
+2025-08-20 21:50:50 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 21:52:54 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=coordinator
+2025-08-20 21:52:54 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-20 21:54:17 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session closed
+2025-08-20 21:55:57 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 21:55:58 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@574b3565
+2025-08-20 21:55:58 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 21:58:05 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=andrew userId=7410f974-39ec-4531-9184-f88522622a83 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=teacher
+2025-08-20 21:58:05 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'andrew' logged in successfully (userId=7410f974-39ec-4531-9184-f88522622a83, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-08-20 22:16:58 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 22:16:59 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@7a4d3f65
+2025-08-20 22:16:59 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 22:16:59 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=andrew userId=7410f974-39ec-4531-9184-f88522622a83 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=teacher
+2025-08-20 22:16:59 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'andrew' logged in successfully (userId=7410f974-39ec-4531-9184-f88522622a83, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-08-20 22:26:25 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 22:26:25 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@784c3afc
+2025-08-20 22:26:25 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 22:26:26 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=andrew userId=7410f974-39ec-4531-9184-f88522622a83 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=teacher
+2025-08-20 22:26:26 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'andrew' logged in successfully (userId=7410f974-39ec-4531-9184-f88522622a83, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-08-20 22:26:41 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session closed
+2025-08-20 22:28:58 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 22:28:59 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@688520d1
+2025-08-20 22:28:59 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 22:29:00 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=andrew userId=7410f974-39ec-4531-9184-f88522622a83 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=teacher
+2025-08-20 22:29:00 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'andrew' logged in successfully (userId=7410f974-39ec-4531-9184-f88522622a83, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-08-20 22:29:10 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session closed
+2025-08-20 22:33:30 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 22:33:30 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@65a9913c
+2025-08-20 22:33:30 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 22:33:31 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=andrew userId=7410f974-39ec-4531-9184-f88522622a83 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=teacher
+2025-08-20 22:33:31 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'andrew' logged in successfully (userId=7410f974-39ec-4531-9184-f88522622a83, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-08-20 22:35:58 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 22:35:59 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@7accf438
+2025-08-20 22:35:59 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 22:35:59 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=andrew userId=7410f974-39ec-4531-9184-f88522622a83 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=teacher
+2025-08-20 22:35:59 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'andrew' logged in successfully (userId=7410f974-39ec-4531-9184-f88522622a83, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-08-20 22:38:48 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 22:38:48 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@32bf2ee1
+2025-08-20 22:38:48 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 22:38:49 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=andrew userId=7410f974-39ec-4531-9184-f88522622a83 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=teacher
+2025-08-20 22:38:49 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'andrew' logged in successfully (userId=7410f974-39ec-4531-9184-f88522622a83, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-08-20 22:42:57 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 22:42:57 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@7c85090e
+2025-08-20 22:42:57 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 22:42:58 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=andrew userId=7410f974-39ec-4531-9184-f88522622a83 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=teacher
+2025-08-20 22:42:58 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'andrew' logged in successfully (userId=7410f974-39ec-4531-9184-f88522622a83, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-08-20 22:44:05 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 22:44:06 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@3393e862
+2025-08-20 22:44:06 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 22:44:07 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=andrew userId=7410f974-39ec-4531-9184-f88522622a83 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=teacher
+2025-08-20 22:44:07 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'andrew' logged in successfully (userId=7410f974-39ec-4531-9184-f88522622a83, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-08-20 22:45:11 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 22:45:13 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@7713dfaa
+2025-08-20 22:45:13 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 22:45:13 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=andrew userId=7410f974-39ec-4531-9184-f88522622a83 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=teacher
+2025-08-20 22:45:13 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'andrew' logged in successfully (userId=7410f974-39ec-4531-9184-f88522622a83, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-08-20 22:49:35 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 22:49:37 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@3603a819
+2025-08-20 22:49:37 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 22:49:38 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=andrew userId=7410f974-39ec-4531-9184-f88522622a83 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=teacher
+2025-08-20 22:49:38 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'andrew' logged in successfully (userId=7410f974-39ec-4531-9184-f88522622a83, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-08-20 22:52:05 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 22:52:11 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@2f01ecdf
+2025-08-20 22:52:11 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 22:52:12 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=andrew userId=7410f974-39ec-4531-9184-f88522622a83 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=teacher
+2025-08-20 22:52:12 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'andrew' logged in successfully (userId=7410f974-39ec-4531-9184-f88522622a83, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-08-20 22:57:05 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 22:57:07 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@7fccd8fe
+2025-08-20 22:57:07 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 22:57:08 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=andrew userId=7410f974-39ec-4531-9184-f88522622a83 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=teacher
+2025-08-20 22:57:08 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'andrew' logged in successfully (userId=7410f974-39ec-4531-9184-f88522622a83, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-08-20 22:59:45 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 22:59:50 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@e700f7a
+2025-08-20 22:59:50 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 22:59:51 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=andrew userId=7410f974-39ec-4531-9184-f88522622a83 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=teacher
+2025-08-20 22:59:51 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'andrew' logged in successfully (userId=7410f974-39ec-4531-9184-f88522622a83, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-08-20 23:53:54 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 23:53:57 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@373f4eb1
+2025-08-20 23:53:57 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 23:54:03 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=andrew userId=7410f974-39ec-4531-9184-f88522622a83 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=teacher
+2025-08-20 23:54:03 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'andrew' logged in successfully (userId=7410f974-39ec-4531-9184-f88522622a83, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-08-20 23:58:13 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-20 23:58:14 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@4e41bef0
+2025-08-20 23:58:14 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-20 23:58:16 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=andrew userId=7410f974-39ec-4531-9184-f88522622a83 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=teacher
+2025-08-20 23:58:16 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'andrew' logged in successfully (userId=7410f974-39ec-4531-9184-f88522622a83, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)

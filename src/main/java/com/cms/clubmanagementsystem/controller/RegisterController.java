@@ -96,12 +96,8 @@ public class RegisterController {
         }
 
         try (Connection conn = DatabaseConnector.getConnection()) {
-
-            // Set tenant for this session
-            TenantContext.setTenant(conn, schoolId.toString());
-
-            String sql = "SELECT club_id, club_name FROM clubs WHERE school_id = ? " +
-                    "AND is_active = true";
+            // Use the SECURITY DEFINER function instead of setting tenant context
+            String sql = "SELECT * FROM get_school_clubs(?)";
 
             try (PreparedStatement stmt = conn.prepareStatement(sql)) {
                 stmt.setObject(1, schoolId);
@@ -119,10 +115,9 @@ public class RegisterController {
                 if (clubComboBox.getItems().isEmpty()) {
                     showError("No clubs available for this school");
                 }
-
             }
         } catch (SQLException e) {
-            showError("Failed to load clubs");
+            showError("Failed to load clubs: " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -350,7 +345,6 @@ public class RegisterController {
             conn.setAutoCommit(false);
 
             try {
-                TenantContext.setTenant(conn, schoolId.toString());
 
                 if (isUsernameTaken(conn, username)) {
                     throw new IllegalArgumentException("Username already taken");
@@ -362,23 +356,25 @@ public class RegisterController {
                     throw new IllegalArgumentException("Phone number already registered");
                 }
 
-                String sql = "INSERT INTO users (full_name, email, username, password_hash, phone, school_id, role, club_id, is_active) " +
-                        "VALUES (?, ?, ?, ?, ?, ?, ?::user_role, ?, ?)";
-
+                // Use the SECURITY DEFINER function to bypass RLS safely
+                String sql = "SELECT register_user(?, ?, ?, ?::user_role, ?, ?, ?, ?)";
 
                 try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                    stmt.setString(1, fullName);
-                    stmt.setString(2, email);
-                    stmt.setString(3, username);
-                    stmt.setString(4, BCrypt.hashpw(password, BCrypt.gensalt(12)));
-                    stmt.setString(5, phone);
-                    stmt.setObject(6, schoolId);
-                    stmt.setString(7, role);
-                    stmt.setObject(8, clubId);
-                    stmt.setBoolean(9, true);
-                    stmt.executeUpdate();
+                    stmt.setString(1, username);
+                    stmt.setString(2, BCrypt.hashpw(password, BCrypt.gensalt(12)));
+                    stmt.setObject(3, schoolId);
+                    stmt.setString(4, role); // This gets cast to user_role by PostgreSQL
+                    stmt.setString(5, fullName);
+                    stmt.setString(6, email);
+                    stmt.setString(7, phone);
+                    stmt.setObject(8, clubId); // This can be NULL for coordinators
 
-                    stmt.executeUpdate();
+                    try (ResultSet rs = stmt.executeQuery()) {
+                        if (rs.next()) {
+                            UUID newUserId = (UUID) rs.getObject(1);
+                            System.out.println("Registered new user with ID: " + newUserId);
+                        }
+                    }
                 }
                 conn.commit();
             } catch (SQLException | IllegalArgumentException e) {

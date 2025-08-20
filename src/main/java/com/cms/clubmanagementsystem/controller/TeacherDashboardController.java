@@ -9,6 +9,7 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.UUID;
 
@@ -16,7 +17,6 @@ public class TeacherDashboardController implements Initializable {
 
     @FXML private Label welcomeLabel;
     @FXML private Label dashboardTitleLabel; // ← NEW: For personalized title
-    @FXML private Label clubInfoLabel;
     @FXML private Label totalLearnersLabel;
     @FXML private Label attendanceTodayLabel;
 
@@ -25,23 +25,46 @@ public class TeacherDashboardController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        setupUserInfo();
         loadTeacherAssignment();
+        setupUserInfo();
         loadClubStatistics();
     }
 
     private void setupUserInfo() {
         String username = SessionManager.getCurrentUsername();
-        welcomeLabel.setText("Welcome, " + username);
+        System.out.println("DEBUG - setupUserInfo(): username=" + username + ", assignedClubName=" + assignedClubName);
+
+        if (username != null && !username.isEmpty()) {
+            String capitalizedUsername = username.substring(0, 1).toUpperCase() +
+                    username.substring(1).toLowerCase();
+
+            if (assignedClubName != null && !assignedClubName.isEmpty()) {
+                String capitalizedClubName = assignedClubName.substring(0, 1).toUpperCase() +
+                        assignedClubName.substring(1).toLowerCase();
+
+                welcomeLabel.setText("Welcome " + capitalizedUsername +
+                        ", you have been assigned to " + capitalizedClubName + " club.");
+                System.out.println("DEBUG - Set welcome message with club: " + capitalizedClubName);
+
+            } else {
+                welcomeLabel.setText("Welcome " + capitalizedUsername +
+                        "! Please contact administrator for club assignment.");
+                System.out.println("DEBUG - Set welcome message WITHOUT club (assignedClubName is null/empty)");
+            }
+        } else {
+            welcomeLabel.setText("Welcome!");
+            System.out.println("DEBUG - Set generic welcome message (username is null/empty)");
+        }
     }
 
     private void loadTeacherAssignment() {
         UUID userId = SessionManager.getCurrentUserId();
+        System.out.println("Loading teacher assignment for user: " + userId);
 
         try (Connection conn = DatabaseConnector.getConnection()) {
             String sql = "SELECT c.club_id, c.club_name FROM users u " +
                     "JOIN clubs c ON u.club_id = c.club_id " +
-                    "WHERE u.user_id = ? AND u.is_active = true";
+                    "WHERE u.user_id = ? AND u.is_active = true AND c.is_active = true";
 
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
                 ps.setObject(1, userId);
@@ -50,17 +73,19 @@ public class TeacherDashboardController implements Initializable {
                 if (rs.next()) {
                     assignedClubId = (UUID) rs.getObject("club_id");
                     assignedClubName = rs.getString("club_name");
+                    System.out.println("FOUND CLUB: " + assignedClubName + " (ID: " + assignedClubId + ")");
 
-                    // Update UI with club information
-                    clubInfoLabel.setText("Assigned to: " + assignedClubName);
-                    dashboardTitleLabel.setText(assignedClubName + " Dashboard"); // ← Personalized title
+                    String capitalizedClubName = assignedClubName.substring(0, 1).toUpperCase() + assignedClubName.substring(1).toLowerCase();
+                    dashboardTitleLabel.setText(capitalizedClubName + " Dashboard");
+                    System.out.println("Set dashboard title to: " + capitalizedClubName + " Dashboard");
                 } else {
-                    clubInfoLabel.setText("No club assigned!");
-                    clubInfoLabel.setStyle("-fx-text-fill: #e74c3c; -fx-font-weight: bold;");
+                    System.out.println("NO CLUB FOUND - This shouldn't happen based on our debug!");
+                    dashboardTitleLabel.setText("Teacher Dashboard");
                 }
             }
         } catch (Exception e) {
-            showError("Error loading teacher assignment");
+            System.out.println("Error in loadTeacherAssignment: " + e.getMessage());
+            dashboardTitleLabel.setText("Teacher Dashboard");
             e.printStackTrace();
         }
     }
@@ -74,7 +99,7 @@ public class TeacherDashboardController implements Initializable {
 
         try (Connection conn = DatabaseConnector.getConnection()) {
             // Load total learners
-            String learnersSql = "SELECT COUNT(*) FROM learner_clubs WHERE club_id = ? AND is_active = true";
+            String learnersSql = "SELECT COUNT(*) FROM club_enrollments WHERE club_id = ? AND is_active = true";
             try (PreparedStatement ps = conn.prepareStatement(learnersSql)) {
                 ps.setObject(1, assignedClubId);
                 ResultSet rs = ps.executeQuery();

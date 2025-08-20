@@ -109,7 +109,13 @@ public class ClubManagementController implements Initializable {
 
         try (Connection conn = DatabaseConnector.getConnection()) {
             // Set tenant context for RLS
-            TenantContext.setTenant(conn, currentSchoolId.toString());
+            UUID currentUserId = SessionManager.getCurrentUserId();
+            if (currentUserId != null) {
+                TenantContext.setTenant(conn, currentSchoolId.toString(), currentUserId.toString());
+            } else {
+                showAlert(Alert.AlertType.ERROR, "User session expired. Please log in again.");
+                return;
+            }
 
             ClubService clubService = new ClubService();
 
@@ -180,7 +186,13 @@ public class ClubManagementController implements Initializable {
         }
 
         try (Connection conn = DatabaseConnector.getConnection()) {
-            TenantContext.setTenant(conn, currentSchoolId.toString());
+            UUID currentUserId = SessionManager.getCurrentUserId();
+            if (currentUserId != null) {
+                TenantContext.setTenant(conn, currentSchoolId.toString(), currentUserId.toString());
+            } else {
+                showAlert(Alert.AlertType.ERROR, "User session expired. Please log in again.");
+                return;
+            }
 
             ClubService clubService = new ClubService();
 
@@ -226,7 +238,13 @@ public class ClubManagementController implements Initializable {
         confirmation.showAndWait().ifPresent(response -> {
             if (response == ButtonType.OK) {
                 try (Connection conn = DatabaseConnector.getConnection()) {
-                    TenantContext.setTenant(conn, currentSchoolId.toString());
+                    UUID currentUserId = SessionManager.getCurrentUserId();
+                    if (currentUserId != null) {
+                        TenantContext.setTenant(conn, currentSchoolId.toString(), currentUserId.toString());
+                    } else {
+                        showAlert(Alert.AlertType.ERROR, "User session expired. Please log in again.");
+                        return;
+                    }
 
                     ClubService clubService = new ClubService();
                     boolean success = clubService.deactivateClub(conn, selectedClub.getClubId());
@@ -259,7 +277,13 @@ public class ClubManagementController implements Initializable {
     private void loadClubs() {
         clubs.clear();
         try (Connection conn = DatabaseConnector.getConnection()) {
-            TenantContext.setTenant(conn, currentSchoolId.toString());
+            UUID currentUserId = SessionManager.getCurrentUserId();
+            if (currentUserId != null) {
+                TenantContext.setTenant(conn, currentSchoolId.toString(), currentUserId.toString());
+            } else {
+                showAlert(Alert.AlertType.ERROR, "User session expired. Please log in again.");
+                return;
+            }
 
             ClubService clubService = new ClubService();
             clubs.addAll(clubService.getClubsBySchool(conn, currentSchoolId));

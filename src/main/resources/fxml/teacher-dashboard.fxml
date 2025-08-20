@@ -23,13 +23,10 @@
                        style="-fx-text-fill: #ecf0f1; -fx-font-size: 12px;"/>
             </VBox>
 
-            <!-- Right Section: Club Name (Prominent) and Logout -->
-            <VBox spacing="2" alignment="CENTER_RIGHT">
-                <Label fx:id="clubInfoLabel" text="Assigned Club: "
-                       style="-fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-color: rgba(0,0,0,0.2); -fx-padding: 5 10; -fx-background-radius: 5;"/>
-                <Button text="🚪 Logout" onAction="#handleLogout"
-                        style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 3 8; -fx-font-size: 11px;"/>
-            </VBox>
+            <!-- Right Section: Just Logout Button -->
+            <Button text="🚪 Logout" onAction="#handleLogout"
+                    style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight:
+                    bold; -fx-padding: 5 12; -fx-font-size: 12px;"/>
         </HBox>
     </top>
 

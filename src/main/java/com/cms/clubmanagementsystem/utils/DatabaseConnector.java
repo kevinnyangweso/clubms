@@ -43,15 +43,20 @@ public class DatabaseConnector {
     }
 
     private static void applyTenantContext(Connection conn) throws SQLException {
-        String currentTenant = TenantContext.getCurrentSchoolId();
-        if (currentTenant != null) {
-            verifySchoolExists(conn, currentTenant);
+        String currentSchoolId = TenantContext.getCurrentSchoolId();
+        String currentUserId = TenantContext.getCurrentUserId();
+
+        // Only apply context if both values are available
+        if (currentSchoolId != null && currentUserId != null) {
+            verifySchoolExists(conn, currentSchoolId);
 
             try (Statement stmt = conn.createStatement()) {
-                stmt.execute("SET app.current_school_id = '" + currentTenant + "'");
+                // Set BOTH required RLS settings
+                stmt.execute("SET app.current_school_id = '" + currentSchoolId + "'");
+                stmt.execute("SET app.current_user_id = '" + currentUserId + "'");
             }
 
-            verifyTenantContext(conn, currentTenant);
+            verifyTenantContext(conn, currentSchoolId, currentUserId);
         }
     }
 
@@ -66,11 +71,21 @@ public class DatabaseConnector {
         }
     }
 
-    private static void verifyTenantContext(Connection conn, String expectedTenant) throws SQLException {
+    // Updated to accept both expected school and user IDs
+    private static void verifyTenantContext(Connection conn, String expectedSchoolId, String expectedUserId) throws SQLException {
         try (Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery("SHOW app.current_school_id")) {
-            if (!rs.next() || !expectedTenant.equals(rs.getString(1))) {
-                throw new SQLException("Tenant context verification failed");
+             ResultSet rs = stmt.executeQuery("SELECT current_setting('app.current_school_id'), current_setting('app.current_user_id')")) {
+            if (!rs.next()) {
+                throw new SQLException("Failed to retrieve tenant context settings");
+            }
+
+            String actualSchoolId = rs.getString(1);
+            String actualUserId = rs.getString(2);
+
+            if (!expectedSchoolId.equals(actualSchoolId) || !expectedUserId.equals(actualUserId)) {
+                throw new SQLException("Tenant context verification failed. Expected: school=" +
+                        expectedSchoolId + ", user=" + expectedUserId + ". Actual: school=" +
+                        actualSchoolId + ", user=" + actualUserId);
             }
         }
     }
