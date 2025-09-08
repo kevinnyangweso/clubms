@@ -1,0 +1,88 @@
+2025-08-21 00:01:08 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-21 00:01:09 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@688520d1
+2025-08-21 00:01:09 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-21 00:01:09 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=andrew userId=7410f974-39ec-4531-9184-f88522622a83 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=teacher
+2025-08-21 00:01:09 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'andrew' logged in successfully (userId=7410f974-39ec-4531-9184-f88522622a83, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-08-21 00:06:18 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-21 00:06:19 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@5be75d9d
+2025-08-21 00:06:19 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-21 00:06:19 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=andrew userId=7410f974-39ec-4531-9184-f88522622a83 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=teacher
+2025-08-21 00:06:19 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'andrew' logged in successfully (userId=7410f974-39ec-4531-9184-f88522622a83, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-08-21 00:08:46 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-21 00:08:47 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@4cf8b384
+2025-08-21 00:08:47 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-21 00:08:47 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=andrew userId=7410f974-39ec-4531-9184-f88522622a83 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=teacher
+2025-08-21 00:08:47 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'andrew' logged in successfully (userId=7410f974-39ec-4531-9184-f88522622a83, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-08-21 00:17:34 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-21 00:17:36 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@1a57ecda
+2025-08-21 00:17:36 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-21 00:17:37 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=andrew userId=7410f974-39ec-4531-9184-f88522622a83 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=teacher
+2025-08-21 00:17:37 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'andrew' logged in successfully (userId=7410f974-39ec-4531-9184-f88522622a83, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-08-21 00:21:49 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-21 00:21:50 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@67820a79
+2025-08-21 00:21:50 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-21 00:21:51 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=andrew userId=7410f974-39ec-4531-9184-f88522622a83 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=teacher
+2025-08-21 00:21:51 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'andrew' logged in successfully (userId=7410f974-39ec-4531-9184-f88522622a83, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-08-21 00:24:59 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-21 00:25:00 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@153e55b2
+2025-08-21 00:25:00 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-21 00:25:01 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - Invalid password attempt for username=andrew
+2025-08-21 00:25:10 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=andrew userId=7410f974-39ec-4531-9184-f88522622a83 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 role=teacher
+2025-08-21 00:25:10 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'andrew' logged in successfully (userId=7410f974-39ec-4531-9184-f88522622a83, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-08-22 12:33:18 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-22 12:42:32 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-22 12:42:34 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@102b0214
+2025-08-22 12:42:34 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-22 12:42:35 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=coordinator
+2025-08-22 12:42:35 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-22 12:44:24 INFO  [JavaFX Application Thread] c.c.c.c.EnrollmentController - Loaded 5 clubs from database
+2025-08-22 12:44:24 INFO  [JavaFX Application Thread] c.c.c.c.EnrollmentController - Loaded 0 learners from database
+2025-08-22 12:45:39 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - Invalid password attempt for username=andrew
+2025-08-22 12:45:45 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=andrew userId=7410f974-39ec-4531-9184-f88522622a83 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=teacher
+2025-08-22 12:45:45 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'andrew' logged in successfully (userId=7410f974-39ec-4531-9184-f88522622a83, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-08-22 12:50:24 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-22 12:50:28 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@102b0214
+2025-08-22 12:50:28 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-22 12:50:30 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=coordinator
+2025-08-22 12:50:30 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-22 13:38:44 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-22 13:38:47 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@3e10b162
+2025-08-22 13:38:47 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-22 13:38:52 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=coordinator
+2025-08-22 13:38:52 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-22 14:00:52 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-22 14:01:15 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@7c5f1136
+2025-08-22 14:01:15 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-22 14:01:18 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=coordinator
+2025-08-22 14:01:18 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-22 14:11:01 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-22 14:11:02 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@56e39f5b
+2025-08-22 14:11:02 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-22 14:11:02 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=coordinator
+2025-08-22 14:11:02 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-22 14:32:28 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-22 14:32:36 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@13b4e075
+2025-08-22 14:32:36 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-22 14:32:38 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=coordinator
+2025-08-22 14:32:38 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-22 15:21:59 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-22 15:22:03 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@5f99a76f
+2025-08-22 15:22:03 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-22 15:22:05 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=coordinator
+2025-08-22 15:22:05 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-22 15:47:57 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-22 15:48:02 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@4f69c161
+2025-08-22 15:48:02 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-22 15:48:04 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - Invalid password attempt for username=mw1
+2025-08-22 15:48:28 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=coordinator
+2025-08-22 15:48:28 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=coordinator)
+2025-08-22 15:48:28 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - Initializing OverviewController
+2025-08-22 15:48:28 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - totalTeachersLabel: NOT NULL
+2025-08-22 15:48:28 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - totalLearnersLabel: NOT NULL
+2025-08-22 15:48:28 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - todayAttendanceLabel: NOT NULL
+2025-08-22 15:48:28 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - attendanceThisWeekLabel: NOT NULL
+2025-08-22 15:48:28 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - attendancePercentageLabel: NOT NULL
+2025-08-22 15:48:28 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - availableCapacityLabel: NOT NULL
+2025-08-22 15:52:48 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - Invalid password attempt for username=kev
+2025-08-22 15:56:51 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=kev userId=628bf95a-756b-4978-9d41-605b3d58b7ab schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=teacher
+2025-08-22 15:56:51 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'kev' logged in successfully (userId=628bf95a-756b-4978-9d41-605b3d58b7ab, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)

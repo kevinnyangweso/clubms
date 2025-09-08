@@ -1,0 +1,258 @@
+2025-08-27 05:08:31 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-27 05:08:40 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@42a6fa10
+2025-08-27 05:08:40 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-27 05:08:43 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator active=true
+2025-08-27 05:08:43 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator, activeCoordinator=true)
+2025-08-27 05:08:43 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-08-27 05:08:43 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-08-27 05:08:43 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalClubsLabel injected successfully
+2025-08-27 05:08:43 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalMembersLabel injected successfully
+2025-08-27 05:08:43 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalTeachersLabel injected successfully
+2025-08-27 05:08:43 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalLearnersLabel injected successfully
+2025-08-27 05:08:43 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ todayAttendanceLabel injected successfully
+2025-08-27 05:08:43 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ attendanceThisWeekLabel injected successfully
+2025-08-27 05:08:43 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ attendancePercentageLabel injected successfully
+2025-08-27 05:08:43 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ weeklyAttendanceRateLabel injected successfully
+2025-08-27 05:08:43 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ participationRateLabel injected successfully
+2025-08-27 05:08:43 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ lastUpdatedLabel injected successfully
+2025-08-27 05:08:43 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ systemStatusLabel injected successfully
+2025-08-27 05:08:43 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-08-27 05:49:08 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-27 05:49:19 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@448fa4e3
+2025-08-27 05:49:19 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-27 05:49:21 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator active=false
+2025-08-27 06:00:01 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-27 06:00:34 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@1df9cbca
+2025-08-27 06:00:34 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-27 06:00:39 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-08-27 06:00:39 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-08-27 06:00:39 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-08-27 06:00:39 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-08-27 06:00:39 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalClubsLabel injected successfully
+2025-08-27 06:00:39 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalMembersLabel injected successfully
+2025-08-27 06:00:39 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalTeachersLabel injected successfully
+2025-08-27 06:00:39 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalLearnersLabel injected successfully
+2025-08-27 06:00:39 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ todayAttendanceLabel injected successfully
+2025-08-27 06:00:39 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ attendanceThisWeekLabel injected successfully
+2025-08-27 06:00:39 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ attendancePercentageLabel injected successfully
+2025-08-27 06:00:39 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ weeklyAttendanceRateLabel injected successfully
+2025-08-27 06:00:39 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ participationRateLabel injected successfully
+2025-08-27 06:00:39 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ lastUpdatedLabel injected successfully
+2025-08-27 06:00:39 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ systemStatusLabel injected successfully
+2025-08-27 06:00:39 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-08-27 06:12:20 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-27 06:12:37 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@6f7dba7c
+2025-08-27 06:12:37 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-27 06:12:40 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-08-27 06:12:40 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-08-27 06:12:40 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-08-27 06:12:40 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-08-27 06:12:40 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalClubsLabel injected successfully
+2025-08-27 06:12:40 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalMembersLabel injected successfully
+2025-08-27 06:12:40 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalTeachersLabel injected successfully
+2025-08-27 06:12:40 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalLearnersLabel injected successfully
+2025-08-27 06:12:40 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ todayAttendanceLabel injected successfully
+2025-08-27 06:12:40 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ attendanceThisWeekLabel injected successfully
+2025-08-27 06:12:40 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ attendancePercentageLabel injected successfully
+2025-08-27 06:12:40 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ weeklyAttendanceRateLabel injected successfully
+2025-08-27 06:12:40 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ participationRateLabel injected successfully
+2025-08-27 06:12:40 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ lastUpdatedLabel injected successfully
+2025-08-27 06:12:40 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ systemStatusLabel injected successfully
+2025-08-27 06:12:40 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-08-27 06:15:12 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=ami userId=6a6860b5-5f9e-4e02-a037-581d998661f4 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-08-27 06:15:12 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'ami' logged in successfully (userId=6a6860b5-5f9e-4e02-a037-581d998661f4, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-08-27 06:15:41 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-08-27 06:15:42 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-08-27 06:15:42 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalClubsLabel injected successfully
+2025-08-27 06:15:42 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalMembersLabel injected successfully
+2025-08-27 06:15:42 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalTeachersLabel injected successfully
+2025-08-27 06:15:42 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalLearnersLabel injected successfully
+2025-08-27 06:15:42 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ todayAttendanceLabel injected successfully
+2025-08-27 06:15:42 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ attendanceThisWeekLabel injected successfully
+2025-08-27 06:15:42 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ attendancePercentageLabel injected successfully
+2025-08-27 06:15:42 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ weeklyAttendanceRateLabel injected successfully
+2025-08-27 06:15:42 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ participationRateLabel injected successfully
+2025-08-27 06:15:42 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ lastUpdatedLabel injected successfully
+2025-08-27 06:15:42 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ systemStatusLabel injected successfully
+2025-08-27 06:15:42 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-08-27 06:15:55 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - User logged out
+2025-08-27 06:17:29 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=ami userId=6a6860b5-5f9e-4e02-a037-581d998661f4 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-08-27 06:17:29 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'ami' logged in successfully (userId=6a6860b5-5f9e-4e02-a037-581d998661f4, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-08-27 06:17:29 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-08-27 06:17:29 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-08-27 06:17:29 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalClubsLabel injected successfully
+2025-08-27 06:17:29 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalMembersLabel injected successfully
+2025-08-27 06:17:29 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalTeachersLabel injected successfully
+2025-08-27 06:17:29 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalLearnersLabel injected successfully
+2025-08-27 06:17:29 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ todayAttendanceLabel injected successfully
+2025-08-27 06:17:29 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ attendanceThisWeekLabel injected successfully
+2025-08-27 06:17:29 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ attendancePercentageLabel injected successfully
+2025-08-27 06:17:29 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ weeklyAttendanceRateLabel injected successfully
+2025-08-27 06:17:29 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ participationRateLabel injected successfully
+2025-08-27 06:17:29 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ lastUpdatedLabel injected successfully
+2025-08-27 06:17:29 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ systemStatusLabel injected successfully
+2025-08-27 06:17:29 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-08-27 06:40:57 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-27 06:41:01 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@7a7a61ee
+2025-08-27 06:41:01 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-27 06:41:02 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - Invalid password attempt for username=peter
+2025-08-27 06:41:25 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-08-27 06:41:25 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-08-27 06:41:25 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-08-27 06:41:25 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-08-27 06:41:25 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalClubsLabel injected successfully
+2025-08-27 06:41:25 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalMembersLabel injected successfully
+2025-08-27 06:41:25 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalTeachersLabel injected successfully
+2025-08-27 06:41:25 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalLearnersLabel injected successfully
+2025-08-27 06:41:25 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ todayAttendanceLabel injected successfully
+2025-08-27 06:41:25 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ attendanceThisWeekLabel injected successfully
+2025-08-27 06:41:25 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ attendancePercentageLabel injected successfully
+2025-08-27 06:41:25 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ weeklyAttendanceRateLabel injected successfully
+2025-08-27 06:41:25 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ participationRateLabel injected successfully
+2025-08-27 06:41:25 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ lastUpdatedLabel injected successfully
+2025-08-27 06:41:25 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ systemStatusLabel injected successfully
+2025-08-27 06:41:25 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-08-27 06:43:12 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=ami userId=6a6860b5-5f9e-4e02-a037-581d998661f4 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-08-27 06:43:12 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'ami' logged in successfully (userId=6a6860b5-5f9e-4e02-a037-581d998661f4, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-08-27 06:43:12 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-08-27 06:43:12 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-08-27 06:43:12 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalClubsLabel injected successfully
+2025-08-27 06:43:12 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalMembersLabel injected successfully
+2025-08-27 06:43:12 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalTeachersLabel injected successfully
+2025-08-27 06:43:12 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalLearnersLabel injected successfully
+2025-08-27 06:43:12 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ todayAttendanceLabel injected successfully
+2025-08-27 06:43:12 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ attendanceThisWeekLabel injected successfully
+2025-08-27 06:43:12 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ attendancePercentageLabel injected successfully
+2025-08-27 06:43:12 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ weeklyAttendanceRateLabel injected successfully
+2025-08-27 06:43:12 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ participationRateLabel injected successfully
+2025-08-27 06:43:12 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ lastUpdatedLabel injected successfully
+2025-08-27 06:43:12 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ systemStatusLabel injected successfully
+2025-08-27 06:43:12 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-08-27 06:48:27 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-08-27 06:48:27 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalClubsLabel injected successfully
+2025-08-27 06:48:27 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalMembersLabel injected successfully
+2025-08-27 06:48:27 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalTeachersLabel injected successfully
+2025-08-27 06:48:27 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalLearnersLabel injected successfully
+2025-08-27 06:48:27 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ todayAttendanceLabel injected successfully
+2025-08-27 06:48:27 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ attendanceThisWeekLabel injected successfully
+2025-08-27 06:48:27 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ attendancePercentageLabel injected successfully
+2025-08-27 06:48:27 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ weeklyAttendanceRateLabel injected successfully
+2025-08-27 06:48:27 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ participationRateLabel injected successfully
+2025-08-27 06:48:27 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ lastUpdatedLabel injected successfully
+2025-08-27 06:48:27 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ systemStatusLabel injected successfully
+2025-08-27 06:48:27 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-08-27 07:04:02 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-27 07:04:14 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@1a57ecda
+2025-08-27 07:04:14 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-27 07:04:17 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=ami userId=6a6860b5-5f9e-4e02-a037-581d998661f4 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-08-27 07:04:17 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'ami' logged in successfully (userId=6a6860b5-5f9e-4e02-a037-581d998661f4, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-08-27 07:04:17 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-08-27 07:04:18 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-08-27 07:04:18 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalClubsLabel injected successfully
+2025-08-27 07:04:18 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalMembersLabel injected successfully
+2025-08-27 07:04:18 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalTeachersLabel injected successfully
+2025-08-27 07:04:18 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalLearnersLabel injected successfully
+2025-08-27 07:04:18 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ todayAttendanceLabel injected successfully
+2025-08-27 07:04:18 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ attendanceThisWeekLabel injected successfully
+2025-08-27 07:04:18 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ attendancePercentageLabel injected successfully
+2025-08-27 07:04:18 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ weeklyAttendanceRateLabel injected successfully
+2025-08-27 07:04:18 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ participationRateLabel injected successfully
+2025-08-27 07:04:18 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ lastUpdatedLabel injected successfully
+2025-08-27 07:04:18 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ systemStatusLabel injected successfully
+2025-08-27 07:04:18 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-08-27 07:08:32 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-27 07:08:33 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@112555ee
+2025-08-27 07:08:33 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-27 07:08:33 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=ami userId=6a6860b5-5f9e-4e02-a037-581d998661f4 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-08-27 07:08:33 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'ami' logged in successfully (userId=6a6860b5-5f9e-4e02-a037-581d998661f4, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-08-27 07:08:33 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-08-27 07:08:33 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-08-27 07:08:33 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalClubsLabel injected successfully
+2025-08-27 07:08:33 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalMembersLabel injected successfully
+2025-08-27 07:08:33 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalTeachersLabel injected successfully
+2025-08-27 07:08:33 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalLearnersLabel injected successfully
+2025-08-27 07:08:33 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ todayAttendanceLabel injected successfully
+2025-08-27 07:08:33 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ attendanceThisWeekLabel injected successfully
+2025-08-27 07:08:33 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ attendancePercentageLabel injected successfully
+2025-08-27 07:08:33 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ weeklyAttendanceRateLabel injected successfully
+2025-08-27 07:08:33 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ participationRateLabel injected successfully
+2025-08-27 07:08:33 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ lastUpdatedLabel injected successfully
+2025-08-27 07:08:33 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ systemStatusLabel injected successfully
+2025-08-27 07:08:33 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-08-27 07:19:17 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-27 07:19:19 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@22ca5cdf
+2025-08-27 07:19:19 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-27 07:19:20 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=ami userId=6a6860b5-5f9e-4e02-a037-581d998661f4 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-08-27 07:19:20 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'ami' logged in successfully (userId=6a6860b5-5f9e-4e02-a037-581d998661f4, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-08-27 07:19:20 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-08-27 07:19:20 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-08-27 07:19:20 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalClubsLabel injected successfully
+2025-08-27 07:19:20 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalMembersLabel injected successfully
+2025-08-27 07:19:20 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalTeachersLabel injected successfully
+2025-08-27 07:19:20 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalLearnersLabel injected successfully
+2025-08-27 07:19:20 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ todayAttendanceLabel injected successfully
+2025-08-27 07:19:20 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ attendanceThisWeekLabel injected successfully
+2025-08-27 07:19:20 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ attendancePercentageLabel injected successfully
+2025-08-27 07:19:20 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ weeklyAttendanceRateLabel injected successfully
+2025-08-27 07:19:20 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ participationRateLabel injected successfully
+2025-08-27 07:19:20 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ lastUpdatedLabel injected successfully
+2025-08-27 07:19:20 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ systemStatusLabel injected successfully
+2025-08-27 07:19:20 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-08-27 07:24:37 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-27 07:24:37 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@153e55b2
+2025-08-27 07:24:37 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-27 07:24:38 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=ami userId=6a6860b5-5f9e-4e02-a037-581d998661f4 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-08-27 07:24:38 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'ami' logged in successfully (userId=6a6860b5-5f9e-4e02-a037-581d998661f4, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-08-27 07:24:38 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-08-27 07:24:38 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-08-27 07:24:38 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalClubsLabel injected successfully
+2025-08-27 07:24:38 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalMembersLabel injected successfully
+2025-08-27 07:24:38 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalTeachersLabel injected successfully
+2025-08-27 07:24:38 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalLearnersLabel injected successfully
+2025-08-27 07:24:38 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ todayAttendanceLabel injected successfully
+2025-08-27 07:24:38 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ attendanceThisWeekLabel injected successfully
+2025-08-27 07:24:38 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ attendancePercentageLabel injected successfully
+2025-08-27 07:24:38 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ weeklyAttendanceRateLabel injected successfully
+2025-08-27 07:24:38 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ participationRateLabel injected successfully
+2025-08-27 07:24:38 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ lastUpdatedLabel injected successfully
+2025-08-27 07:24:38 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ systemStatusLabel injected successfully
+2025-08-27 07:24:38 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-08-27 07:28:29 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-27 07:28:30 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@4100d392
+2025-08-27 07:28:30 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-27 07:28:30 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - Invalid password attempt for username=ami
+2025-08-27 07:28:37 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=ami userId=6a6860b5-5f9e-4e02-a037-581d998661f4 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-08-27 07:28:37 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'ami' logged in successfully (userId=6a6860b5-5f9e-4e02-a037-581d998661f4, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-08-27 07:28:37 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-08-27 07:28:37 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-08-27 07:28:37 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalClubsLabel injected successfully
+2025-08-27 07:28:37 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalMembersLabel injected successfully
+2025-08-27 07:28:37 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalTeachersLabel injected successfully
+2025-08-27 07:28:37 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalLearnersLabel injected successfully
+2025-08-27 07:28:37 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ todayAttendanceLabel injected successfully
+2025-08-27 07:28:37 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ attendanceThisWeekLabel injected successfully
+2025-08-27 07:28:37 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ attendancePercentageLabel injected successfully
+2025-08-27 07:28:37 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ weeklyAttendanceRateLabel injected successfully
+2025-08-27 07:28:37 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ participationRateLabel injected successfully
+2025-08-27 07:28:37 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ lastUpdatedLabel injected successfully
+2025-08-27 07:28:37 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ systemStatusLabel injected successfully
+2025-08-27 07:28:37 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-08-27 07:35:42 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-08-27 07:35:43 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@2decfa21
+2025-08-27 07:35:43 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-08-27 07:35:44 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=ami userId=6a6860b5-5f9e-4e02-a037-581d998661f4 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-08-27 07:35:44 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'ami' logged in successfully (userId=6a6860b5-5f9e-4e02-a037-581d998661f4, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-08-27 07:35:44 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-08-27 07:35:44 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-08-27 07:35:44 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalClubsLabel injected successfully
+2025-08-27 07:35:44 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalMembersLabel injected successfully
+2025-08-27 07:35:44 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalTeachersLabel injected successfully
+2025-08-27 07:35:44 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ totalLearnersLabel injected successfully
+2025-08-27 07:35:44 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ todayAttendanceLabel injected successfully
+2025-08-27 07:35:44 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ attendanceThisWeekLabel injected successfully
+2025-08-27 07:35:44 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ attendancePercentageLabel injected successfully
+2025-08-27 07:35:44 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ weeklyAttendanceRateLabel injected successfully
+2025-08-27 07:35:44 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ participationRateLabel injected successfully
+2025-08-27 07:35:44 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ lastUpdatedLabel injected successfully
+2025-08-27 07:35:44 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ systemStatusLabel injected successfully
+2025-08-27 07:35:44 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76

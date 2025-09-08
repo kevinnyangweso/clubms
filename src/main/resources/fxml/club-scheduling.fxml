@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.cms.clubmanagementsystem.controller.ClubSchedulingController"
+      spacing="10" prefWidth="900" prefHeight="650">
+
+    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+
+    <!-- Header Section -->
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Label text="⏰" style="-fx-font-size: 24px;"/>
+        <Label fx:id="clubNameLabel" text="Club Scheduling" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    </HBox>
+
+    <!-- Add this section below the header section -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Select Club:"/>
+        <ComboBox fx:id="clubCombo" promptText="Select a Club" prefWidth="250"/>
+    </HBox>
+
+    <Separator/>
+
+    <!-- Schedule Form Section -->
+    <VBox spacing="10" style="-fx-border-color: #ccc; -fx-border-width: 1; -fx-border-radius: 5; -fx-padding: 10;">
+        <Label text="Add New Schedule" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+
+        <GridPane hgap="10" vgap="10">
+            <Label text="Grade:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <HBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <ComboBox fx:id="gradeCombo" promptText="Select Grade" prefWidth="120"/>
+                <Button text="Add Grade" onAction="#showAddGradeForm" style="-fx-font-size: 12px; -fx-padding: 3 5;"/>
+            </HBox>
+
+            <Label text="Class:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <HBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <ComboBox fx:id="classCombo" promptText="Select Class" prefWidth="120"/>
+                <Button text="Add Class" onAction="#showAddClassForm" style="-fx-font-size: 12px; -fx-padding: 3 5;"/>
+            </HBox>
+
+            <Label text="Day:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <ComboBox fx:id="dayCombo" promptText="Select Day" GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="100"/>
+
+            <Label text="Start Time:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+            <TextField fx:id="startTimeField" promptText="HH:MM" GridPane.columnIndex="1" GridPane.rowIndex="3" prefWidth="80"/>
+
+            <Label text="End Time:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+            <TextField fx:id="endTimeField" promptText="HH:MM" GridPane.columnIndex="1" GridPane.rowIndex="4" prefWidth="80"/>
+
+            <Label text="Venue:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+            <TextField fx:id="venueField" promptText="Enter venue" GridPane.columnIndex="1" GridPane.rowIndex="5" prefWidth="150"/>
+        </GridPane>
+
+        <Button fx:id="addUpdateButton" text="Add Schedule" onAction="#addSchedule" prefWidth="100"/>
+    </VBox>
+
+    <!-- Schedules Table -->
+    <Label text="Current Schedules:" style="-fx-font-weight: bold;"/>
+    <TableView fx:id="scheduleTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn text="Target" prefWidth="200"/>
+            <TableColumn text="Day" prefWidth="80"/>
+            <TableColumn text="Time" prefWidth="120"/>
+            <TableColumn text="Venue" prefWidth="150"/>
+            <TableColumn text="Actions" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+    <!-- Action Buttons -->
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Back" onAction="#handleBack"/>
+        <Button text="Save" onAction="#handleSave" style="-fx-font-weight: bold;"/>
+        <Button text="Cancel" onAction="#handleCancel"/>
+    </HBox>
+
+</VBox>

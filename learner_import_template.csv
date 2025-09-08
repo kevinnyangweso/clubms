@@ -1,0 +1,7 @@
+admission_number,full_name,grade_name,date_joined_school (YYYY-MM-DD),gender (optional)
+STU001,John Doe,Grade 4,2024-01-15,Male
+STU002,Jane Smith,Grade 5,2024-09-01,Female
+STU003,Mike Brown,PP2,2023-08-28,
+STU004,Sarah Johnson,Grade 3,2024-03-10,Female
+STU005,David Wilson,Grade 6,2024-12-25,Male
+STU006,Emily Davis,Grade 2,2024-06-30,Female
