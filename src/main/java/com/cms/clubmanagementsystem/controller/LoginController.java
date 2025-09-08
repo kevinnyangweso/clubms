@@ -11,6 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.mindrot.jbcrypt.BCrypt;
 import org.slf4j.Logger;
@@ -22,7 +23,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Enumeration;
 import java.util.ResourceBundle;
 import java.util.UUID;
 
@@ -34,7 +34,6 @@ public class LoginController implements Initializable {
     @FXML private TextField passwordVisibleField;
     @FXML private CheckBox showPasswordCheckBox;
     @FXML private Button loginButton;
-    @FXML private Button registerButton;
     @FXML private Hyperlink forgotPasswordLink;
     @FXML private Label messageLabel;
 
@@ -42,7 +41,6 @@ public class LoginController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         passwordVisibleField.setVisible(false);
         passwordVisibleField.setManaged(false);
-
     }
 
     @FXML
@@ -102,7 +100,7 @@ public class LoginController implements Initializable {
                 }
 
                 final String selectSql =
-                        "SELECT u.user_id, u.password_hash, u.is_active, u.school_id, u.role, s.school_name " +
+                        "SELECT u.user_id, u.password_hash, u.is_active, u.school_id, u.role, u.first_login, s.school_name " +
                                 "FROM users u LEFT JOIN schools s ON u.school_id = s.school_id " +
                                 "WHERE u.username = ? LIMIT 1";
 
@@ -111,6 +109,7 @@ public class LoginController implements Initializable {
                 boolean isActive;
                 UUID schoolId;
                 String role;
+                boolean firstLogin;
                 String schoolName;
 
                 try (PreparedStatement ps = conn.prepareStatement(selectSql)) {
@@ -127,6 +126,7 @@ public class LoginController implements Initializable {
                         isActive = rs.getBoolean("is_active");
                         schoolId = (UUID) rs.getObject("school_id");
                         role = rs.getString("role");
+                        firstLogin = rs.getBoolean("first_login");
                         schoolName = rs.getString("school_name");
                     }
                 }
@@ -169,27 +169,25 @@ public class LoginController implements Initializable {
                     return;
                 }
 
-// Set the tenant context using the proper method
+                // Set the tenant context using the proper method
                 try (Connection tenantConn = DatabaseConnector.getConnection()) {
                     TenantContext.setTenant(tenantConn, schoolId.toString(), userId.toString());
                 }
 
-// Create session WITHOUT storing the connection (let DatabaseConnector handle it)
-                SessionManager.createSession(username, userId, schoolId, role);
+                // Create session WITHOUT storing the connection (let DatabaseConnector handle it)
+                SessionManager.createSession(username, userId, schoolId, schoolName, role);
 
                 logger.info("User '{}' logged in successfully (userId={}, schoolId={}, role={})",
                         username, userId, schoolId, role);
 
-                // Redirect based on user role
-                if ("coordinator".equalsIgnoreCase(role)) {
-                    switchScene(event, "/fxml/coordinator-dashboard.fxml", "Coordinator Dashboard");
-                } else if ("teacher".equalsIgnoreCase(role)) {
-                    switchScene(event, "/fxml/teacher-dashboard.fxml", "Teacher Dashboard");
-                } else {
-                    // Fallback for unknown roles or if role is null
-                    logger.warn("Unknown role '{}' for user {}, redirecting to coordinator dashboard", role, username);
-                    switchScene(event, "/fxml/coordinator-dashboard.fxml", "Coordinator Dashboard");
+                // Check if this is the first login and redirect to password change
+                if (firstLogin) {
+                    showPasswordChangeScreen(event, username, userId);
+                    return; // Don't proceed to dashboard yet
                 }
+
+                // Redirect based on user role (only if not first login)
+                redirectBasedOnRole(event, role);
 
             } catch (Exception ex) {
                 try { conn.rollback(); } catch (SQLException ignored) {}
@@ -205,9 +203,58 @@ public class LoginController implements Initializable {
         }
     }
 
-    @FXML
-    private void handleRegister(ActionEvent event) {
-        switchScene(event, "/fxml/register.fxml", "User Registration");
+    private void showPasswordChangeScreen(ActionEvent event, String username, UUID userId) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/password-change.fxml"));
+            Parent root = loader.load();
+
+            PasswordChangeController controller = loader.getController();
+            controller.initialize(username, userId, () -> {
+                // Password changed successfully - logout and redirect to login page
+                SessionManager.logout();
+
+                // Show success message on login page
+                messageLabel.setText("Password changed successfully! Please login with your new password.");
+
+                // Clear the login fields
+                usernameField.clear();
+                passwordField.clear();
+                passwordVisibleField.clear();
+            });
+
+            Stage stage = new Stage();
+            stage.setTitle("Change Password - First Login");
+            stage.setScene(new Scene(root));
+            // Enable maximize button and make window resizable
+            stage.setResizable(true);
+            stage.initModality(Modality.APPLICATION_MODAL); // Keep as modal if needed
+
+            // Set minimum size to prevent making window too small
+            stage.setMinWidth(500);
+            stage.setMinHeight(600);
+            stage.setOnCloseRequest(e -> {
+                // Force logout if user closes the password change window without completing
+                SessionManager.logout();
+                messageLabel.setText("Please complete password change to continue.");
+            });
+            stage.show();
+
+        } catch (IOException e) {
+            logger.error("Error loading password change screen: {}", e.getMessage(), e);
+            messageLabel.setText("Error loading password change screen.");
+        }
+    }
+
+    private void redirectBasedOnRole(ActionEvent event, String role) {
+        if ("coordinator".equalsIgnoreCase(role)) {
+            switchScene(event, "/fxml/coordinator-dashboard.fxml", "Coordinator Dashboard");
+        } else if ("teacher".equalsIgnoreCase(role)) {
+            switchScene(event, "/fxml/teacher-dashboard.fxml", "Teacher Dashboard");
+        } else {
+            // Fallback for unknown roles or if role is null
+            logger.warn("Unknown role '{}', redirecting to coordinator dashboard", role);
+            switchScene(event, "/fxml/coordinator-dashboard.fxml", "Coordinator Dashboard");
+        }
     }
 
     @FXML
@@ -240,5 +287,4 @@ public class LoginController implements Initializable {
             messageLabel.setText("Error loading screen. Please try again.");
         }
     }
-
 }

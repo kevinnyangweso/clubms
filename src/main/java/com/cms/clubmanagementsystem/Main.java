@@ -1,17 +1,25 @@
 package com.cms.clubmanagementsystem;
 
+import com.cms.clubmanagementsystem.controller.LearnersController;
+import com.cms.clubmanagementsystem.model.LearnerImportDTO;
 import com.cms.clubmanagementsystem.utils.EnvLoader; // <-- Added import
+import com.cms.clubmanagementsystem.utils.PasswordService;
 import com.cms.clubmanagementsystem.utils.SessionManager;
+import com.cms.clubmanagementsystem.utils.DatabaseConnector;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -113,6 +121,10 @@ public class Main extends Application {
         SessionManager.closeSession();
         SessionManager.clearTransientData();
 
+        // Clean up resources
+        PasswordService.shutdown();
+        DatabaseConnector.shutdown();
+
         System.out.println("Application stopped. Cleaned up session data.");
         super.stop();
     }
@@ -153,4 +165,5 @@ public class Main extends Application {
         stage.setScene(new Scene(root));
         stage.show();
     }
+
 }

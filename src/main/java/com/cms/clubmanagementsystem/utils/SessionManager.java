@@ -4,6 +4,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.UUID;
 import java.util.HashMap;
 import java.util.Map;
@@ -56,14 +59,15 @@ public final class SessionManager {
         return currentUserRole;
     }
 
-    public static synchronized void createSession(String username, UUID userId, UUID schoolId, String role) {
+    public static synchronized void createSession(String username, UUID userId, UUID schoolId, String schoolName, String role) {
         closeSession();
         currentUserId = userId;
         currentUsername = username;
         currentSchoolId = schoolId;
+        currentSchoolName = schoolName; // This line is crucial
         currentUserRole = role;
-        logger.info("Session created for username={} userId={} schoolId={} role={}",
-                username, userId, schoolId, role);
+        logger.info("Session created for username={} userId={} schoolId={} schoolName={} role={}",
+                username, userId, schoolId, schoolName, role);
     }
 
     public static synchronized String getCurrentSchoolName() {
@@ -78,6 +82,25 @@ public final class SessionManager {
         return currentSchoolId; }
     public static synchronized String getCurrentUsername() {
         return currentUsername; }
+
+    /**
+     * Clear the current user session (logout) - simple version that just clears session variables
+     */
+    public static synchronized void logout() {
+        currentUsername = null;
+        currentUserId = null;
+        currentSchoolId = null;
+        currentSchoolName = null;
+        currentUserRole = null;
+        logger.info("User logged out");
+    }
+
+    /**
+     * Check if a user is currently logged in
+     */
+    public static synchronized boolean isLoggedIn() {
+        return currentUserId != null && currentSchoolId != null;
+    }
 
     public static synchronized void closeSession() {
         // Clear all transient data when the user session ends (logs out)
@@ -218,4 +241,81 @@ public final class SessionManager {
         }
     }
 
+    /**
+     * Check if user is ANY coordinator (for viewing access)
+     * Returns true for both active and inactive coordinators
+     */
+    public static synchronized boolean isCoordinator() {
+        if (currentUserId == null || currentSchoolId == null) {
+            return false;
+        }
+
+        String sql = "SELECT role FROM users WHERE user_id = ? AND school_id = ?";
+
+        try (Connection conn = DatabaseConnector.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setObject(1, currentUserId);
+            stmt.setObject(2, currentSchoolId);
+
+            ResultSet rs = stmt.executeQuery();
+            return rs.next() && "club_coordinator".equals(rs.getString("role"));
+
+        } catch (SQLException e) {
+            logger.error("Failed to check coordinator role: {}", e.getMessage(), e);
+            return false;
+        }
+    }
+
+    /**
+     * Check if user is an ACTIVE coordinator (for editing access)
+     * Returns true only for coordinators with both flags set to true
+     */
+    public static synchronized boolean isActiveCoordinator() {
+        if (currentUserId == null || currentSchoolId == null) {
+            return false;
+        }
+
+        String sql = "SELECT is_active, is_active_coordinator FROM users WHERE user_id = ? " +
+                "AND school_id = ? AND role = 'club_coordinator'";
+
+        try (Connection conn = DatabaseConnector.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setObject(1, currentUserId);
+            stmt.setObject(2, currentSchoolId);
+
+            ResultSet rs = stmt.executeQuery();
+            return rs.next() && rs.getBoolean("is_active") && rs.getBoolean("is_active_coordinator");
+
+        } catch (SQLException e) {
+            logger.error("Failed to check coordinator permissions: {}", e.getMessage(), e);
+            return false;
+        }
+    }
+
+    /**
+     * Check if user is a teacher
+     */
+    public static synchronized boolean isTeacher() {
+        if (currentUserId == null || currentSchoolId == null) {
+            return false;
+        }
+
+        String sql = "SELECT role FROM users WHERE user_id = ? AND school_id = ?";
+
+        try (Connection conn = DatabaseConnector.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setObject(1, currentUserId);
+            stmt.setObject(2, currentSchoolId);
+
+            ResultSet rs = stmt.executeQuery();
+            return rs.next() && "teacher".equals(rs.getString("role"));
+
+        } catch (SQLException e) {
+            logger.error("Failed to check teacher role: {}", e.getMessage(), e);
+            return false;
+        }
+    }
 }

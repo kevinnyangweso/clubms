@@ -102,12 +102,18 @@ public class ForgotPasswordController {
         String email = emailField.getText().trim().toLowerCase();
         SchoolItem selectedSchool = schoolComboBox.getSelectionModel().getSelectedItem();
 
+        System.out.println("CONTROLLER DEBUG:");
+        System.out.println("  - Email: " + email);
+        System.out.println("  - School ID: " + selectedSchool.getId());
+        System.out.println("  - School Name: " + selectedSchool.getSchoolName());
+
         if (email.isEmpty() || selectedSchool == null) {
             showAlert(Alert.AlertType.WARNING, "Please enter email and select school");
             return;
         }
 
         try (Connection conn = DatabaseConnector.getConnection()) {
+            debugDatabaseSession(conn);
             PasswordResetService service = new PasswordResetService();
             String generatedToken = service.generateResetToken(conn, email, selectedSchool.getId());
 
@@ -148,6 +154,28 @@ public class ForgotPasswordController {
         } catch (Exception e) {
             showAlert(Alert.AlertType.ERROR, "Error: " + e.getMessage());
             e.printStackTrace();
+        }
+    }
+
+    private void debugDatabaseSession(Connection conn) throws SQLException {
+        try (Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT current_database(), current_user, current_schema()")) {
+            if (rs.next()) {
+                System.out.println("DATABASE SESSION:");
+                System.out.println("  - Database: " + rs.getString(1));
+                System.out.println("  - User: " + rs.getString(2));
+                System.out.println("  - Schema: " + rs.getString(3));
+            }
+        }
+
+        // Check if there are any temporary session variables
+        try (Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(
+                     "SELECT name, setting FROM pg_settings WHERE name LIKE '%app%' OR name LIKE '%tenant%' OR name LIKE '%school%'")) {
+            System.out.println("SESSION SETTINGS:");
+            while (rs.next()) {
+                System.out.println("  - " + rs.getString("name") + " = " + rs.getString("setting"));
+            }
         }
     }
 

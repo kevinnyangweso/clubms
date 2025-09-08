@@ -20,6 +20,7 @@ module com.cms.clubmanagementsystem {
     requires jakarta.mail;
     requires jakarta.activation;
     requires io.github.cdimascio.dotenv.java;
+    requires java.desktop;
 
     // Export your main package(s)
     exports com.cms.clubmanagementsystem;
@@ -36,4 +37,5 @@ module com.cms.clubmanagementsystem {
 
     opens css to javafx.fxml;
     opens fxml to javafx.fxml;
+    opens com.cms.clubmanagementsystem.utils to javafx.fxml;
 }

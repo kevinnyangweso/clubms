@@ -24,4 +24,7 @@
         <appender-ref ref="CONSOLE" />
         <appender-ref ref="FILE" />
     </root>
+
+    <!-- allows DEBUG level logs for the SessionManager class -->
+    <logger name="com.cms.clubmanagementsystem.utils.SessionManager" level="DEBUG" />
 </configuration>

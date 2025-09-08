@@ -5,13 +5,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 
-<?import java.net.URL?>
 <VBox xmlns="http://javafx.com/javafx/8.0.171"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.cms.clubmanagementsystem.controller.ClubManagementController"
       spacing="20"
       style="-fx-padding: 25; -fx-background-color: #f8f9fa;"
-      stylesheets="@../css/club-management.css">
+      stylesheets="@../css/club-management.css"
+      fx:id="mainContainer">
 
     <!-- Header Section -->
     <HBox alignment="CENTER_LEFT" spacing="10">
@@ -24,106 +24,47 @@
 
     <Separator style="-fx-padding: 0 0 10 0;"/>
 
-    <!-- Form Section -->
-    <VBox spacing="15" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #e0e0e0; -fx-border-width: 1;">
-        <Label text="Add New Club" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
-
-        <GridPane hgap="15" vgap="15">
-            <columnConstraints>
-                <ColumnConstraints prefWidth="120" halignment="RIGHT"/>
-                <ColumnConstraints prefWidth="350"/>
-            </columnConstraints>
-
-            <!-- Club Name -->
-            <Label text="Club Name:*" GridPane.rowIndex="0" GridPane.columnIndex="0"
-                   style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
-            <TextField fx:id="clubNameField" promptText="Enter club name (e.g., Chess Club)"
-                       GridPane.rowIndex="0" GridPane.columnIndex="1"/>
-
-            <!-- Description -->
-            <Label text="Description:" GridPane.rowIndex="1" GridPane.columnIndex="0"
-                   style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
-            <TextArea fx:id="descriptionArea" promptText="Describe the club's purpose and activities..."
-                      prefRowCount="3" wrapText="true" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
-
-            <!-- Meeting Day -->
-            <Label text="Meeting Day:*" GridPane.rowIndex="2" GridPane.columnIndex="0"
-                   style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
-            <ComboBox fx:id="meetingDayCombo" promptText="Select meeting day"
-                      GridPane.rowIndex="2" GridPane.columnIndex="1"/>
-
-            <!-- Meeting Time -->
-            <Label text="Meeting Time:*" GridPane.rowIndex="3" GridPane.columnIndex="0"
-                   style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
-            <HBox spacing="5" GridPane.rowIndex="3" GridPane.columnIndex="1" alignment="CENTER_LEFT">
-                <TextField fx:id="meetingTimeField" promptText="HH:MM" prefWidth="80"/>
-                <Label text="(e.g., 14:30 for 2:30 PM)" style="-fx-text-fill: #7f8c8d; -fx-font-size: 12px;"/>
-            </HBox>
-
-            <!-- Venue -->
-            <Label text="Venue:*" GridPane.rowIndex="4" GridPane.columnIndex="0"
-                   style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
-            <TextField fx:id="venueField" promptText="Enter venue location"
-                       GridPane.rowIndex="4" GridPane.columnIndex="1"/>
-
-            <!-- Capacity -->
-            <Label text="Capacity:*" GridPane.rowIndex="5" GridPane.columnIndex="0"
-                   style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
-            <HBox spacing="5" GridPane.rowIndex="5" GridPane.columnIndex="1" alignment="CENTER_LEFT">
-                <Spinner fx:id="capacitySpinner" prefWidth="100"/>
-                <Label text="max learners" style="-fx-text-fill: #7f8c8d; -fx-font-size: 12px;"/>
-            </HBox>
-        </GridPane>
-
-        <!-- Action Buttons -->
-        <HBox spacing="10" style="-fx-padding: 15 0 0 0;">
-            <Button text="➕ Create Club" onAction="#handleCreateClub"
-                    style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15;"/>
-            <Button text="📝 Update Selected" onAction="#handleUpdateClub"
-                    style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15;"/>
-            <Button text="💾 Save Update" onAction="#handleSaveUpdate"
-                    style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15;"/>
-            <Button text="🗑️ Delete Selected" onAction="#handleDeleteClub"
-                    style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15;"/>
-            <Button text="🧹 Clear Form" onAction="#handleClearForm"
-                    style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15;"/>
-        </HBox>
-    </VBox>
+    <!-- Action Buttons Section -->
+    <HBox spacing="10" style="-fx-padding: 10; -fx-background-color: white; -fx-background-radius: 10;">
+        <Button fx:id="createButton" text="➕ Create New Club" onAction="#showClubCreationForm"
+                style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15;"/>
+        <Button fx:id="updateButton" text="📝 Update Club" onAction="#handleUpdateClub"
+                style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15;"/>
+        <Button fx:id="addScheduleButton" text="⏰ Add Schedule" onAction="#showAddScheduleForm"
+                style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15;"/>
+        <Button fx:id="viewSchedulesButton" text="📅 View Schedules" onAction="#showClubSchedules"
+                style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15;"/>
+        <Button fx:id="deleteButton" text="🗑️ Delete Club" onAction="#handleDeleteClub"
+                style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15;"/>
+        <Button text="🔄 Refresh" onAction="#handleRefresh"
+                style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15;"/>
+    </HBox>
 
     <!-- Existing Clubs Section -->
     <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #e0e0e0; -fx-border-width: 1;">
         <HBox alignment="CENTER_LEFT" spacing="10">
             <Label text="📋" style="-fx-font-size: 20px;"/>
             <Label text="Existing Clubs" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
-            <Button text="🔄 Refresh" onAction="#handleRefresh"
-                    style="-fx-background-color: transparent; -fx-border-color: #bdc3c7; -fx-text-fill: #7f8c8d; -fx-padding: 4 8;"/>
         </HBox>
 
-        <TableView fx:id="clubsTable" prefHeight="300" style="-fx-font-size: 13px;">
-            <columns>
-                <TableColumn fx:id="nameColumn" text="Club Name" prefWidth="150"
-                             style="-fx-font-weight: bold; -fx-alignment: CENTER_LEFT;"/>
-                <TableColumn fx:id="descriptionColumn" text="Description" prefWidth="250"
-                             style="-fx-alignment: CENTER_LEFT;"/>
-                <TableColumn fx:id="meetingColumn" text="Meeting Time" prefWidth="120"
-                             style="-fx-alignment: CENTER;"/>
-                <TableColumn fx:id="venueColumn" text="Venue" prefWidth="120"
-                             style="-fx-alignment: CENTER_LEFT;"/>
-                <TableColumn fx:id="capacityColumn" text="Capacity" prefWidth="80"
-                             style="-fx-alignment: CENTER;"/>
-            </columns>
-        </TableView>
+        <!-- TableView -->
+        <VBox VBox.vgrow="ALWAYS" style="-fx-max-width: infinity;">
+            <TableView fx:id="clubsTable" VBox.vgrow="ALWAYS" style="-fx-font-size: 13px;">
+                <columns>
+                    <TableColumn fx:id="nameColumn" text="Club Name" prefWidth="180"/>
+                    <TableColumn fx:id="descriptionColumn" text="Description" prefWidth="280"/>
+                </columns>
+            </TableView>
+        </VBox>
 
         <HBox spacing="5" alignment="CENTER_LEFT">
-            <Label text="ℹ️" style="-fx-font-size: 14px;"/>
-            <Label text="Select a club to update or delete. Capacity shows maximum learners per session."
-                   style="-fx-text-fill: #7f8c8d; -fx-font-size: 12px; -fx-wrap-text: true;"/>
+            <HBox spacing="5" alignment="CENTER_LEFT">
+                <Label text="ℹ️" style="-fx-font-size: 14px;"/>
+                <Label fx:id="infoLabel"
+                       style="-fx-text-fill: #7f8c8d; -fx-font-size: 12px; -fx-wrap-text: true;"/>
+            </HBox>
         </HBox>
-    </VBox>
 
-    <!-- Footer Section -->
-    <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-padding: 10 0 0 0;">
-        <Label text="* Required fields" style="-fx-text-fill: #e74c3c; -fx-font-size: 12px; -fx-font-style: italic;"/>
-    </HBox>
+    </VBox>
 
 </VBox>

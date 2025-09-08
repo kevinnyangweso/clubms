@@ -44,3 +44,18 @@
 .spinner .increment-arrow-button:hover, .spinner .decrement-arrow-button:hover {
     -fx-background-color: #95a5a6;
 }
+
+/* Proactive Bug Prevention */
+VBox, HBox, GridPane {
+    -fx-max-width: infinity;
+}
+
+TableView {
+    -fx-table-cell-border-color: transparent;
+}
+
+/* Prevent horizontal scrolling */
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+

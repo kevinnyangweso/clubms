@@ -30,7 +30,7 @@
         </HBox>
     </top>
 
-    <!-- Center Content Area (unchanged) -->
+    <!-- Center Content Area -->
     <center>
         <TabPane tabClosingPolicy="UNAVAILABLE">
             <!-- My Club Tab -->
@@ -55,10 +55,15 @@
                     <VBox spacing="10">
                         <Label text="Quick Actions" style="-fx-font-weight: bold;"/>
                         <HBox spacing="10">
+                            <Button text="➕ Enroll Learners" onAction="#handleEnrollment"
+                                    style="-fx-background-color: #f39c12; -fx-text-fill: white;"/>
+
                             <Button text="📝 Take Attendance" onAction="#handleTakeAttendance"
                                     style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+
                             <Button text="👥 View Learners" onAction="#handleViewLearners"
                                     style="-fx-background-color: #2ecc71; -fx-text-fill: white;"/>
+
                             <Button text="📊 View Reports" onAction="#handleViewReports"
                                     style="-fx-background-color: #9b59b6; -fx-text-fill: white;"/>
                         </HBox>
@@ -79,6 +84,26 @@
                 <VBox spacing="15" style="-fx-padding: 20;">
                     <Label text="Learner Management" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
                     <!-- Learners content will be loaded here -->
+                </VBox>
+            </Tab>
+
+            <!-- NEW: Enrollment Tab -->
+            <Tab text="📝 Enrollment">
+                <VBox spacing="15" style="-fx-padding: 20;">
+                    <Label text="Learner Enrollment" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <Label text="Manage learner enrollments for your club" style="-fx-text-fill: #7f8c8d;"/>
+
+                    <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 20 0;">
+                        <Button text="Open Enrollment Manager" onAction="#handleEnrollment"
+                                style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20;"/>
+                    </HBox>
+
+                    <VBox spacing="10" style="-fx-padding: 10; -fx-background-color: #f8f9fa; -fx-background-radius: 5;">
+                        <Label text="ℹ️ Enrollment Information" style="-fx-font-weight: bold;"/>
+                        <Label text="• Enroll new learners in your club" style="-fx-text-fill: #7f8c8d;"/>
+                        <Label text="• View current enrollments" style="-fx-text-fill: #7f8c8d;"/>
+                        <Label text="• Withdraw learners when needed" style="-fx-text-fill: #7f8c8d;"/>
+                    </VBox>
                 </VBox>
             </Tab>
         </TabPane>

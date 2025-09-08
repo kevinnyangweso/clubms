@@ -40,17 +40,17 @@
 
         <!-- Username -->
         <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="0">
-         <font>
-            <Font size="18.0" />
-         </font></Label>
+            <font>
+                <Font size="18.0" />
+            </font></Label>
         <TextField fx:id="usernameField" prefWidth="250" promptText="Enter username"
                    GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
         <!-- Password -->
         <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="1">
-         <font>
-            <Font size="18.0" />
-         </font></Label>
+            <font>
+                <Font size="18.0" />
+            </font></Label>
         <StackPane GridPane.columnIndex="1" GridPane.rowIndex="1">
             <PasswordField fx:id="passwordField" prefWidth="250" promptText="Enter password" />
             <TextField fx:id="passwordVisibleField" prefWidth="250" promptText="Enter password"
@@ -61,33 +61,30 @@
         <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
             <CheckBox fx:id="showPasswordCheckBox" onAction="#handleShowPassword"
                       text="Show Password">
-            <font>
-               <Font size="13.0" />
-            </font></CheckBox>
+                <font>
+                    <Font size="13.0" />
+                </font></CheckBox>
         </HBox>
 
-        <!-- Buttons - Now perfectly aligned under input fields -->
-        <HBox alignment="CENTER_LEFT" spacing="47" GridPane.columnIndex="1" GridPane.rowIndex="3">
+        <!-- Buttons - Centered Login Button -->
+        <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
             <Button defaultButton="true" onAction="#handleLogin" prefWidth="120" text="Login">
-            <font>
-               <Font size="18.0" />
-            </font></Button>
-            <Button fx:id="registerButton" onAction="#handleRegister" prefWidth="120" text="Register">
-            <font>
-               <Font size="18.0" />
-            </font></Button>
+                <font>
+                    <Font size="18.0" />
+                </font></Button>
+            <!-- REMOVED: The Register Button -->
         </HBox>
     </GridPane>
 
     <!-- Forgot Password -->
     <Hyperlink fx:id="forgotPasswordLink" onAction="#handleForgotPassword"
                text="Forgot Password?" textAlignment="CENTER">
-      <VBox.margin>
-         <Insets left="90.0" />
-      </VBox.margin>
-      <font>
-         <Font size="16.0" />
-      </font></Hyperlink>
+        <VBox.margin>
+            <Insets left="90.0" />
+        </VBox.margin>
+        <font>
+            <Font size="16.0" />
+        </font></Hyperlink>
 
     <!-- Status Message -->
     <Label fx:id="messageLabel" style="-fx-font-weight: bold;" textFill="#e74c3c" />
