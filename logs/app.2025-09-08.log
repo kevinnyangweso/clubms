@@ -1,0 +1,54 @@
+2025-09-08 04:27:27 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-09-08 04:27:57 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@2b8175f6
+2025-09-08 04:27:57 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-09-08 04:28:01 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-08 04:28:01 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-09-08 04:28:01 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-09-08 04:28:01 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-09-08 04:28:02 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-08 04:28:02 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-08 04:34:31 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-08 04:34:31 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-08 06:23:37 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-08 06:23:38 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-08 06:23:44 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown initiated...
+2025-09-08 09:35:17 INFO  [Thread-4] org.eclipse.jetty.util.log - Logging initialized @59197ms to org.eclipse.jetty.util.log.Slf4jLog
+2025-09-08 09:35:22 INFO  [Thread-4] s.e.jetty.EmbeddedJettyServer - == Spark has ignited ...
+2025-09-08 09:35:22 INFO  [Thread-4] s.e.jetty.EmbeddedJettyServer - >> Listening on 0.0.0.0:8080
+2025-09-08 09:35:23 INFO  [Thread-4] org.eclipse.jetty.server.Server - jetty-9.4.48.v20220622; built: 2022-06-21T20:42:25.880Z; git: 6b67c5719d1f4371b33655ff2d047d24e171e49a; jvm 21.0.7+8-LTS-245
+2025-09-08 09:35:24 INFO  [Thread-4] org.eclipse.jetty.server.session - DefaultSessionIdManager workerName=node0
+2025-09-08 09:35:24 INFO  [Thread-4] org.eclipse.jetty.server.session - No SessionScavenger set, using defaults
+2025-09-08 09:35:25 INFO  [Thread-4] org.eclipse.jetty.server.session - node0 Scavenging every 660000ms
+2025-09-08 09:35:34 INFO  [Thread-4] o.e.jetty.server.AbstractConnector - Started ServerConnector@741974df{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-09-08 09:35:34 INFO  [Thread-4] org.eclipse.jetty.server.Server - Started @76539ms
+2025-09-08 09:35:34 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Webhook service started successfully on port 8080
+2025-09-08 09:35:53 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-09-08 09:42:56 INFO  [Thread-4] org.eclipse.jetty.util.log - Logging initialized @51242ms to org.eclipse.jetty.util.log.Slf4jLog
+2025-09-08 09:43:00 INFO  [Thread-4] s.e.jetty.EmbeddedJettyServer - == Spark has ignited ...
+2025-09-08 09:43:00 INFO  [Thread-4] s.e.jetty.EmbeddedJettyServer - >> Listening on 0.0.0.0:8080
+2025-09-08 09:43:01 INFO  [Thread-4] org.eclipse.jetty.server.Server - jetty-9.4.48.v20220622; built: 2022-06-21T20:42:25.880Z; git: 6b67c5719d1f4371b33655ff2d047d24e171e49a; jvm 21.0.7+8-LTS-245
+2025-09-08 09:43:02 INFO  [Thread-4] org.eclipse.jetty.server.session - DefaultSessionIdManager workerName=node0
+2025-09-08 09:43:02 INFO  [Thread-4] org.eclipse.jetty.server.session - No SessionScavenger set, using defaults
+2025-09-08 09:43:02 INFO  [Thread-4] org.eclipse.jetty.server.session - node0 Scavenging every 600000ms
+2025-09-08 09:43:05 INFO  [Thread-4] o.e.jetty.server.AbstractConnector - Started ServerConnector@56b9e5bc{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-09-08 09:43:05 INFO  [Thread-4] org.eclipse.jetty.server.Server - Started @61296ms
+2025-09-08 09:43:05 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Webhook service started successfully on port 8080
+2025-09-08 09:47:10 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-09-08 09:47:33 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@131f2225
+2025-09-08 09:47:33 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-09-08 09:47:43 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-08 09:47:43 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-09-08 09:47:43 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-09-08 09:47:43 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-09-08 09:47:45 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-08 09:47:45 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-08 09:49:10 INFO  [qtp634850547-41] c.c.c.service.WebhookService - Received webhook payload: {"event_type": "new_student", "student_id": "S10003"}
+2025-09-08 09:55:44 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Stopping webhook service...
+2025-09-08 09:55:44 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-08 09:55:44 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-08 09:55:44 INFO  [Thread-14] s.e.jetty.EmbeddedJettyServer - >>> Spark shutting down ...
+2025-09-08 09:55:45 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown initiated...
+2025-09-08 09:55:45 INFO  [Thread-14] o.e.jetty.server.AbstractConnector - Stopped ServerConnector@56b9e5bc{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-09-08 09:55:45 INFO  [Thread-14] org.eclipse.jetty.server.session - node0 Stopped scavenging
+2025-09-08 09:55:45 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown completed.
+2025-09-08 09:55:46 INFO  [Thread-14] s.e.jetty.EmbeddedJettyServer - done

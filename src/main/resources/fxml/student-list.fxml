@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      spacing="20" alignment="TOP_CENTER" style="-fx-padding: 20;"
+      fx:controller="com.cms.clubmanagementsystem.controller.StudentListController">
+
+    <Label text="Student Management" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <HBox spacing="10" alignment="CENTER">
+        <TextField fx:id="searchField" promptText="Search by name, admission no, grade, or gender..." prefWidth="300"/>
+        <Button fx:id="searchButton" text="🔍 Search" onAction="#handleSearch" style="-fx-padding: 5 15;"/>
+        <Button fx:id="refreshButton" text="Refresh" onAction="#handleRefresh" style="-fx-padding: 5 15;"/>
+        <Button fx:id="refreshExcelButton" text="Refresh from Excel" onAction="#handleRefreshFromExcel" style="-fx-padding: 5 15; -fx-background-color: #27ae60; -fx-text-fill: white;"/>
+    </HBox>
+
+    <TableView fx:id="studentTable" prefHeight="400" prefWidth="900">
+        <columns>
+            <TableColumn fx:id="colAdmissionNo" text="Admission No" prefWidth="120"/>
+            <TableColumn fx:id="colFullName" text="Full Name" prefWidth="200"/>
+            <TableColumn fx:id="colGrade" text="Grade" prefWidth="100"/>
+            <TableColumn fx:id="colGender" text="Gender" prefWidth="80"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="View Details" onAction="#handleViewStudentDetails" style="-fx-padding: 8 15;"/>
+    </HBox>
+</VBox>

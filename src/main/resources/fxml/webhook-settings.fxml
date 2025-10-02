@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cms.clubmanagementsystem.controller.WebhookController">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <Label text="Webhook Settings" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+    <Separator/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <CheckBox fx:id="enableWebhooksCheckbox" text="Enable Webhooks"/>
+        <Label fx:id="authStatusLabel" style="-fx-font-weight: bold;"/>
+        <Label text="Authentication"/>
+        <Label fx:id="hmacStatusLabel" style="-fx-font-weight: bold;" />
+        <Label text="HMAC Validation"/>
+    </HBox>
+
+    <GridPane hgap="10" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="30"/>
+            <ColumnConstraints percentWidth="70"/>
+        </columnConstraints>
+
+        <Label text="School Webhook URL:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="webhookUrlField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="API Key:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <HBox spacing="5" GridPane.rowIndex="1" GridPane.columnIndex="1">
+            <TextField fx:id="apiKeyField" HBox.hgrow="ALWAYS"/>
+            <Button text="Generate" onAction="#handleGenerateApiKey"/>
+        </HBox>
+
+        <Label text="Callback URL:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="callbackUrlField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Listener Port:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="portField" GridPane.rowIndex="3" GridPane.columnIndex="1" editable="false"/>
+    </GridPane>
+
+    <Button fx:id="toggleAdvancedButton" text="Show Advanced Settings" onAction="#handleToggleAdvanced"/>
+
+    <VBox fx:id="advancedSettingsBox" spacing="10">
+        <CheckBox fx:id="enableHmacCheckbox" text="Enable HMAC Validation"/>
+        <!-- Add more advanced settings here as needed -->
+    </VBox>
+
+    <HBox spacing="10">
+        <Button text="Save Settings" onAction="#handleSave" defaultButton="true"/>
+        <Button text="Test Connection" onAction="#handleTest"/>
+        <Button text="Clear Events" onAction="#handleClearEvents"/>
+    </HBox>
+
+    <Label fx:id="statusLabel" style="-fx-text-fill: green;"/>
+
+    <Label text="Recent Webhook Events" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+    <Separator/>
+
+    <TableView fx:id="eventsTable" prefHeight="200">
+        <columns>
+            <TableColumn fx:id="timeColumn" text="Time" prefWidth="80"/>
+            <TableColumn fx:id="eventTypeColumn" text="Event Type" prefWidth="120"/>
+            <TableColumn fx:id="studentIdColumn" text="Student ID" prefWidth="120"/>
+            <TableColumn fx:id="statusColumn" text="Status" prefWidth="80"/>
+        </columns>
+    </TableView>
+</VBox>

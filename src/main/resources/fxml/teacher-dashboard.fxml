@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.collections.FXCollections?>
+
+<?import java.lang.String?>
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.cms.clubmanagementsystem.controller.TeacherDashboardController"
+            stylesheets="@../css/teacher-dashboard.css">
+
+    <!-- Top Header - Improved Layout -->
+    <top>
+        <HBox style="-fx-background-color: #27ae60; -fx-padding: 15 20;" spacing="20" alignment="CENTER_LEFT">
+            <Label text="👨‍🏫" style="-fx-font-size: 24px;"/>
+
+            <!-- Left Section: Dashboard Title and Club Info -->
+            <VBox spacing="2" HBox.hgrow="ALWAYS">
+                <Label fx:id="dashboardTitleLabel" text="Teacher Dashboard"
+                       style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;"/>
+                <Label fx:id="welcomeLabel" text="Welcome, Teacher"
+                       style="-fx-text-fill: #ecf0f1; -fx-font-size: 12px;"/>
+            </VBox>
+
+            <!-- Right Section: Just Logout Button -->
+            <Button text="🚪 Logout" onAction="#handleLogout"
+                    style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 5 12; -fx-font-size: 12px;"/>
+        </HBox>
+    </top>
+
+    <!-- Center Content Area -->
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <!-- My Club Tab -->
+            <Tab text="📋 My Club">
+                <VBox spacing="20" style="-fx-padding: 20;">
+                    <Label text="Club Overview" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+                    <!-- Year and Term Selector -->
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Select Year:" style="-fx-font-weight: bold;"/>
+                        <ComboBox fx:id="yearComboBox" promptText="Select Year">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="2024"/>
+                                    <String fx:value="2025"/>
+                                    <String fx:value="2026"/>
+                                </FXCollections>
+                            </items>
+                        </ComboBox>
+                        <Label text="Select Term:" style="-fx-font-weight: bold;"/>
+                        <ComboBox fx:id="termComboBox" promptText="Select Term">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Term 1"/>
+                                    <String fx:value="Term 2"/>
+                                    <String fx:value="Term 3"/>
+                                </FXCollections>
+                            </items>
+                        </ComboBox>
+                    </HBox>
+
+                    <!-- Club Statistics -->
+                    <HBox spacing="20" alignment="CENTER">
+                        <VBox alignment="CENTER" spacing="5" style="-fx-background-color: #f5f5f5; -fx-padding: 15; -fx-border-radius: 5; -fx-background-radius: 5;">
+                            <Label text="Total Learners" style="-fx-font-weight: bold; -fx-text-fill: #666;"/>
+                            <Label fx:id="totalLearnersLabel" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #2196F3;"/>
+                        </VBox>
+
+                        <VBox alignment="CENTER" spacing="5" style="-fx-background-color: #e8f5e8; -fx-padding: 15; -fx-border-radius: 5; -fx-background-radius: 5;">
+                            <Label text="Attendance Today" style="-fx-font-weight: bold; -fx-text-fill: #666;"/>
+                            <Label fx:id="attendanceTodayLabel" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #4CAF50;"/>
+                        </VBox>
+                    </HBox>
+
+                    <!-- Quick Actions -->
+                    <VBox spacing="10">
+                        <Label text="Quick Actions" style="-fx-font-weight: bold;"/>
+                        <HBox spacing="10">
+                            <Button text="➕ Enroll Learners" onAction="#handleEnrollment"
+                                    style="-fx-background-color: #f39c12; -fx-text-fill: white;"/>
+                            <Button text="📝 Take Attendance" onAction="#handleTakeAttendance"
+                                    style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+                            <Button text="👥 View Learners" onAction="#handleViewLearners"
+                                    style="-fx-background-color: #2ecc71; -fx-text-fill: white;"/>
+                            <Button text="📊 View Reports" onAction="#handleViewReports"
+                                    style="-fx-background-color: #9b59b6; -fx-text-fill: white;"/>
+                        </HBox>
+                    </VBox>
+                </VBox>
+            </Tab>
+
+            <!-- Attendance Tab -->
+            <Tab text="✅ Attendance" fx:id="attendanceTab">
+                <VBox spacing="15" style="-fx-padding: 20;">
+                    <Label text="Loading attendance data..." style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <ProgressIndicator />
+                </VBox>
+            </Tab>
+
+            <!-- Learners Tab -->
+            <Tab text="👥 Learners" fx:id="learnersTab">
+                <VBox spacing="15" style="-fx-padding: 20;">
+                    <Label text="Loading learners data..." style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <ProgressIndicator />
+                </VBox>
+            </Tab>
+
+            <!-- Enrollment Tab -->
+            <Tab text="📝 Enrollment">
+                <VBox spacing="15" style="-fx-padding: 20;">
+                    <Label text="Learner Enrollment" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                    <Label text="Manage learner enrollments for your club" style="-fx-text-fill: #7f8c8d;"/>
+
+                    <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 20 0;">
+                        <Button text="Open Enrollment Manager" onAction="#handleEnrollment"
+                                style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20;"/>
+                    </HBox>
+
+                    <VBox spacing="10" style="-fx-padding: 10; -fx-background-color: #f8f9fa; -fx-background-radius: 5;">
+                        <Label text="ℹ️ Enrollment Information" style="-fx-font-weight: bold;"/>
+                        <Label text="• Enroll new learners in your club" style="-fx-text-fill: #7f8c8d;"/>
+                        <Label text="• View current enrollments" style="-fx-text-fill: #7f8c8d;"/>
+                        <Label text="• Withdraw learners when needed" style="-fx-text-fill: #7f8c8d;"/>
+                    </VBox>
+                </VBox>
+            </Tab>
+        </TabPane>
+    </center>
+
+</BorderPane>

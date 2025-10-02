@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.cms.clubmanagementsystem.controller.AttendanceSummaryController"
+            fitToWidth="true"
+            style="-fx-background: #f8f9fa; -fx-border-color: transparent;">
+
+    <VBox spacing="25" style="-fx-padding: 25;">
+        <!-- Header Section -->
+        <VBox spacing="10">
+            <Label text="📊 Club Attendance Dashboard"
+                   style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            <Label text="Monitor attendance across all clubs with daily, monthly, and term insights"
+                   style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;"/>
+        </VBox>
+
+        <!-- Controls Section -->
+        <VBox spacing="20" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 25; -fx-border-color: #e9ecef; -fx-border-radius: 10;">
+            <Label text="FILTER OPTIONS" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+            <!-- First Row of Controls -->
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <VBox spacing="5">
+                    <Label text="Time Period *" style="-fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                    <ComboBox fx:id="periodComboBox" prefWidth="200"/>
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label text="Date *" style="-fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                    <DatePicker fx:id="datePicker" prefWidth="200"/>
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label text="Actions" style="-fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                    <Button text="📅 Today" onAction="#loadTodayAttendance"
+                            style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 100;"/>
+                </VBox>
+            </HBox>
+
+            <!-- Second Row of Controls (Conditional) -->
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <VBox spacing="5" fx:id="monthContainer" visible="false" managed="false">
+                    <Label text="Month" style="-fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                    <ComboBox fx:id="monthComboBox" prefWidth="200"/>
+                </VBox>
+
+                <VBox spacing="5" fx:id="yearContainer" visible="false" managed="false">
+                    <Label text="Year" style="-fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                    <ComboBox fx:id="yearComboBox" prefWidth="200"/>
+                </VBox>
+
+                <VBox spacing="5" fx:id="termContainer" visible="false" managed="false">
+                    <Label text="Term" style="-fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                    <ComboBox fx:id="termComboBox" prefWidth="200"/>
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label text=" " style="-fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                    <Button text="🔄 Refresh Data" onAction="#loadAttendanceData"
+                            style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 120; -fx-pref-height: 35;"/>
+                </VBox>
+            </HBox>
+
+            <Label text="* Required fields" style="-fx-text-fill: #7f8c8d; -fx-font-size: 12px; -fx-font-style: italic;"/>
+        </VBox>
+
+        <!-- Summary Cards -->
+        <VBox spacing="12">
+            <Label text="QUICK STATISTICS" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+            <HBox spacing="12" alignment="CENTER">
+                <!-- Total Clubs Card -->
+                <VBox style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 12; -fx-pref-width: 160; -fx-min-width: 160; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+                    <HBox spacing="6" alignment="CENTER_LEFT">
+                        <Label text="🏛️" style="-fx-font-size: 18px;"/>
+                        <VBox>
+                            <Label text="Clubs" style="-fx-text-fill: #7f8c8d; -fx-font-size: 10px;"/>
+                            <Label fx:id="totalClubsLabel" text="0" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        </VBox>
+                    </HBox>
+                    <Label text="Total Active" style="-fx-text-fill: #bdc3c7; -fx-font-size: 10px; -fx-padding: 3 0 0 0;"/>
+                </VBox>
+
+                <!-- Active Sessions Card -->
+                <VBox style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 12; -fx-pref-width: 160; -fx-min-width: 160; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+                    <HBox spacing="6" alignment="CENTER_LEFT">
+                        <Label text="📅" style="-fx-font-size: 18px;"/>
+                        <VBox>
+                            <Label text="Sessions" style="-fx-text-fill: #7f8c8d; -fx-font-size: 10px;"/>
+                            <Label fx:id="activeSessionsLabel" text="0" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #27ae60;"/>
+                        </VBox>
+                    </HBox>
+                    <Label text="Sessions today" style="-fx-text-fill: #bdc3c7; -fx-font-size: 10px; -fx-padding: 3 0 0 0;"/>
+                </VBox>
+
+                <!-- Total Learners Card -->
+                <VBox style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 12; -fx-pref-width: 160; -fx-min-width: 160; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+                    <HBox spacing="6" alignment="CENTER_LEFT">
+                        <Label text="👥" style="-fx-font-size: 18px;"/>
+                        <VBox>
+                            <Label text="Learners" style="-fx-text-fill: #7f8c8d; -fx-font-size: 10px;"/>
+                            <Label fx:id="totalLearnersLabel" text="0" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #f39c12;"/>
+                        </VBox>
+                    </HBox>
+                    <Label text="All enrolled learners" style="-fx-text-fill: #bdc3c7; -fx-font-size: 10px; -fx-padding: 3 0 0 0;"/>
+                </VBox>
+
+                <!-- Overall Attendance Card -->
+                <VBox style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 12; -fx-pref-width: 160; -fx-min-width: 160; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+                    <HBox spacing="6" alignment="CENTER_LEFT">
+                        <Label text="📈" style="-fx-font-size: 18px;"/>
+                        <VBox>
+                            <Label text="Attendance" style="-fx-text-fill: #7f8c8d; -fx-font-size: 10px;"/>
+                            <Label fx:id="avgAttendanceLabel" text="0%" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #9b59b6;"/>
+                        </VBox>
+                    </HBox>
+                    <Label text="Average" style="-fx-text-fill: #bdc3c7; -fx-font-size: 10px; -fx-padding: 3 0 0 0;"/>
+                </VBox>
+            </HBox>
+        </VBox>
+
+        <!-- Attendance Table Section -->
+        <VBox spacing="15" style="-fx-min-height: 400;">
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label text="CLUB-WISE ATTENDANCE DETAILS" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                <Label fx:id="resultsCountLabel" text="(0 clubs)" style="-fx-text-fill: #7f8c8d; -fx-font-size: 14px;"/>
+            </HBox>
+
+            <!-- Simple Table without frozen columns -->
+            <TableView fx:id="attendanceTable" style="-fx-background-color: white; -fx-border-color: #e9ecef; -fx-border-radius: 8;">
+                <columns>
+                    <!-- Club Name Column -->
+                    <TableColumn text="Club Name" prefWidth="200">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="clubName" />
+                        </cellValueFactory>
+                    </TableColumn>
+
+                    <!-- Teacher Column -->
+                    <TableColumn text="Teacher" prefWidth="150">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="teacherName" />
+                        </cellValueFactory>
+                    </TableColumn>
+
+                    <!-- Enrollment & Session Info -->
+                    <TableColumn text="Total Learners" prefWidth="120">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="totalLearners" />
+                        </cellValueFactory>
+                    </TableColumn>
+
+                    <TableColumn text="Session Time" prefWidth="130">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="sessionTime" />
+                        </cellValueFactory>
+                    </TableColumn>
+
+                    <!-- Daily Attendance -->
+                    <TableColumn text="Present" prefWidth="80">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="presentCount" />
+                        </cellValueFactory>
+                        <style>
+                            -fx-alignment: CENTER;
+                        </style>
+                    </TableColumn>
+
+                    <TableColumn text="Absent" prefWidth="80">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="absentCount" />
+                        </cellValueFactory>
+                        <style>
+                            -fx-alignment: CENTER;
+                        </style>
+                    </TableColumn>
+
+                    <TableColumn text="Daily Rate" prefWidth="120">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="dailyRate" />
+                        </cellValueFactory>
+                        <style>
+                            -fx-alignment: CENTER_RIGHT;
+                        </style>
+                    </TableColumn>
+
+                    <!-- Historical Rates -->
+                    <TableColumn text="Monthly Rate" prefWidth="110">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="monthlyRate" />
+                        </cellValueFactory>
+                        <style>
+                            -fx-alignment: CENTER_RIGHT;
+                        </style>
+                    </TableColumn>
+
+                    <TableColumn text="Term Rate" prefWidth="110">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="termRate" />
+                        </cellValueFactory>
+                        <style>
+                            -fx-alignment: CENTER_RIGHT;
+                        </style>
+                    </TableColumn>
+                </columns>
+            </TableView>
+
+            <!-- Table Footer -->
+            <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 10 0 0 0;">
+                <Label text="💡 Tip:" style="-fx-text-fill: #7f8c8d; -fx-font-weight: bold;"/>
+                <Label text="Scroll horizontally to view all attendance metrics."
+                       style="-fx-text-fill: #7f8c8d; -fx-font-size: 12px;"/>
+            </HBox>
+        </VBox>
+    </VBox>
+</ScrollPane>

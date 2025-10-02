@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.171"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.cms.clubmanagementsystem.controller.ClubManagementController"
+      spacing="20"
+      style="-fx-padding: 25; -fx-background-color: #f8f9fa;"
+      stylesheets="@../css/club-management.css"
+      fx:id="mainContainer">
+
+    <!-- Header Section -->
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Label text="🎯" style="-fx-font-size: 28px;"/>
+        <VBox spacing="5">
+            <Label text="Club Management" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            <Label text="Create and manage clubs for your school" style="-fx-text-fill: #7f8c8d; -fx-font-size: 14px;"/>
+        </VBox>
+    </HBox>
+
+    <Separator style="-fx-padding: 0 0 10 0;"/>
+
+    <!-- Action Buttons Section -->
+    <HBox spacing="10" style="-fx-padding: 10; -fx-background-color: white; -fx-background-radius: 10;">
+        <Button fx:id="createButton" text="➕ Create New Club" onAction="#showClubCreationForm"
+                style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15;"/>
+        <Button fx:id="updateButton" text="📝 Update Club" onAction="#handleUpdateClub"
+                style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15;"/>
+        <Button fx:id="addScheduleButton" text="⏰ Add Schedule" onAction="#showAddScheduleForm"
+                style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15;"/>
+        <Button fx:id="viewSchedulesButton" text="📅 View Schedules" onAction="#showClubSchedules"
+                style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15;"/>
+        <Button fx:id="deleteButton" text="🗑️ Delete Club" onAction="#handleDeleteClub"
+                style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15;"/>
+        <Button text="🔄 Refresh" onAction="#handleRefresh"
+                style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15;"/>
+    </HBox>
+
+    <!-- Existing Clubs Section -->
+    <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #e0e0e0; -fx-border-width: 1;">
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label text="📋" style="-fx-font-size: 20px;"/>
+            <Label text="Existing Clubs" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+        </HBox>
+
+        <!-- TableView -->
+        <VBox VBox.vgrow="ALWAYS" style="-fx-max-width: infinity;">
+            <TableView fx:id="clubsTable" VBox.vgrow="ALWAYS" style="-fx-font-size: 13px;">
+                <columns>
+                    <TableColumn fx:id="nameColumn" text="Club Name" prefWidth="180"/>
+                    <TableColumn fx:id="descriptionColumn" text="Description" prefWidth="280"/>
+                </columns>
+            </TableView>
+        </VBox>
+
+        <HBox spacing="5" alignment="CENTER_LEFT">
+            <HBox spacing="5" alignment="CENTER_LEFT">
+                <Label text="ℹ️" style="-fx-font-size: 14px;"/>
+                <Label fx:id="infoLabel"
+                       style="-fx-text-fill: #7f8c8d; -fx-font-size: 12px; -fx-wrap-text: true;"/>
+            </HBox>
+        </HBox>
+
+    </VBox>
+
+</VBox>

@@ -20,6 +20,16 @@ module com.cms.clubmanagementsystem {
     requires jakarta.mail;
     requires jakarta.activation;
     requires io.github.cdimascio.dotenv.java;
+    requires java.desktop;
+    requires com.google.gson;
+    requires spark.core;
+    requires java.net.http;
+    requires java.prefs;
+    requires org.apache.poi.poi;
+    requires org.apache.poi.ooxml;
+    requires layout;
+    requires kernel;
+    requires io;
 
     // Export your main package(s)
     exports com.cms.clubmanagementsystem;
@@ -33,4 +43,8 @@ module com.cms.clubmanagementsystem {
     opens com.cms.clubmanagementsystem.controller to javafx.fxml;
     exports com.cms.clubmanagementsystem.service;
     opens com.cms.clubmanagementsystem.service to javafx.fxml;
+
+    opens css to javafx.fxml;
+    opens fxml to javafx.fxml;
+    opens com.cms.clubmanagementsystem.utils to javafx.fxml;
 }

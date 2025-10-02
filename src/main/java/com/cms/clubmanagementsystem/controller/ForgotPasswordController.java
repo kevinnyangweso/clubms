@@ -3,6 +3,7 @@ package com.cms.clubmanagementsystem.controller;
 import com.cms.clubmanagementsystem.service.EmailService;
 import com.cms.clubmanagementsystem.service.PasswordResetService;
 import com.cms.clubmanagementsystem.utils.DatabaseConnector;
+import com.cms.clubmanagementsystem.utils.SessionManager;
 import com.cms.clubmanagementsystem.utils.TenantContext;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,7 +13,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -23,6 +26,8 @@ public class ForgotPasswordController {
 
     @FXML private ComboBox<SchoolItem> schoolComboBox;
     @FXML private TextField emailField;
+    @FXML private Label messageLabel;
+    @FXML private VBox confirmationPanel;
 
     private final ObservableList<SchoolItem> schools = FXCollections.observableArrayList();
 
@@ -53,6 +58,10 @@ public class ForgotPasswordController {
     public void initialize() {
         schoolComboBox.setItems(schools);
         loadSchools();
+
+        // Hide the confirmation panel initially
+        confirmationPanel.setVisible(false);
+        messageLabel.setText("");
     }
 
     private void loadSchools() {
@@ -93,17 +102,23 @@ public class ForgotPasswordController {
         String email = emailField.getText().trim().toLowerCase();
         SchoolItem selectedSchool = schoolComboBox.getSelectionModel().getSelectedItem();
 
+        System.out.println("CONTROLLER DEBUG:");
+        System.out.println("  - Email: " + email);
+        System.out.println("  - School ID: " + selectedSchool.getId());
+        System.out.println("  - School Name: " + selectedSchool.getSchoolName());
+
         if (email.isEmpty() || selectedSchool == null) {
             showAlert(Alert.AlertType.WARNING, "Please enter email and select school");
             return;
         }
 
         try (Connection conn = DatabaseConnector.getConnection()) {
-            // Set tenant context
-            TenantContext.setTenant(conn, selectedSchool.getId().toString());
-
+            debugDatabaseSession(conn);
             PasswordResetService service = new PasswordResetService();
-            String generatedToken = service.generateResetToken(conn, email);
+            String generatedToken = service.generateResetToken(conn, email, selectedSchool.getId());
+
+            //PasswordResetService service = new PasswordResetService();
+            //String generatedToken = service.generateResetToken(conn, email);
 
             if (generatedToken == null) {
                 showAlert(Alert.AlertType.ERROR,
@@ -111,11 +126,27 @@ public class ForgotPasswordController {
                 return;
             }
 
-            // Send email and open reset screen
-            new EmailService().sendEmail(email, "Password Reset",
-                    "Your reset token: " + generatedToken);
+            // Store the token in SessionManager instead of passing it directly
+            SessionManager.setTransientData("resetToken_for_" + email, generatedToken);
+            // Also store the school ID and email for the reset process
+            SessionManager.setTransientData("resetSchool_for_" + email, selectedSchool.getId());
+            SessionManager.setTransientData("resetEmail", email); // Store email for easy retrieval
 
-            openResetPasswordScreen(generatedToken, email, selectedSchool.getId());
+            // Send email and open reset screen
+            new EmailService().sendEmail(email, "Password Reset Code",
+                    "Your password reset code is: " + generatedToken + "\n\n" +
+                            "This code will expire in 30 minutes.\n\n" +
+                            "If you didn't request this reset, please ignore this email.");
+
+            // Show success message and proceed button instead of auto-navigating
+            messageLabel.setText("A reset token has been sent to your email. Please check " +
+                    "your inbox.");
+            messageLabel.setStyle("-fx-text-fill: green;");
+            confirmationPanel.setVisible(true);
+
+            // Disable the form to prevent multiple requests
+            emailField.setDisable(true);
+            schoolComboBox.setDisable(true);
 
         } catch (SQLException e) {
             showAlert(Alert.AlertType.ERROR, "Database error: " + e.getMessage());
@@ -123,6 +154,79 @@ public class ForgotPasswordController {
         } catch (Exception e) {
             showAlert(Alert.AlertType.ERROR, "Error: " + e.getMessage());
             e.printStackTrace();
+        }
+    }
+
+    private void debugDatabaseSession(Connection conn) throws SQLException {
+        try (Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT current_database(), current_user, current_schema()")) {
+            if (rs.next()) {
+                System.out.println("DATABASE SESSION:");
+                System.out.println("  - Database: " + rs.getString(1));
+                System.out.println("  - User: " + rs.getString(2));
+                System.out.println("  - Schema: " + rs.getString(3));
+            }
+        }
+
+        // Check if there are any temporary session variables
+        try (Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(
+                     "SELECT name, setting FROM pg_settings WHERE name LIKE '%app%' OR name LIKE '%tenant%' OR name LIKE '%school%'")) {
+            System.out.println("SESSION SETTINGS:");
+            while (rs.next()) {
+                System.out.println("  - " + rs.getString("name") + " = " + rs.getString("setting"));
+            }
+        }
+    }
+
+    @FXML
+    private void handleProceedToReset() {
+        String email = emailField.getText().trim().toLowerCase();
+
+        // Retrieve the stored data from SessionManager
+        String storedToken = (String) SessionManager.getTransientData("resetToken_for_" + email);
+        UUID schoolId = (UUID) SessionManager.getTransientData("resetSchool_for_" + email);
+
+        if (storedToken == null || schoolId == null) {
+            showAlert(Alert.AlertType.ERROR, "No reset token found. Please request a new one.");
+            return;
+        }
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/reset-password.fxml"));
+            Parent root = loader.load();
+
+            ResetPasswordController controller = loader.getController();
+            // Now we pass only the email and school ID, NOT the token
+            controller.setUserData(email, schoolId);
+
+            Stage stage = (Stage) emailField.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Reset Password");
+
+        } catch (IOException e) {
+            showAlert(Alert.AlertType.ERROR, "Failed to load reset password screen.");
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleBackToLogin() {
+        try {
+            // Clear any transient reset data when going back
+            String email = emailField.getText().trim().toLowerCase();
+            if (!email.isEmpty()) {
+                SessionManager.removeTransientData("resetToken_for_" + email);
+                SessionManager.removeTransientData("resetSchool_for_" + email);
+            }
+            SessionManager.removeTransientData("resetEmail");
+
+            Stage stage = (Stage) emailField.getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
+            stage.setScene(new Scene(root));
+            stage.setTitle("Login");
+        } catch (IOException e) {
+            showAlert(Alert.AlertType.ERROR, "Failed to load login screen.");
         }
     }
 
@@ -141,7 +245,7 @@ public class ForgotPasswordController {
             Parent root = loader.load();
 
             ResetPasswordController controller = loader.getController();
-            controller.setResetToken(token, email, schoolId);
+            //controller.setResetToken(token, email, schoolId);
 
             Stage stage = (Stage) emailField.getScene().getWindow();
             stage.setScene(new Scene(root));
@@ -149,18 +253,6 @@ public class ForgotPasswordController {
 
         } catch (IOException e) {
             showAlert(Alert.AlertType.ERROR, "Failed to load reset password screen.");
-        }
-    }
-
-    @FXML
-    private void handleBackToLogin() {
-        try {
-            Stage stage = (Stage) emailField.getScene().getWindow();
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
-            stage.setScene(new Scene(root));
-            stage.setTitle("Login");
-        } catch (IOException e) {
-            showAlert(Alert.AlertType.ERROR, "Failed to load login screen.");
         }
     }
 

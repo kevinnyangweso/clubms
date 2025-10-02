@@ -1,14 +1,18 @@
 package com.cms.clubmanagementsystem.controller;
 
+import com.cms.clubmanagementsystem.Main;
 import com.cms.clubmanagementsystem.utils.DatabaseConnector;
 import com.cms.clubmanagementsystem.utils.SessionManager;
+import com.cms.clubmanagementsystem.utils.TenantContext;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.mindrot.jbcrypt.BCrypt;
 import org.slf4j.Logger;
@@ -16,26 +20,28 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ResourceBundle;
 import java.util.UUID;
 
-public class LoginController {
+public class LoginController implements Initializable {
     private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
+
+    private Main mainApp;
 
     @FXML private TextField usernameField;
     @FXML private PasswordField passwordField;
     @FXML private TextField passwordVisibleField;
     @FXML private CheckBox showPasswordCheckBox;
     @FXML private Button loginButton;
-    @FXML private Button registerButton;
     @FXML private Hyperlink forgotPasswordLink;
     @FXML private Label messageLabel;
 
-    @FXML
-    public void initialize() {
+    public void setMainApp(Main mainApp) {
+        this.mainApp = mainApp;
+    }
+
+    public void initialize(URL location, ResourceBundle resources) {
         passwordVisibleField.setVisible(false);
         passwordVisibleField.setManaged(false);
     }
@@ -97,14 +103,17 @@ public class LoginController {
                 }
 
                 final String selectSql =
-                        "SELECT user_id, password_hash, is_active, school_id, role " +
-                                "FROM users WHERE username = ? LIMIT 1";
+                        "SELECT u.user_id, u.password_hash, u.is_active, u.school_id, u.role, u.first_login, s.school_name " +
+                                "FROM users u LEFT JOIN schools s ON u.school_id = s.school_id " +
+                                "WHERE u.username = ? LIMIT 1";
 
                 UUID userId;
                 String storedHash;
                 boolean isActive;
                 UUID schoolId;
                 String role;
+                boolean firstLogin;
+                String schoolName;
 
                 try (PreparedStatement ps = conn.prepareStatement(selectSql)) {
                     ps.setString(1, username);
@@ -120,6 +129,8 @@ public class LoginController {
                         isActive = rs.getBoolean("is_active");
                         schoolId = (UUID) rs.getObject("school_id");
                         role = rs.getString("role");
+                        firstLogin = rs.getBoolean("first_login");
+                        schoolName = rs.getString("school_name");
                     }
                 }
 
@@ -156,31 +167,55 @@ public class LoginController {
 
                 conn.commit();
 
-                // Keep a session-scoped connection with tenant set
-                Connection sessionConn = DatabaseConnector.getConnection();
-                try {
-                    if (schoolId == null) {
-                        messageLabel.setText("No school assigned to this user.");
-                        sessionConn.close();
-                        return;
-                    }
-                    try (PreparedStatement setTenant = sessionConn.prepareStatement(
-                            "SELECT set_config('app.current_school_id', ?, false)")) {
-                        setTenant.setString(1, schoolId.toString());
-                        setTenant.execute();
-                    }
-                } catch (SQLException e) {
-                    try { sessionConn.close(); } catch (Exception ignore) {}
-                    throw e;
+                if (schoolId == null) {
+                    messageLabel.setText("No school assigned to this user.");
+                    return;
                 }
 
-                SessionManager.createSession(userId, username, schoolId, sessionConn);
+                // ✅ CRITICAL FIX: Create session FIRST before any tenant context operations
+                SessionManager.createSession(username, userId, schoolId, schoolName, role);
+
+                // ✅ Now that session is created, get a NEW connection with proper tenant context
+                try (Connection tenantConn = DatabaseConnector.getConnection()) {
+                    // This will now work because SessionManager has the user info
+                    DatabaseConnector.applyTenantContext(tenantConn);
+
+                    // Verify the tenant context was set correctly
+                    try (Statement verifyStmt = tenantConn.createStatement();
+                         ResultSet rs = verifyStmt.executeQuery(
+                                 "SELECT current_setting('app.current_school_id'), current_setting('app.current_user_id')")) {
+                        if (rs.next()) {
+                            String actualSchoolId = rs.getString(1);
+                            String actualUserId = rs.getString(2);
+                            logger.info("Tenant context verified - School: {}, User: {}", actualSchoolId, actualUserId);
+                        }
+                    }
+                }
+
+                // ✅ ADD THIS: Call onSchoolLogin to start Excel Server and other services
+                if (mainApp != null) {
+                    mainApp.onSchoolLogin(schoolId);
+                } else {
+                    // Try to get Main from stage as fallback
+                    Main fallbackMain = getMainAppFromStage(event);
+                    if (fallbackMain != null) {
+                        fallbackMain.onSchoolLogin(schoolId);
+                    } else {
+                        logger.error("Cannot start Excel services: Main application reference not available");
+                    }
+                }
 
                 logger.info("User '{}' logged in successfully (userId={}, schoolId={}, role={})",
                         username, userId, schoolId, role);
 
-                // Go to dashboard
-                switchScene(event, "/fxml/dashboard.fxml", "Club Management Dashboard");
+                // Check if this is the first login and redirect to password change
+                if (firstLogin) {
+                    showPasswordChangeScreen(event, username, userId);
+                    return; // Don't proceed to dashboard yet
+                }
+
+                // Redirect based on user role (only if not first login)
+                redirectBasedOnRole(event, role);
 
             } catch (Exception ex) {
                 try { conn.rollback(); } catch (SQLException ignored) {}
@@ -196,9 +231,81 @@ public class LoginController {
         }
     }
 
-    @FXML
-    private void handleRegister(ActionEvent event) {
-        switchScene(event, "/fxml/register.fxml", "User Registration");
+    private void showPasswordChangeScreen(ActionEvent event, String username, UUID userId) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/password-change.fxml"));
+            Parent root = loader.load();
+
+            PasswordChangeController controller = loader.getController();
+            controller.initialize(username, userId, () -> {
+                // Password changed successfully - restart services with the same school ID
+                UUID schoolId = SessionManager.getCurrentSchoolId();
+                if (schoolId != null && mainApp != null) {
+                    mainApp.onSchoolLogin(schoolId); // ✅ Restart services
+                }
+
+                // Redirect to dashboard
+                String role = SessionManager.getCurrentUserRole();
+                redirectBasedOnRole(event, role);
+
+                // Password changed successfully - logout and redirect to login page
+                SessionManager.logout();
+
+                // Show success message on login page
+                messageLabel.setText("Password changed successfully! Please login with your new password.");
+
+                // Clear the login fields
+                usernameField.clear();
+                passwordField.clear();
+                passwordVisibleField.clear();
+            });
+
+            Stage stage = new Stage();
+            stage.setTitle("Change Password - First Login");
+            stage.setScene(new Scene(root));
+            // Enable maximize button and make window resizable
+            stage.setResizable(true);
+            stage.initModality(Modality.APPLICATION_MODAL); // Keep as modal if needed
+
+            // Set minimum size to prevent making window too small
+            stage.setMinWidth(500);
+            stage.setMinHeight(600);
+            stage.setOnCloseRequest(e -> {
+                // Force logout if user closes the password change window without completing
+                SessionManager.logout();
+                messageLabel.setText("Please complete password change to continue.");
+            });
+            stage.show();
+
+        } catch (IOException e) {
+            logger.error("Error loading password change screen: {}", e.getMessage(), e);
+            messageLabel.setText("Error loading password change screen.");
+        }
+    }
+
+    private Main getMainAppFromStage(ActionEvent event) {
+        try {
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Object userData = stage.getUserData();
+            if (userData instanceof Main) {
+                return (Main) userData;
+            }
+        } catch (Exception e) {
+            logger.warn("Could not get Main application from stage: {}", e.getMessage());
+        }
+        return null;
+    }
+
+    private void redirectBasedOnRole(ActionEvent event, String role) {
+        if ("coordinator".equalsIgnoreCase(role)) {
+            switchScene(event, "/fxml/coordinator-dashboard.fxml", "Coordinator Dashboard");
+        } else if ("teacher".equalsIgnoreCase(role)) {
+            switchScene(event, "/fxml/teacher-dashboard.fxml", "Teacher Dashboard");
+        } else {
+            // Fallback for unknown roles or if role is null
+            logger.warn("Unknown role '{}', redirecting to coordinator dashboard", role);
+            switchScene(event, "/fxml/coordinator-dashboard.fxml", "Coordinator Dashboard");
+        }
     }
 
     @FXML
@@ -213,11 +320,19 @@ public class LoginController {
             if (url == null) {
                 throw new IOException("Cannot find FXML at " + fxmlPath);
             }
+
+            // Load the FXML
             Parent root = FXMLLoader.load(url);
+
+            // Create the scene first
+            Scene scene = new Scene(root);
+
+            // Get the stage and set the scene with CSS
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
+            stage.setScene(scene);
             stage.setTitle(title);
             stage.show();
+
         } catch (IOException e) {
             logger.error("Error loading {}: {}", fxmlPath, e.getMessage(), e);
             messageLabel.setText("Error loading screen. Please try again.");

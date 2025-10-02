@@ -1,17 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox spacing="10" alignment="CENTER"
-      xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
+<VBox alignment="CENTER" maxHeight="Infinity" maxWidth="Infinity" prefHeight="600"
+      prefWidth="800" spacing="40" style="-fx-background-color: #f5f5f5;"
+      xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.cms.clubmanagementsystem.controller.LoginController">
 
-    <TextField fx:id="usernameField" promptText="Username"/>
-    <PasswordField fx:id="passwordField" promptText="Password"/>
-    <Button text="Login" onAction="#handleLogin"/>
-    <Button fx:id="registerButton" text="Register" layoutX="350" layoutY="200" onAction="#handleRegister" />
-    <Label fx:id="messageLabel" textFill="green"/>
+    <!-- Title -->
+    <Label text="Club Management System">
+        <font>
+            <Font size="31.0" />
+        </font>
+        <style>
+            -fx-font-weight: bold;
+            -fx-text-fill: #2c3e50;
+        </style>
+        <VBox.margin>
+            <Insets bottom="10.0" left="17.0" top="-140.0" />
+        </VBox.margin>
+    </Label>
 
+    <!-- Form Container -->
+    <GridPane alignment="CENTER" hgap="10" maxWidth="400" vgap="15">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" hgrow="NEVER" prefWidth="100" />
+            <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" />
+        </columnConstraints>
+
+        <rowConstraints>
+            <RowConstraints /> <!-- Username -->
+            <RowConstraints /> <!-- Password -->
+            <RowConstraints /> <!-- Show Password -->
+            <RowConstraints /> <!-- Buttons -->
+        </rowConstraints>
+
+        <!-- Username -->
+        <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <font>
+                <Font size="18.0" />
+            </font></Label>
+        <TextField fx:id="usernameField" prefWidth="250" promptText="Enter username"
+                   GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <!-- Password -->
+        <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <font>
+                <Font size="18.0" />
+            </font></Label>
+        <StackPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <PasswordField fx:id="passwordField" prefWidth="250" promptText="Enter password" />
+            <TextField fx:id="passwordVisibleField" prefWidth="250" promptText="Enter password"
+                       visible="false" />
+        </StackPane>
+
+        <!-- Show Password Checkbox -->
+        <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <CheckBox fx:id="showPasswordCheckBox" onAction="#handleShowPassword"
+                      text="Show Password">
+                <font>
+                    <Font size="13.0" />
+                </font></CheckBox>
+        </HBox>
+
+        <!-- Buttons - Centered Login Button -->
+        <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Button defaultButton="true" onAction="#handleLogin" prefWidth="120" text="Login">
+                <font>
+                    <Font size="18.0" />
+                </font></Button>
+            <!-- REMOVED: The Register Button -->
+        </HBox>
+    </GridPane>
+
+    <!-- Forgot Password -->
+    <Hyperlink fx:id="forgotPasswordLink" onAction="#handleForgotPassword"
+               text="Forgot Password?" textAlignment="CENTER">
+        <VBox.margin>
+            <Insets left="90.0" />
+        </VBox.margin>
+        <font>
+            <Font size="16.0" />
+        </font></Hyperlink>
+
+    <!-- Status Message -->
+    <Label fx:id="messageLabel" style="-fx-font-weight: bold;" textFill="#e74c3c" />
+
+    <!-- Padding around the entire VBox -->
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
 </VBox>

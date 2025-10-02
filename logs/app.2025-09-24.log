@@ -1,0 +1,444 @@
+2025-09-24 04:13:53 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=pam userId=5858b2a0-a8b6-40f6-9e14-ef50ba3071f0 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=teacher
+2025-09-24 04:13:53 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-24 04:13:54 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook HMAC validation enabled
+2025-09-24 04:13:54 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook API authentication enabled
+2025-09-24 04:13:58 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Webhook service started successfully on port 8080 - Authentication: true
+2025-09-24 04:13:59 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Excel School Server initialized:
+2025-09-24 04:13:59 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   File: C:\Users\user\Desktop\learners.xlsx
+2025-09-24 04:13:59 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Webhook URL: http://localhost:8080/webhook
+2025-09-24 04:13:59 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   HMAC Signature: ENABLED
+2025-09-24 04:13:59 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Lock retry settings: 5 attempts with 3000ms delay
+2025-09-24 04:13:59 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Excel import attempted by user: 5858b2a0-a8b6-40f6-9e14-ef50ba3071f0, school: 9d47203f-4e54-47ac-a560-eeb277794e76, authorized: false
+2025-09-24 04:14:00 WARN  [qtp1149060641-51] c.c.c.service.WebhookService - Unauthorized webhook attempt - missing API key from IP: 127.0.0.1, User-Agent: Java-http-client/21.0.7
+2025-09-24 04:14:01 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - Audit log entry created for action: EXCEL_IMPORT_ATTEMPT_UNAUTHORIZED
+2025-09-24 04:14:01 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - ❌ User not authorized to import Excel - failing silently
+2025-09-24 04:14:02 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Successfully registered webhook with school server
+2025-09-24 04:14:21 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-24 04:14:42 INFO  [JavaFX Application Thread] c.c.c.service.EnrollmentService - Attempting to enroll learner 5479f4b8-9abe-4942-a734-169ecebcdfce in club 31f651e3-f41b-4890-b0eb-a9eee7125dcd for term 1/2025
+2025-09-24 04:14:42 INFO  [JavaFX Application Thread] c.c.c.service.EnrollmentService - Successfully enrolled learner 5479f4b8-9abe-4942-a734-169ecebcdfce in club 31f651e3-f41b-4890-b0eb-a9eee7125dcd for term 1/2025
+2025-09-24 04:15:45 INFO  [JavaFX Application Thread] c.c.c.service.EnrollmentService - Fetching enrollment history for learner_id: 5479f4b8-9abe-4942-a734-169ecebcdfce, school_id: 9d47203f-4e54-47ac-a560-eeb277794e76, user_id: 5858b2a0-a8b6-40f6-9e14-ef50ba3071f0
+2025-09-24 04:15:45 INFO  [JavaFX Application Thread] c.c.c.service.EnrollmentService - Found valid enrollment: club=Piano, term=1/2025, active=true, learner=xxxx xxxx
+2025-09-24 04:15:45 INFO  [JavaFX Application Thread] c.c.c.service.EnrollmentService - Query returned 1 valid enrollment records for learner_id: 5479f4b8-9abe-4942-a734-169ecebcdfce
+2025-09-24 04:15:58 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-24 04:15:58 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session closed
+2025-09-24 04:16:26 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-09-24 04:16:26 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-24 04:16:26 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook HMAC validation enabled
+2025-09-24 04:16:26 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook API authentication enabled
+2025-09-24 04:16:26 ERROR [Webhook-Service-Thread] c.c.c.service.WebhookService - Failed to start webhook service on port 8080
+java.lang.IllegalStateException: This must be done before route mapping has begun
+	at spark.core@2.9.4/spark.Service.throwBeforeRouteMappingException(Service.java:504)
+	at spark.core@2.9.4/spark.Service.port(Service.java:169)
+	at spark.core@2.9.4/spark.Spark.port(Spark.java:1014)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.service.WebhookService.configureServer(WebhookService.java:83)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.service.WebhookService.start(WebhookService.java:72)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.Main.lambda$startWebhookService$5(Main.java:205)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-09-24 04:16:26 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Excel School Server initialized:
+2025-09-24 04:16:26 ERROR [Webhook-Service-Thread] com.cms.clubmanagementsystem.Main - Webhook service failed to start
+java.lang.RuntimeException: Could not start webhook listener
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.service.WebhookService.start(WebhookService.java:78)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.Main.lambda$startWebhookService$5(Main.java:205)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.IllegalStateException: This must be done before route mapping has begun
+	at spark.core@2.9.4/spark.Service.throwBeforeRouteMappingException(Service.java:504)
+	at spark.core@2.9.4/spark.Service.port(Service.java:169)
+	at spark.core@2.9.4/spark.Spark.port(Spark.java:1014)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.service.WebhookService.configureServer(WebhookService.java:83)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.service.WebhookService.start(WebhookService.java:72)
+	... 6 common frames omitted
+2025-09-24 04:16:26 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   File: C:\Users\user\Desktop\learners.xlsx
+2025-09-24 04:16:26 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Webhook URL: http://localhost:8080/webhook
+2025-09-24 04:16:26 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   HMAC Signature: ENABLED
+2025-09-24 04:16:26 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Lock retry settings: 5 attempts with 3000ms delay
+2025-09-24 04:16:26 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Excel import attempted by user: 6748e77d-a21d-4fee-94ad-a0532bd88c68, school: 9d47203f-4e54-47ac-a560-eeb277794e76, authorized: true
+2025-09-24 04:16:26 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - Audit log entry created for action: EXCEL_IMPORT_ATTEMPT_AUTHORIZED
+2025-09-24 04:16:26 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Starting Excel School Server monitor for file: C:\Users\user\Desktop\learners.xlsx
+2025-09-24 04:16:26 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - 🔄 Attempting to load Excel data from: C:\Users\user\Desktop\learners.xlsx
+2025-09-24 04:16:26 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - File changed detected, reading Excel data...
+2025-09-24 04:16:26 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - 📖 Reading Excel file: C:\Users\user\Desktop\learners.xlsx
+2025-09-24 04:16:29 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - 📊 Excel file has 18 rows
+2025-09-24 04:16:29 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - 📋 Headers: admission_number, full_name, grade_name, date_joined_school, gender
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Raw date '2020-02-02' normalized to '2020-02-02' for adm001
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - 📝 Record 1: LearnerRecord{admissionNumber='adm001', fullName='Michael Prince', gradeName='Grade 2', dateJoinedSchool='2020-02-02', gender='Male', status=''}
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Raw date '2023-04-08' normalized to '2023-04-08' for adm002
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - 📝 Record 2: LearnerRecord{admissionNumber='adm002', fullName='John Hamisi', gradeName='Grade 9', dateJoinedSchool='2023-04-08', gender='Male', status=''}
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Raw date '2030-04-05' normalized to '2030-04-05' for adm003
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - 📝 Record 3: LearnerRecord{admissionNumber='adm003', fullName='Nicole Prudence', gradeName='Creche', dateJoinedSchool='2030-04-05', gender='Female', status=''}
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Raw date '1990-06-06' normalized to '1990-06-06' for adm004
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Raw date '2025-06-09' normalized to '2025-06-09' for adm005
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Raw date '2023-09-09' normalized to '2023-09-09' for adm006
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Raw date '2018-08-16' normalized to '2018-08-16' for adm0010
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Raw date '2019-12-03' normalized to '2019-12-03' for adm0011
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Raw date '2014-12-30' normalized to '2014-12-30' for adm0012
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Raw date '2025-09-15' normalized to '2025-09-15' for adm0013
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Raw date '2021-01-01' normalized to '2021-01-01' for adm0020
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Raw date '2022-11-02' normalized to '2022-11-02' for adm007
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Raw date '2020-12-01' normalized to '2020-12-01' for adm0014
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Raw date '2012-02-02' normalized to '2012-02-02' for adm0023
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Raw date '2019-11-23' normalized to '2019-11-23' for adm0022
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Raw date '2009-01-01' normalized to '2009-01-01' for adm0021
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Raw date '2008-02-02' normalized to '2008-02-02' for adm0025
+2025-09-24 04:16:29 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - ✅ Parsed 17 valid records from 17 rows (0 duplicates skipped)
+2025-09-24 04:16:29 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Read 17 learners from Excel file
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sample records: [LearnerRecord{admissionNumber='adm001', fullName='Michael Prince', gradeName='Grade 2', dateJoinedSchool='2020-02-02', gender='Male', status=''}, LearnerRecord{admissionNumber='adm002', fullName='John Hamisi', gradeName='Grade 9', dateJoinedSchool='2023-04-08', gender='Male', status=''}, LearnerRecord{admissionNumber='adm003', fullName='Nicole Prudence', gradeName='Creche', dateJoinedSchool='2030-04-05', gender='Female', status=''}]
+2025-09-24 04:16:29 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Validating 17 new learner records...
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Skipping webhook for local operation: new_student
+2025-09-24 04:16:29 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - NEW student detected: adm001
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Skipping webhook for local operation: new_student
+2025-09-24 04:16:29 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - NEW student detected: adm002
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Skipping webhook for local operation: new_student
+2025-09-24 04:16:29 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - NEW student detected: adm003
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Skipping webhook for local operation: new_student
+2025-09-24 04:16:29 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - NEW student detected: adm004
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Skipping webhook for local operation: new_student
+2025-09-24 04:16:29 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - NEW student detected: adm005
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Skipping webhook for local operation: new_student
+2025-09-24 04:16:29 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - NEW student detected: adm006
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Skipping webhook for local operation: new_student
+2025-09-24 04:16:29 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - NEW student detected: adm0010
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Skipping webhook for local operation: new_student
+2025-09-24 04:16:29 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - NEW student detected: adm0011
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Skipping webhook for local operation: new_student
+2025-09-24 04:16:29 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - NEW student detected: adm0012
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Skipping webhook for local operation: new_student
+2025-09-24 04:16:29 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - NEW student detected: adm0013
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Skipping webhook for local operation: new_student
+2025-09-24 04:16:29 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - NEW student detected: adm0020
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Skipping webhook for local operation: new_student
+2025-09-24 04:16:29 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - NEW student detected: adm007
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Skipping webhook for local operation: new_student
+2025-09-24 04:16:29 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - NEW student detected: adm0014
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Skipping webhook for local operation: new_student
+2025-09-24 04:16:29 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - NEW student detected: adm0023
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Skipping webhook for local operation: new_student
+2025-09-24 04:16:29 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - NEW student detected: adm0022
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Skipping webhook for local operation: new_student
+2025-09-24 04:16:29 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - NEW student detected: adm0021
+2025-09-24 04:16:29 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Skipping webhook for local operation: new_student
+2025-09-24 04:16:29 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - NEW student detected: adm0025
+2025-09-24 04:16:29 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Change detection: 17 new, 0 updated, 0 removed, 0 duplicates, 0 invalid skipped
+2025-09-24 04:16:29 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Processing 17 changes in database
+2025-09-24 04:16:29 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Attempting to process 17 records in database
+2025-09-24 04:16:29 INFO  [JavaFX Application Thread] c.c.c.service.LearnerService - Cleaning up duplicate records in database for school: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-24 04:16:30 ERROR [JavaFX Application Thread] c.c.c.service.LearnerService - Error cleaning up database duplicates
+org.postgresql.util.PSQLException: ERROR: function max(uuid) does not exist
+  Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+  Position: 59
+	at org.postgresql.jdbc@42.7.3/org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2725)
+	at org.postgresql.jdbc@42.7.3/org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2412)
+	at org.postgresql.jdbc@42.7.3/org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:371)
+	at org.postgresql.jdbc@42.7.3/org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:502)
+	at org.postgresql.jdbc@42.7.3/org.postgresql.jdbc.PgStatement.execute(PgStatement.java:419)
+	at org.postgresql.jdbc@42.7.3/org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+	at org.postgresql.jdbc@42.7.3/org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:155)
+	at com.zaxxer.hikari@5.1.0/com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari@5.1.0/com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.service.LearnerService.cleanupDuplicates(LearnerService.java:246)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.service.ExcelSchoolServer.cleanupDatabaseDuplicates(ExcelSchoolServer.java:585)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.service.ExcelSchoolServer.processChangesInDatabase(ExcelSchoolServer.java:604)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.service.ExcelSchoolServer.detectChanges(ExcelSchoolServer.java:557)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.service.ExcelSchoolServer.loadExcelData(ExcelSchoolServer.java:224)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.service.ExcelSchoolServer.loadExcelDataWithRetryOnLock(ExcelSchoolServer.java:241)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.service.ExcelSchoolServer.start(ExcelSchoolServer.java:151)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.Main.startExcelSchoolServer(Main.java:249)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.Main.onSchoolLogin(Main.java:83)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.controller.LoginController.handleLogin(LoginController.java:202)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at javafx.base@21.0.2/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:270)
+	at javafx.fxml@21.0.2/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml@21.0.2/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1853)
+	at javafx.fxml@21.0.2/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1726)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@21.0.2/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.2/javafx.scene.Node.fireEvent(Node.java:8875)
+	at javafx.controls@21.0.2/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@21.0.2/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@21.0.2/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@21.0.2/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.2/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+	at javafx.graphics@21.0.2/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+	at javafx.graphics@21.0.2/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics@21.0.2/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics@21.0.2/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics@21.0.2/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@21.0.2/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-09-24 04:16:30 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Removed 0 duplicate records from database
+2025-09-24 04:16:30 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Raw date strings from Excel:
+2025-09-24 04:16:30 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   adm001: '2020-02-02'
+2025-09-24 04:16:30 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   adm002: '2023-04-08'
+2025-09-24 04:16:30 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   adm003: '2030-04-05'
+2025-09-24 04:16:30 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   adm004: '1990-06-06'
+2025-09-24 04:16:30 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   adm005: '2025-06-09'
+2025-09-24 04:16:30 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   adm006: '2023-09-09'
+2025-09-24 04:16:30 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   adm0010: '2018-08-16'
+2025-09-24 04:16:30 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   adm0011: '2019-12-03'
+2025-09-24 04:16:30 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   adm0012: '2014-12-30'
+2025-09-24 04:16:30 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   adm0013: '2025-09-15'
+2025-09-24 04:16:30 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   adm0020: '2021-01-01'
+2025-09-24 04:16:30 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   adm007: '2022-11-02'
+2025-09-24 04:16:30 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   adm0014: '2020-12-01'
+2025-09-24 04:16:30 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   adm0023: '2012-02-02'
+2025-09-24 04:16:30 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   adm0022: '2019-11-23'
+2025-09-24 04:16:30 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   adm0021: '2009-01-01'
+2025-09-24 04:16:30 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   adm0025: '2008-02-02'
+2025-09-24 04:16:30 DEBUG [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sample record for DB processing: LearnerRecord{admissionNumber='adm001', fullName='Michael Prince', gradeName='Grade 2', dateJoinedSchool='2020-02-02', gender='Male', status=''}
+2025-09-24 04:16:30 INFO  [JavaFX Application Thread] c.c.c.service.LearnerService - School validation: OK - School: main campus
+2025-09-24 04:16:30 INFO  [JavaFX Application Thread] c.c.c.service.LearnerService - Found 12 grades for school
+2025-09-24 04:16:30 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - Resolved grade 'Grade 2' to ID: 75c082f5-16ef-420e-8ca5-3635ca784401
+2025-09-24 04:16:30 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - Resolved grade 'Grade 9' to ID: de75dd39-9b5a-4f2a-9f6f-2e2a73740a65
+2025-09-24 04:16:30 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - Resolved grade 'Creche' to ID: 6804fc9b-5cb1-45bb-9e10-abe8c6fd195b
+2025-09-24 04:16:30 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - Resolved grade 'PP1' to ID: c25ae18d-7ec6-4de5-b349-e4980e4176a5
+2025-09-24 04:16:30 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - Resolved grade 'PP2' to ID: a6366eec-69d9-4bbb-9c3e-c29f9b275d67
+2025-09-24 04:16:30 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - Resolved grade 'Grade 8' to ID: 499620a9-9695-4ecd-9a80-9ac576c1a882
+2025-09-24 04:16:30 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - Resolved grade 'Grade 7' to ID: 340eeac6-834d-48f0-9f57-eff401c9a203
+2025-09-24 04:16:30 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - Resolved grade 'Grade 7' to ID: 340eeac6-834d-48f0-9f57-eff401c9a203
+2025-09-24 04:16:30 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - Resolved grade 'Grade 2' to ID: 75c082f5-16ef-420e-8ca5-3635ca784401
+2025-09-24 04:16:30 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - Resolved grade 'Creche' to ID: 6804fc9b-5cb1-45bb-9e10-abe8c6fd195b
+2025-09-24 04:16:30 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - Resolved grade 'Grade 8' to ID: 499620a9-9695-4ecd-9a80-9ac576c1a882
+2025-09-24 04:16:30 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - Resolved grade 'Grade 6' to ID: db92dfdc-e9eb-466b-b919-0bbf0c65d5d7
+2025-09-24 04:16:30 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - Resolved grade 'Creche' to ID: 6804fc9b-5cb1-45bb-9e10-abe8c6fd195b
+2025-09-24 04:16:30 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - Resolved grade 'Creche' to ID: 6804fc9b-5cb1-45bb-9e10-abe8c6fd195b
+2025-09-24 04:16:30 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - Resolved grade 'Grade 1' to ID: 9f02ec46-ef36-4ac4-98d5-92fe50a7612d
+2025-09-24 04:16:30 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - Resolved grade 'Grade 5' to ID: 66333c8d-79b9-4a07-b569-f45258e9ae01
+2025-09-24 04:16:30 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - Resolved grade 'Grade 5' to ID: 66333c8d-79b9-4a07-b569-f45258e9ae01
+2025-09-24 04:16:30 INFO  [JavaFX Application Thread] c.c.c.service.LearnerService - Import results: 17 total, 17 successful, 0 failed
+2025-09-24 04:16:30 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - ✅ Successfully processed 17 changes in database
+2025-09-24 04:16:30 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Successfully processed 17 learners from Excel
+2025-09-24 04:16:30 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Excel School Server started successfully
+2025-09-24 04:16:30 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-09-24 04:16:30 INFO  [Excel-File-Watcher] c.c.c.service.ExcelSchoolServer - Watching directory for Excel file changes: C:\Users\user\Desktop
+2025-09-24 04:16:49 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-24 04:19:20 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-24 04:19:20 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session closed
+2025-09-24 04:19:37 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=pam userId=5858b2a0-a8b6-40f6-9e14-ef50ba3071f0 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=teacher
+2025-09-24 04:19:37 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-24 04:19:38 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook HMAC validation enabled
+2025-09-24 04:19:38 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook API authentication enabled
+2025-09-24 04:19:38 ERROR [Webhook-Service-Thread] c.c.c.service.WebhookService - Failed to start webhook service on port 8080
+java.lang.IllegalStateException: This must be done before route mapping has begun
+	at spark.core@2.9.4/spark.Service.throwBeforeRouteMappingException(Service.java:504)
+	at spark.core@2.9.4/spark.Service.port(Service.java:169)
+	at spark.core@2.9.4/spark.Spark.port(Spark.java:1014)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.service.WebhookService.configureServer(WebhookService.java:83)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.service.WebhookService.start(WebhookService.java:72)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.Main.lambda$startWebhookService$5(Main.java:205)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-09-24 04:19:38 ERROR [Webhook-Service-Thread] com.cms.clubmanagementsystem.Main - Webhook service failed to start
+java.lang.RuntimeException: Could not start webhook listener
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.service.WebhookService.start(WebhookService.java:78)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.Main.lambda$startWebhookService$5(Main.java:205)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.IllegalStateException: This must be done before route mapping has begun
+	at spark.core@2.9.4/spark.Service.throwBeforeRouteMappingException(Service.java:504)
+	at spark.core@2.9.4/spark.Service.port(Service.java:169)
+	at spark.core@2.9.4/spark.Spark.port(Spark.java:1014)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.service.WebhookService.configureServer(WebhookService.java:83)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.service.WebhookService.start(WebhookService.java:72)
+	... 6 common frames omitted
+2025-09-24 04:19:38 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Excel School Server initialized:
+2025-09-24 04:19:38 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   File: C:\Users\user\Desktop\learners.xlsx
+2025-09-24 04:19:38 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Webhook URL: http://localhost:8080/webhook
+2025-09-24 04:19:38 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   HMAC Signature: ENABLED
+2025-09-24 04:19:38 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Lock retry settings: 5 attempts with 3000ms delay
+2025-09-24 04:19:38 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Excel import attempted by user: 5858b2a0-a8b6-40f6-9e14-ef50ba3071f0, school: 9d47203f-4e54-47ac-a560-eeb277794e76, authorized: false
+2025-09-24 04:19:38 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - Audit log entry created for action: EXCEL_IMPORT_ATTEMPT_UNAUTHORIZED
+2025-09-24 04:19:38 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - ❌ User not authorized to import Excel - failing silently
+2025-09-24 04:20:18 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-24 04:20:35 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-24 05:19:19 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=pam userId=5858b2a0-a8b6-40f6-9e14-ef50ba3071f0 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=teacher
+2025-09-24 05:19:19 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-24 05:19:20 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook HMAC validation enabled
+2025-09-24 05:19:20 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook API authentication enabled
+2025-09-24 05:19:21 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Webhook service started successfully on port 8080 - Authentication: true
+2025-09-24 05:19:21 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Excel School Server initialized:
+2025-09-24 05:19:21 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   File: C:\Users\user\Desktop\learners.xlsx
+2025-09-24 05:19:21 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Webhook URL: http://localhost:8080/webhook
+2025-09-24 05:19:21 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   HMAC Signature: ENABLED
+2025-09-24 05:19:21 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Lock retry settings: 5 attempts with 3000ms delay
+2025-09-24 05:19:21 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Excel import attempted by user: 5858b2a0-a8b6-40f6-9e14-ef50ba3071f0, school: 9d47203f-4e54-47ac-a560-eeb277794e76, authorized: false
+2025-09-24 05:19:22 WARN  [qtp1319283695-50] c.c.c.service.WebhookService - Unauthorized webhook attempt - missing API key from IP: 127.0.0.1, User-Agent: Java-http-client/21.0.7
+2025-09-24 05:19:22 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - Audit log entry created for action: EXCEL_IMPORT_ATTEMPT_UNAUTHORIZED
+2025-09-24 05:19:22 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - ❌ User not authorized to import Excel - failing silently
+2025-09-24 05:19:22 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Successfully registered webhook with school server
+2025-09-24 05:24:38 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=pam userId=5858b2a0-a8b6-40f6-9e14-ef50ba3071f0 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=teacher
+2025-09-24 05:24:39 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-24 05:24:39 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook HMAC validation enabled
+2025-09-24 05:24:39 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook API authentication enabled
+2025-09-24 05:24:40 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Webhook service started successfully on port 8080 - Authentication: true
+2025-09-24 05:24:41 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Excel School Server initialized:
+2025-09-24 05:24:41 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   File: C:\Users\user\Desktop\learners.xlsx
+2025-09-24 05:24:41 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Webhook URL: http://localhost:8080/webhook
+2025-09-24 05:24:41 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   HMAC Signature: ENABLED
+2025-09-24 05:24:41 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Lock retry settings: 5 attempts with 3000ms delay
+2025-09-24 05:24:41 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Excel import attempted by user: 5858b2a0-a8b6-40f6-9e14-ef50ba3071f0, school: 9d47203f-4e54-47ac-a560-eeb277794e76, authorized: false
+2025-09-24 05:24:41 WARN  [qtp1662660605-50] c.c.c.service.WebhookService - Unauthorized webhook attempt - missing API key from IP: 127.0.0.1, User-Agent: Java-http-client/21.0.7
+2025-09-24 05:24:41 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - Audit log entry created for action: EXCEL_IMPORT_ATTEMPT_UNAUTHORIZED
+2025-09-24 05:24:41 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - ❌ User not authorized to import Excel - failing silently
+2025-09-24 05:24:41 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Successfully registered webhook with school server
+2025-09-24 05:25:06 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-24 05:25:24 WARN  [JavaFX Application Thread] c.c.c.c.EnrollmentController - Enrollment blocked: Learner already enrolled in this club
+2025-09-24 05:29:02 WARN  [qtp1662660605-57] c.c.c.service.WebhookService - Unauthorized webhook attempt - missing API key from IP: 127.0.0.1, User-Agent: Java-http-client/21.0.7
+2025-09-24 05:29:02 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Successfully unregistered webhook from school server
+2025-09-24 05:29:03 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook service stopped
+2025-09-24 05:29:03 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-24 05:29:03 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session closed
+2025-09-24 05:29:03 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-24 05:38:59 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=pam userId=5858b2a0-a8b6-40f6-9e14-ef50ba3071f0 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=teacher
+2025-09-24 05:38:59 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-24 05:39:00 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook HMAC validation enabled
+2025-09-24 05:39:00 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook API authentication enabled
+2025-09-24 05:39:02 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Webhook service started successfully on port 8080 - Authentication: true
+2025-09-24 05:39:05 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Excel School Server initialized:
+2025-09-24 05:39:05 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   File: C:\Users\user\Desktop\learners.xlsx
+2025-09-24 05:39:05 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Webhook URL: http://localhost:8080/webhook
+2025-09-24 05:39:05 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   HMAC Signature: ENABLED
+2025-09-24 05:39:05 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Lock retry settings: 5 attempts with 3000ms delay
+2025-09-24 05:39:05 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Excel import attempted by user: 5858b2a0-a8b6-40f6-9e14-ef50ba3071f0, school: 9d47203f-4e54-47ac-a560-eeb277794e76, authorized: false
+2025-09-24 05:39:06 WARN  [qtp817398291-50] c.c.c.service.WebhookService - Unauthorized webhook attempt - missing API key from IP: 127.0.0.1, User-Agent: Java-http-client/21.0.7
+2025-09-24 05:39:06 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Successfully registered webhook with school server
+2025-09-24 05:39:06 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - Audit log entry created for action: EXCEL_IMPORT_ATTEMPT_UNAUTHORIZED
+2025-09-24 05:39:06 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - ❌ User not authorized to import Excel - failing silently
+2025-09-24 05:39:13 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-24 05:40:54 WARN  [qtp817398291-57] c.c.c.service.WebhookService - Unauthorized webhook attempt - missing API key from IP: 127.0.0.1, User-Agent: Java-http-client/21.0.7
+2025-09-24 05:40:54 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Successfully unregistered webhook from school server
+2025-09-24 05:40:55 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook service stopped
+2025-09-24 05:40:55 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-24 05:40:55 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session closed
+2025-09-24 05:40:55 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-24 05:45:06 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=pam userId=5858b2a0-a8b6-40f6-9e14-ef50ba3071f0 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=teacher
+2025-09-24 05:45:06 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-24 05:45:06 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook HMAC validation enabled
+2025-09-24 05:45:06 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook API authentication enabled
+2025-09-24 05:45:07 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Webhook service started successfully on port 8080 - Authentication: true
+2025-09-24 05:45:07 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Excel School Server initialized:
+2025-09-24 05:45:07 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   File: C:\Users\user\Desktop\learners.xlsx
+2025-09-24 05:45:07 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Webhook URL: http://localhost:8080/webhook
+2025-09-24 05:45:07 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   HMAC Signature: ENABLED
+2025-09-24 05:45:07 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Lock retry settings: 5 attempts with 3000ms delay
+2025-09-24 05:45:07 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Excel import attempted by user: 5858b2a0-a8b6-40f6-9e14-ef50ba3071f0, school: 9d47203f-4e54-47ac-a560-eeb277794e76, authorized: false
+2025-09-24 05:45:08 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - Audit log entry created for action: EXCEL_IMPORT_ATTEMPT_UNAUTHORIZED
+2025-09-24 05:45:08 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - ❌ User not authorized to import Excel - failing silently
+2025-09-24 05:45:08 WARN  [qtp1120246905-50] c.c.c.service.WebhookService - Unauthorized webhook attempt - missing API key from IP: 127.0.0.1, User-Agent: Java-http-client/21.0.7
+2025-09-24 05:45:08 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Successfully registered webhook with school server
+2025-09-24 05:45:15 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-24 05:45:23 INFO  [JavaFX Application Thread] c.c.c.service.EnrollmentService - Fetching enrollment history for learner_id: 12febd6a-695d-4890-a3b9-a4bed866696d, school_id: 9d47203f-4e54-47ac-a560-eeb277794e76, user_id: 5858b2a0-a8b6-40f6-9e14-ef50ba3071f0
+2025-09-24 05:45:23 INFO  [JavaFX Application Thread] c.c.c.service.EnrollmentService - Found valid enrollment: club=Piano, term=1/2025, active=true, learner=Job Guyo
+2025-09-24 05:45:23 INFO  [JavaFX Application Thread] c.c.c.service.EnrollmentService - Query returned 1 valid enrollment records for learner_id: 12febd6a-695d-4890-a3b9-a4bed866696d
+2025-09-24 05:45:30 INFO  [JavaFX Application Thread] c.c.c.service.EnrollmentService - Fetching enrollment history for learner_id: 5479f4b8-9abe-4942-a734-169ecebcdfce, school_id: 9d47203f-4e54-47ac-a560-eeb277794e76, user_id: 5858b2a0-a8b6-40f6-9e14-ef50ba3071f0
+2025-09-24 05:45:30 INFO  [JavaFX Application Thread] c.c.c.service.EnrollmentService - Found valid enrollment: club=Piano, term=1/2025, active=true, learner=Magnus Calsen
+2025-09-24 05:45:30 INFO  [JavaFX Application Thread] c.c.c.service.EnrollmentService - Query returned 1 valid enrollment records for learner_id: 5479f4b8-9abe-4942-a734-169ecebcdfce
+2025-09-24 05:45:38 INFO  [JavaFX Application Thread] c.c.c.service.EnrollmentService - Fetching enrollment history for learner_id: 12febd6a-695d-4890-a3b9-a4bed866696d, school_id: 9d47203f-4e54-47ac-a560-eeb277794e76, user_id: 5858b2a0-a8b6-40f6-9e14-ef50ba3071f0
+2025-09-24 05:45:38 INFO  [JavaFX Application Thread] c.c.c.service.EnrollmentService - Found valid enrollment: club=Piano, term=1/2025, active=true, learner=Job Guyo
+2025-09-24 05:45:38 INFO  [JavaFX Application Thread] c.c.c.service.EnrollmentService - Query returned 1 valid enrollment records for learner_id: 12febd6a-695d-4890-a3b9-a4bed866696d
+2025-09-24 05:46:04 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-24 05:46:17 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-24 05:52:55 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-24 05:53:32 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-24 07:31:11 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=pam userId=5858b2a0-a8b6-40f6-9e14-ef50ba3071f0 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=teacher
+2025-09-24 07:31:11 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-24 07:31:12 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook HMAC validation enabled
+2025-09-24 07:31:12 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook API authentication enabled
+2025-09-24 07:31:13 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Webhook service started successfully on port 8080 - Authentication: true
+2025-09-24 07:31:13 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Excel School Server initialized:
+2025-09-24 07:31:13 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   File: C:\Users\user\Desktop\learners.xlsx
+2025-09-24 07:31:13 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Webhook URL: http://localhost:8080/webhook
+2025-09-24 07:31:13 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   HMAC Signature: ENABLED
+2025-09-24 07:31:13 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Lock retry settings: 5 attempts with 3000ms delay
+2025-09-24 07:31:13 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Excel import attempted by user: 5858b2a0-a8b6-40f6-9e14-ef50ba3071f0, school: 9d47203f-4e54-47ac-a560-eeb277794e76, authorized: false
+2025-09-24 07:31:14 WARN  [qtp1280684253-50] c.c.c.service.WebhookService - Unauthorized webhook attempt - missing API key from IP: 127.0.0.1, User-Agent: Java-http-client/21.0.7
+2025-09-24 07:31:14 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - Audit log entry created for action: EXCEL_IMPORT_ATTEMPT_UNAUTHORIZED
+2025-09-24 07:31:14 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - ❌ User not authorized to import Excel - failing silently
+2025-09-24 07:31:14 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Successfully registered webhook with school server
+2025-09-24 07:47:06 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=pam userId=5858b2a0-a8b6-40f6-9e14-ef50ba3071f0 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=teacher
+2025-09-24 07:47:06 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-24 07:47:07 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook HMAC validation enabled
+2025-09-24 07:47:07 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook API authentication enabled
+2025-09-24 07:47:08 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Webhook service started successfully on port 8080 - Authentication: true
+2025-09-24 07:47:08 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Excel School Server initialized:
+2025-09-24 07:47:08 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   File: C:\Users\user\Desktop\learners.xlsx
+2025-09-24 07:47:08 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Webhook URL: http://localhost:8080/webhook
+2025-09-24 07:47:08 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   HMAC Signature: ENABLED
+2025-09-24 07:47:08 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Lock retry settings: 5 attempts with 3000ms delay
+2025-09-24 07:47:08 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Excel import attempted by user: 5858b2a0-a8b6-40f6-9e14-ef50ba3071f0, school: 9d47203f-4e54-47ac-a560-eeb277794e76, authorized: false
+2025-09-24 07:47:09 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - Audit log entry created for action: EXCEL_IMPORT_ATTEMPT_UNAUTHORIZED
+2025-09-24 07:47:09 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - ❌ User not authorized to import Excel - failing silently
+2025-09-24 07:47:09 WARN  [qtp1976502143-50] c.c.c.service.WebhookService - Unauthorized webhook attempt - missing API key from IP: 127.0.0.1, User-Agent: Java-http-client/21.0.7
+2025-09-24 07:47:09 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Successfully registered webhook with school server
+2025-09-24 07:47:14 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-24 07:47:24 INFO  [JavaFX Application Thread] c.c.c.service.EnrollmentService - Fetching enrollment history for learner_id: 12febd6a-695d-4890-a3b9-a4bed866696d
+2025-09-24 07:47:29 INFO  [JavaFX Application Thread] c.c.c.service.EnrollmentService - Fetching enrollment history for learner_id: 94a364f1-8008-490c-b497-36efee1a98e0
+2025-09-24 07:57:33 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=pam userId=5858b2a0-a8b6-40f6-9e14-ef50ba3071f0 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=teacher
+2025-09-24 07:57:34 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-24 07:57:35 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook HMAC validation enabled
+2025-09-24 07:57:35 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook API authentication enabled
+2025-09-24 07:57:39 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Webhook service started successfully on port 8080 - Authentication: true
+2025-09-24 07:57:43 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Excel School Server initialized:
+2025-09-24 07:57:43 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   File: C:\Users\user\Desktop\learners.xlsx
+2025-09-24 07:57:43 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Webhook URL: http://localhost:8080/webhook
+2025-09-24 07:57:43 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   HMAC Signature: ENABLED
+2025-09-24 07:57:43 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Lock retry settings: 5 attempts with 3000ms delay
+2025-09-24 07:57:43 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Excel import attempted by user: 5858b2a0-a8b6-40f6-9e14-ef50ba3071f0, school: 9d47203f-4e54-47ac-a560-eeb277794e76, authorized: false
+2025-09-24 07:57:46 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - Audit log entry created for action: EXCEL_IMPORT_ATTEMPT_UNAUTHORIZED
+2025-09-24 07:57:46 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - ❌ User not authorized to import Excel - failing silently
+2025-09-24 07:57:48 WARN  [qtp2128340238-50] c.c.c.service.WebhookService - Unauthorized webhook attempt - missing API key from IP: 127.0.0.1, User-Agent: Java-http-client/21.0.7
+2025-09-24 07:57:51 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Successfully registered webhook with school server
+2025-09-24 07:58:00 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-24 07:58:08 INFO  [JavaFX Application Thread] c.c.c.service.EnrollmentService - Fetching enrollment history for learner_id: 628e406c-1da7-4373-b6de-b528701a36f1
+2025-09-24 07:58:24 WARN  [qtp2128340238-45] c.c.c.service.WebhookService - Unauthorized webhook attempt - missing API key from IP: 127.0.0.1, User-Agent: Java-http-client/21.0.7
+2025-09-24 07:58:24 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Successfully unregistered webhook from school server
+2025-09-24 07:58:26 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook service stopped
+2025-09-24 07:58:26 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-24 07:58:26 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session closed
+2025-09-24 07:58:26 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.

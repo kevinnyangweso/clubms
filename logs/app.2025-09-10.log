@@ -1,0 +1,11 @@
+2025-09-10 06:16:20 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook API authentication enabled
+2025-09-10 06:16:20 INFO  [Thread-4] org.eclipse.jetty.util.log - Logging initialized @8715ms to org.eclipse.jetty.util.log.Slf4jLog
+2025-09-10 06:16:21 INFO  [Thread-4] s.e.jetty.EmbeddedJettyServer - == Spark has ignited ...
+2025-09-10 06:16:21 INFO  [Thread-4] s.e.jetty.EmbeddedJettyServer - >> Listening on 0.0.0.0:8080
+2025-09-10 06:16:22 INFO  [Thread-4] org.eclipse.jetty.server.Server - jetty-9.4.48.v20220622; built: 2022-06-21T20:42:25.880Z; git: 6b67c5719d1f4371b33655ff2d047d24e171e49a; jvm 21.0.7+8-LTS-245
+2025-09-10 06:16:23 INFO  [Thread-4] org.eclipse.jetty.server.session - DefaultSessionIdManager workerName=node0
+2025-09-10 06:16:23 INFO  [Thread-4] org.eclipse.jetty.server.session - No SessionScavenger set, using defaults
+2025-09-10 06:16:23 INFO  [Thread-4] org.eclipse.jetty.server.session - node0 Scavenging every 600000ms
+2025-09-10 06:16:24 INFO  [Thread-4] o.e.jetty.server.AbstractConnector - Started ServerConnector@1e370968{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-09-10 06:16:24 INFO  [Thread-4] org.eclipse.jetty.server.Server - Started @12276ms
+2025-09-10 06:16:24 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Webhook service started successfully on port 8080 - Authentication: true

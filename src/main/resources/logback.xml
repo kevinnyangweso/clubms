@@ -19,9 +19,22 @@
         </encoder>
     </appender>
 
-    <!-- Root logger: set to INFO for production; change to DEBUG while troubleshooting -->
-    <root level="INFO">
-        <appender-ref ref="CONSOLE" />
+    <!-- Second console appender with different pattern -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Root logger: set to WARN to see duplicate warnings -->
+    <root level="WARN">
+        <appender-ref ref="STDOUT" />
         <appender-ref ref="FILE" />
     </root>
+
+    <!-- Specifically set your package to DEBUG to see all messages -->
+    <logger name="com.cms.clubmanagementsystem.service" level="DEBUG" />
+
+    <!-- allows DEBUG level logs for the SessionManager class -->
+    <logger name="com.cms.clubmanagementsystem.utils.SessionManager" level="DEBUG" />
 </configuration>

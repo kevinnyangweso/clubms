@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fitToWidth="true"
+            hbarPolicy="NEVER"
+            vbarPolicy="AS_NEEDED"
+            style="-fx-background: transparent; -fx-background-color: transparent; -fx-border-color: transparent;"
+            stylesheets="@../css/styles.css"
+            fx:controller="com.cms.clubmanagementsystem.controller.OverviewController"
+            fx:id="scrollPane">
+
+    <VBox style="-fx-padding: 20; -fx-background-color: #f8fafc; -fx-alignment: TOP_CENTER; -fx-spacing: 15;">
+        <padding>
+            <Insets bottom="20" />
+        </padding>
+
+        <!-- Header Section -->
+        <VBox spacing="5" style="-fx-padding: 0 0 10 0;">
+            <Label text="🏠 Dashboard Overview" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            <Label text="Weekly Club Attendance &amp; Participation Tracking" style="-fx-font-size: 16px; -fx-text-fill: #64748b;"/>
+        </VBox>
+
+        <!-- Refresh Button -->
+        <HBox alignment="CENTER_RIGHT" style="-fx-padding: 0 0 15 0;">
+            <Button text="🔄 Refresh Data" onAction="#handleManualRefresh" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16; -fx-background-radius: 6; -fx-cursor: hand;"/>
+        </HBox>
+
+        <!-- Main Metrics Grid - Responsive design -->
+        <GridPane hgap="15" vgap="15" style="-fx-padding: 5; -fx-max-width: 100%;">
+            <columnConstraints>
+                <ColumnConstraints minWidth="200" maxWidth="300" percentWidth="33"/>
+                <ColumnConstraints minWidth="200" maxWidth="300" percentWidth="33"/>
+                <ColumnConstraints minWidth="200" maxWidth="300" percentWidth="33"/>
+            </columnConstraints>
+
+            <rowConstraints>
+                <RowConstraints minHeight="150" percentHeight="33" />
+                <RowConstraints minHeight="150" percentHeight="33" />
+                <RowConstraints minHeight="150" percentHeight="33" />
+            </rowConstraints>
+
+            <!-- Row 1: Basic Stats -->
+            <VBox style="-fx-background-color: #e0f2fe; -fx-background-radius: 12; -fx-padding: 20; -fx-alignment: CENTER; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 2);"
+                  GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <Label text="🏛️" style="-fx-font-size: 36px;"/>
+                <Label text="Total Clubs" style="-fx-font-size: 14px; -fx-text-fill: #64748b; -fx-font-weight: bold;"/>
+                <Label fx:id="totalClubsLabel" text="0" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #0369a1;"/>
+            </VBox>
+
+            <VBox style="-fx-background-color: #dcfce7; -fx-background-radius: 12; -fx-padding: 20; -fx-alignment: CENTER; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 2);"
+                  GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <Label text="👥" style="-fx-font-size: 36px;"/>
+                <Label text="Club Members" style="-fx-font-size: 14px; -fx-text-fill: #64748b; -fx-font-weight: bold;"/>
+                <Label fx:id="totalMembersLabel" text="0" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #166534;"/>
+            </VBox>
+
+            <VBox style="-fx-background-color: #e0f2fe; -fx-background-radius: 12; -fx-padding: 20; -fx-alignment: CENTER; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 2);"
+                  GridPane.columnIndex="2" GridPane.rowIndex="0">
+                <Label text="👨‍🏫" style="-fx-font-size: 36px;"/>
+                <Label text="Total Teachers" style="-fx-font-size: 14px; -fx-text-fill: #64748b; -fx-font-weight: bold;"/>
+                <Label fx:id="totalTeachersLabel" text="0" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #0369a1;"/>
+            </VBox>
+
+            <!-- Row 2: People Stats -->
+            <VBox style="-fx-background-color: #dcfce7; -fx-background-radius: 12; -fx-padding: 20; -fx-alignment: CENTER; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 2);"
+                  GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <Label text="👨‍🎓" style="-fx-font-size: 36px;"/>
+                <Label text="Total Learners" style="-fx-font-size: 14px; -fx-text-fill: #64748b; -fx-font-weight: bold;"/>
+                <Label fx:id="totalLearnersLabel" text="0" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #166534;"/>
+            </VBox>
+
+            <VBox style="-fx-background-color: #e0f2fe; -fx-background-radius: 12; -fx-padding: 20; -fx-alignment: CENTER; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 2);"
+                  GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <Label text="✅" style="-fx-font-size: 36px;"/>
+                <Label text="Today's Attendance" style="-fx-font-size: 14px; -fx-text-fill: #64748b; -fx-font-weight: bold;"/>
+                <Label fx:id="todayAttendanceLabel" text="0" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #0369a1;"/>
+            </VBox>
+
+            <VBox style="-fx-background-color: #dcfce7; -fx-background-radius: 12; -fx-padding: 20; -fx-alignment: CENTER; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 2);"
+                  GridPane.columnIndex="2" GridPane.rowIndex="1">
+                <Label text="📊" style="-fx-font-size: 36px;"/>
+                <Label text="Weekly Attendance" style="-fx-font-size: 14px; -fx-text-fill: #64748b; -fx-font-weight: bold;"/>
+                <Label fx:id="attendanceThisWeekLabel" text="0" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #166534;"/>
+            </VBox>
+
+            <!-- Row 3: Performance Metrics -->
+            <!-- In your GridPane, replace the performance metrics section with: -->
+
+            <!-- Row 3: Performance Metrics -->
+            <VBox style="-fx-background-color: #cffafe; -fx-background-radius: 12; -fx-padding: 20; -fx-alignment: CENTER; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 2);"
+                  GridPane.columnIndex="0" GridPane.rowIndex="2">
+                <Label text="📅" style="-fx-font-size: 36px;"/>
+                <Label text="Weekly Rate" style="-fx-font-size: 14px; -fx-text-fill: #64748b; -fx-font-weight: bold;"/>
+                <Label fx:id="weeklyAttendanceRateLabel" text="0%" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #0e7490;"/>
+                <Label text="Weekly performance" style="-fx-font-size: 11px; -fx-text-fill: #0e7490;"/>
+            </VBox>
+
+            <VBox style="-fx-background-color: #f3e8ff; -fx-background-radius: 12; -fx-padding: 20; -fx-alignment: CENTER; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 2);"
+                  GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <Label text="👥" style="-fx-font-size: 36px;"/>
+                <Label text="Participation" style="-fx-font-size: 14px; -fx-text-fill: #64748b; -fx-font-weight: bold;"/>
+                <Label fx:id="participationRateLabel" text="0%" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #7e22ce;"/>
+                <Label text="Learner engagement" style="-fx-font-size: 11px; -fx-text-fill: #7e22ce;"/>
+            </VBox>
+
+            <VBox style="-fx-background-color: #ffedd5; -fx-background-radius: 12; -fx-padding: 20; -fx-alignment: CENTER; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 2);"
+                  GridPane.columnIndex="2" GridPane.rowIndex="2">
+                <Label text="📈" style="-fx-font-size: 36px;"/>
+                <Label text="Today's Rate" style="-fx-font-size: 14px; -fx-text-fill: #64748b; -fx-font-weight: bold;"/>
+                <Label fx:id="attendancePercentageLabel" text="0%" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #ea580c;"/>
+                <Label text="Current session" style="-fx-font-size: 11px; -fx-text-fill: #ea580c;"/>
+            </VBox>
+        </GridPane>
+
+        <!-- Footer Section -->
+        <VBox spacing="8" style="-fx-padding: 25; -fx-background-color: #f1f5f9; -fx-background-radius: 12;">
+            <Label text="📊 Quick Insights" style="-fx-font-weight: bold; -fx-text-fill: #334155; -fx-font-size: 14px;"/>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label fx:id="lastUpdatedLabel" text="Last updated: Just now" style="-fx-text-fill: #64748b; -fx-font-size: 12px;"/>
+                <Label text="•" style="-fx-text-fill: #cbd5e1;"/>
+                <Label fx:id="systemStatusLabel" text="🟢 System status: Online" style="-fx-text-fill: #16a34a; -fx-font-weight: bold; -fx-font-size: 12px;"/>
+            </HBox>
+        </VBox>
+    </VBox>
+</ScrollPane>

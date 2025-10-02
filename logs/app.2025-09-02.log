@@ -1,0 +1,291 @@
+2025-09-02 02:09:14 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-09-02 02:09:47 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-09-02 02:10:01 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-09-02 02:10:19 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@48ae7cb8
+2025-09-02 02:10:20 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-09-02 02:10:28 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-09-02 02:10:28 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-09-02 02:10:28 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-09-02 02:10:28 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-02 02:10:28 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-02 02:12:42 INFO  [Thread-4] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown initiated...
+2025-09-02 02:12:42 INFO  [Thread-4] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown completed.
+2025-09-02 02:13:51 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-09-02 02:13:57 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@3c1a5453
+2025-09-02 02:13:57 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-09-02 02:13:59 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-09-02 02:13:59 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-09-02 02:13:59 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-09-02 02:13:59 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-02 02:13:59 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-02 02:20:05 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-02 02:20:05 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-02 02:21:32 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=ami userId=6a6860b5-5f9e-4e02-a037-581d998661f4 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-09-02 02:21:32 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'ami' logged in successfully (userId=6a6860b5-5f9e-4e02-a037-581d998661f4, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-09-02 02:21:32 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-09-02 02:21:32 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-02 02:21:32 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-02 02:32:19 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown initiated...
+2025-09-02 02:32:19 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown completed.
+2025-09-02 02:44:24 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-09-02 02:44:27 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@4f17a55a
+2025-09-02 02:44:27 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-09-02 02:44:28 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-09-02 02:44:28 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-09-02 02:44:28 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-09-02 02:44:28 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-02 02:44:28 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-02 02:52:19 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown initiated...
+2025-09-02 02:52:19 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown completed.
+2025-09-02 02:53:13 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-09-02 02:53:20 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@528a2e86
+2025-09-02 02:53:20 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-09-02 02:53:22 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=ami userId=6a6860b5-5f9e-4e02-a037-581d998661f4 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-09-02 02:53:22 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'ami' logged in successfully (userId=6a6860b5-5f9e-4e02-a037-581d998661f4, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-09-02 02:53:22 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-09-02 02:53:22 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-02 02:53:22 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-02 03:03:13 INFO  [Thread-4] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown initiated...
+2025-09-02 03:03:13 INFO  [Thread-4] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown completed.
+2025-09-02 03:03:43 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-09-02 03:03:44 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@5aa814c5
+2025-09-02 03:03:44 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-09-02 03:03:44 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=ami userId=6a6860b5-5f9e-4e02-a037-581d998661f4 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-09-02 03:03:44 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'ami' logged in successfully (userId=6a6860b5-5f9e-4e02-a037-581d998661f4, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-09-02 03:03:44 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-09-02 03:03:45 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-02 03:03:45 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-02 03:09:08 INFO  [Thread-4] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown initiated...
+2025-09-02 03:09:08 INFO  [Thread-4] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown completed.
+2025-09-02 03:09:44 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-09-02 03:09:45 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@3be8e6ce
+2025-09-02 03:09:45 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-09-02 03:09:45 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 03:09:45 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=ami userId=6a6860b5-5f9e-4e02-a037-581d998661f4 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-09-02 03:09:45 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'ami' logged in successfully (userId=6a6860b5-5f9e-4e02-a037-581d998661f4, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-09-02 03:09:45 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-09-02 03:09:46 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-02 03:09:46 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-02 03:09:50 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - Checking coordinator status for user: 6a6860b5-5f9e-4e02-a037-581d998661f4, school: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-02 03:09:50 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - Executing SQL: SELECT is_active, is_active_coordinator, role FROM users WHERE user_id = ? AND school_id = ? AND role = 'club_coordinator'
+2025-09-02 03:09:50 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - Parameters: userId=6a6860b5-5f9e-4e02-a037-581d998661f4, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-02 03:09:50 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - Database result - role: club_coordinator, is_active: true, is_active_coordinator: false
+2025-09-02 03:43:49 INFO  [Thread-4] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown initiated...
+2025-09-02 04:46:26 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-09-02 04:46:31 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@5346c15d
+2025-09-02 04:46:31 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-09-02 04:46:33 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 04:46:33 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-09-02 04:46:33 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-09-02 04:46:33 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-09-02 04:46:33 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-02 04:46:33 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-02 04:49:58 INFO  [Thread-4] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown initiated...
+2025-09-02 04:49:59 INFO  [Thread-4] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown completed.
+2025-09-02 04:51:38 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-09-02 04:51:40 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@15ddbfba
+2025-09-02 04:51:40 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-09-02 04:51:41 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 04:51:41 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-09-02 04:51:41 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-09-02 04:51:41 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-09-02 04:51:42 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-02 04:51:42 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-02 04:56:07 INFO  [Thread-4] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown initiated...
+2025-09-02 04:56:07 INFO  [Thread-4] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown completed.
+2025-09-02 04:56:56 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-09-02 04:56:57 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@21c9e15c
+2025-09-02 04:56:57 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-09-02 04:56:58 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 04:56:58 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-09-02 04:56:58 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-09-02 04:56:58 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-09-02 04:56:58 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-02 04:56:58 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-02 05:00:43 INFO  [Thread-4] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown initiated...
+2025-09-02 05:00:44 INFO  [Thread-4] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown completed.
+2025-09-02 05:01:46 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-09-02 05:01:47 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@23d4ded3
+2025-09-02 05:01:47 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-09-02 05:01:48 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 05:01:48 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-09-02 05:01:48 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-09-02 05:01:48 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-09-02 05:01:48 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-02 05:01:48 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-02 05:06:19 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 05:06:31 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 05:06:31 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=ami userId=6a6860b5-5f9e-4e02-a037-581d998661f4 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-09-02 05:06:31 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'ami' logged in successfully (userId=6a6860b5-5f9e-4e02-a037-581d998661f4, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-09-02 05:06:31 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-09-02 05:06:31 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-02 05:06:31 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-02 05:08:24 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 05:08:34 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 05:08:34 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=ami userId=6a6860b5-5f9e-4e02-a037-581d998661f4 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-09-02 05:08:34 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'ami' logged in successfully (userId=6a6860b5-5f9e-4e02-a037-581d998661f4, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-09-02 05:08:34 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-09-02 05:08:35 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-02 05:08:35 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-02 05:09:00 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-02 05:09:00 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-02 05:22:09 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 05:27:48 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 05:27:48 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 05:27:48 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown initiated...
+2025-09-02 05:27:48 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown completed.
+2025-09-02 06:15:35 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-09-02 06:15:52 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@93b23d5
+2025-09-02 06:15:52 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-09-02 06:15:57 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 06:15:57 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-09-02 06:15:57 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-09-02 06:15:57 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-09-02 06:15:58 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-02 06:15:58 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-02 06:19:33 INFO  [Thread-4] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown initiated...
+2025-09-02 06:19:33 INFO  [Thread-4] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown completed.
+2025-09-02 06:21:57 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-09-02 06:22:17 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@5cbb46f5
+2025-09-02 06:22:17 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-09-02 06:22:20 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 06:22:20 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-09-02 06:22:20 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-09-02 06:22:20 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-09-02 06:22:20 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-02 06:22:20 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-02 06:31:26 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 06:31:26 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 06:31:26 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown initiated...
+2025-09-02 06:31:26 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown completed.
+2025-09-02 06:40:54 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-09-02 06:40:57 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@25983742
+2025-09-02 06:40:57 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-09-02 06:40:58 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - Invalid password attempt for username=mw1
+2025-09-02 06:41:05 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 06:41:05 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-09-02 06:41:05 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-09-02 06:41:05 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-09-02 06:41:05 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-02 06:41:05 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-02 07:13:05 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-09-02 07:13:08 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@5071eada
+2025-09-02 07:13:08 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-09-02 07:13:09 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - Invalid password attempt for username=mw1
+2025-09-02 07:13:18 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 07:13:18 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-09-02 07:13:18 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-09-02 07:13:18 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-09-02 07:13:18 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-02 07:13:18 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-02 07:20:56 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 07:21:05 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 07:21:05 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=pam userId=5858b2a0-a8b6-40f6-9e14-ef50ba3071f0 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=teacher
+2025-09-02 07:21:05 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'pam' logged in successfully (userId=5858b2a0-a8b6-40f6-9e14-ef50ba3071f0, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-09-02 07:21:26 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - User logged out
+2025-09-02 07:21:52 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 07:21:52 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=pam userId=5858b2a0-a8b6-40f6-9e14-ef50ba3071f0 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=teacher
+2025-09-02 07:21:52 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'pam' logged in successfully (userId=5858b2a0-a8b6-40f6-9e14-ef50ba3071f0, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-09-02 07:22:32 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 07:22:32 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 07:22:32 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown initiated...
+2025-09-02 07:22:32 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown completed.
+2025-09-02 17:53:30 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-09-02 17:53:36 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@216257d2
+2025-09-02 17:53:36 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-09-02 17:53:38 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 17:53:38 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=ami userId=6a6860b5-5f9e-4e02-a037-581d998661f4 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-09-02 17:53:38 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'ami' logged in successfully (userId=6a6860b5-5f9e-4e02-a037-581d998661f4, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-09-02 17:53:38 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-09-02 17:53:38 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-02 17:53:38 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-02 17:56:00 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-02 17:56:00 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-02 18:08:21 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 18:08:21 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 18:08:22 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown initiated...
+2025-09-02 18:08:22 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown completed.
+2025-09-02 18:17:46 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-09-02 18:17:50 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@7eccf299
+2025-09-02 18:17:50 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-09-02 18:17:51 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 18:17:51 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=ami userId=6a6860b5-5f9e-4e02-a037-581d998661f4 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-09-02 18:17:51 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'ami' logged in successfully (userId=6a6860b5-5f9e-4e02-a037-581d998661f4, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-09-02 18:17:51 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-09-02 18:17:52 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-02 18:17:52 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-02 18:21:37 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-02 18:21:37 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-02 18:24:35 INFO  [JavaFX Application Thread] c.c.c.c.EnrollmentController - Loaded 11 clubs from database
+2025-09-02 18:24:35 INFO  [JavaFX Application Thread] c.c.c.c.EnrollmentController - Loaded 0 learners from database
+2025-09-02 19:12:40 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 19:12:42 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 19:12:46 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown initiated...
+2025-09-02 19:12:49 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown completed.
+2025-09-02 19:42:51 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-09-02 19:43:03 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@4067ed87
+2025-09-02 19:43:03 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-09-02 19:43:06 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - Invalid password attempt for username=pam
+2025-09-02 19:43:14 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 19:43:14 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=pam userId=5858b2a0-a8b6-40f6-9e14-ef50ba3071f0 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=teacher
+2025-09-02 19:43:14 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'pam' logged in successfully (userId=5858b2a0-a8b6-40f6-9e14-ef50ba3071f0, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-09-02 19:43:52 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 19:44:24 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - Invalid password attempt for username=ami
+2025-09-02 19:44:35 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 19:44:35 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=ami userId=6a6860b5-5f9e-4e02-a037-581d998661f4 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-09-02 19:44:35 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'ami' logged in successfully (userId=6a6860b5-5f9e-4e02-a037-581d998661f4, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-09-02 19:44:35 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-09-02 19:44:36 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-02 19:44:36 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-02 19:53:56 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 19:53:56 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 19:53:56 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown initiated...
+2025-09-02 19:53:56 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown completed.
+2025-09-02 19:55:23 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-09-02 19:55:44 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@133183d2
+2025-09-02 19:55:44 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-09-02 19:55:48 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 19:55:48 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=pam userId=5858b2a0-a8b6-40f6-9e14-ef50ba3071f0 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=teacher
+2025-09-02 19:55:48 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'pam' logged in successfully (userId=5858b2a0-a8b6-40f6-9e14-ef50ba3071f0, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-09-02 19:58:20 INFO  [JavaFX Application Thread] c.c.c.c.EnrollmentController - User is teacher: true
+2025-09-02 19:58:20 INFO  [JavaFX Application Thread] c.c.c.c.EnrollmentController - Loading teacher assignment for user: 5858b2a0-a8b6-40f6-9e14-ef50ba3071f0
+2025-09-02 19:58:20 INFO  [JavaFX Application Thread] c.c.c.c.EnrollmentController - Teacher assigned to club: Piano (ID: 31f651e3-f41b-4890-b0eb-a9eee7125dcd)
+2025-09-02 19:58:20 INFO  [JavaFX Application Thread] c.c.c.c.EnrollmentController - Loaded 0 learners from database
+2025-09-02 19:58:20 INFO  [JavaFX Application Thread] c.c.c.c.EnrollmentController - Loaded 0 enrollments for club Piano
+2025-09-02 20:00:25 INFO  [JavaFX Application Thread] c.c.c.c.EnrollmentController - Loaded 0 learners from database
+2025-09-02 20:00:25 INFO  [JavaFX Application Thread] c.c.c.c.EnrollmentController - Loaded 0 enrollments for club Piano
+2025-09-02 20:00:36 INFO  [JavaFX Application Thread] c.c.c.c.EnrollmentController - Loaded 0 enrollments for club Piano
+2025-09-02 20:39:29 INFO  [Thread-4] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown initiated...
+2025-09-02 20:39:31 INFO  [Thread-4] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown completed.
+2025-09-02 20:40:57 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-09-02 20:41:00 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@16972c08
+2025-09-02 20:41:00 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-09-02 20:41:01 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 20:41:01 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=pam userId=5858b2a0-a8b6-40f6-9e14-ef50ba3071f0 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=teacher
+2025-09-02 20:41:01 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'pam' logged in successfully (userId=5858b2a0-a8b6-40f6-9e14-ef50ba3071f0, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-09-02 20:41:22 INFO  [JavaFX Application Thread] c.c.c.c.EnrollmentController - User is teacher: true
+2025-09-02 20:41:22 INFO  [JavaFX Application Thread] c.c.c.c.EnrollmentController - Loading teacher assignment for user: 5858b2a0-a8b6-40f6-9e14-ef50ba3071f0
+2025-09-02 20:41:22 INFO  [JavaFX Application Thread] c.c.c.c.EnrollmentController - Teacher assigned to club: Piano (ID: 31f651e3-f41b-4890-b0eb-a9eee7125dcd)
+2025-09-02 20:41:22 INFO  [JavaFX Application Thread] c.c.c.c.EnrollmentController - Loaded 0 learners from database
+2025-09-02 20:52:15 INFO  [Thread-4] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown initiated...
+2025-09-02 20:52:17 INFO  [Thread-4] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown completed.
+2025-09-02 20:53:20 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 20:53:20 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 20:54:16 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-09-02 20:54:22 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@7d523b18
+2025-09-02 20:54:22 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-09-02 20:54:23 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 20:54:23 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=pam userId=5858b2a0-a8b6-40f6-9e14-ef50ba3071f0 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=teacher
+2025-09-02 20:54:23 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'pam' logged in successfully (userId=5858b2a0-a8b6-40f6-9e14-ef50ba3071f0, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=teacher)
+2025-09-02 20:54:29 INFO  [JavaFX Application Thread] c.c.c.c.EnrollmentController - User is teacher: true
+2025-09-02 20:54:29 INFO  [JavaFX Application Thread] c.c.c.c.EnrollmentController - Loading teacher assignment for user: 5858b2a0-a8b6-40f6-9e14-ef50ba3071f0
+2025-09-02 20:54:29 INFO  [JavaFX Application Thread] c.c.c.c.EnrollmentController - Teacher assigned to club: Piano (ID: 31f651e3-f41b-4890-b0eb-a9eee7125dcd)
+2025-09-02 20:54:29 INFO  [JavaFX Application Thread] c.c.c.c.EnrollmentController - Loaded 0 learners from database
+2025-09-02 20:57:27 INFO  [JavaFX Application Thread] c.c.c.c.EnrollmentController - Loaded 0 learners from database
+2025-09-02 20:57:27 INFO  [JavaFX Application Thread] c.c.c.c.EnrollmentController - Loaded 0 enrollments for club Piano
+2025-09-02 20:57:28 INFO  [JavaFX Application Thread] c.c.c.c.EnrollmentController - Loaded 0 learners from database
+2025-09-02 20:57:28 INFO  [JavaFX Application Thread] c.c.c.c.EnrollmentController - Loaded 0 enrollments for club Piano
+2025-09-02 21:03:13 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 21:03:13 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-02 21:03:13 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown initiated...
+2025-09-02 21:03:13 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown completed.

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.cms.clubmanagementsystem.controller.ClubCreationController"
+      spacing="10" prefWidth="900" prefHeight="650">
+
+    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+
+    <!-- Club Information Section -->
+    <VBox spacing="10" style="-fx-border-color: #ccc; -fx-border-width: 1; -fx-border-radius: 5; -fx-padding: 10;">
+        <Label text="Club Information" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+        <HBox spacing="10">
+            <Label text="Club Name:"/>
+            <TextField fx:id="clubNameField" prefWidth="300"/>
+        </HBox>
+        <VBox spacing="5">
+            <Label text="Description:"/>
+            <TextArea fx:id="descriptionArea" prefHeight="80"/>
+        </VBox>
+    </VBox>
+
+    <!-- Submit button - add fx:id for dynamic text -->
+    <!-- Change this line: -->
+    <Button fx:id="submitButton" text="Create Club" onAction="#handleSubmit" prefWidth="100"
+            HBox.hgrow="NEVER" alignment="CENTER"/>
+
+</VBox>

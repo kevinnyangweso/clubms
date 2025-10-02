@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<ScrollPane xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.cms.clubmanagementsystem.controller.EnrollmentController"
+            fitToWidth="true"
+            style="-fx-background: #f8f9fa;"
+            stylesheets="@../css/enrollment-management.css">
+
+    <VBox spacing="20" style="-fx-padding: 25;">
+        <!-- Header Section -->
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label text="👥" styleClass="header-icon"/>
+            <VBox spacing="5">
+                <Label text="Learner Enrollment Management" styleClass="header-title"/>
+                <Label text="Enroll and withdraw learners in your assigned club" styleClass="header-subtitle"/>
+            </VBox>
+        </HBox>
+
+        <Separator styleClass="section-separator"/>
+
+        <!-- Assigned Club Information -->
+        <VBox styleClass="info-card">
+            <Label text="Your Assigned Club" styleClass="section-title"/>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="🎯" styleClass="info-icon"/>
+                <Label fx:id="clubNameLabel" text="Loading your assigned club..." styleClass="club-name-label"/>
+            </HBox>
+
+            <Label text="You can only enroll and withdraw learners in your assigned club. Contact the club coordinator if you need to change clubs."
+                   styleClass="info-text"/>
+        </VBox>
+
+        <!-- Term Selection Section -->
+        <VBox styleClass="input-card">
+            <Label text="Term &amp; Year Selection" styleClass="section-title"/>
+
+            <GridPane hgap="15" vgap="15">
+                <columnConstraints>
+                    <ColumnConstraints prefWidth="120" halignment="RIGHT"/>
+                    <ColumnConstraints prefWidth="200"/>
+                    <ColumnConstraints prefWidth="120" halignment="RIGHT"/>
+                    <ColumnConstraints prefWidth="200"/>
+                </columnConstraints>
+
+                <!-- Academic Year -->
+                <Label text="Academic Year:*" styleClass="input-label"
+                       GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="yearComboBox" promptText="Enter academic year" editable="true"
+                          styleClass="year-combo-box"
+                          GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <!-- Term Number -->
+                <Label text="Term Number:*" styleClass="input-label"
+                       GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                <ComboBox fx:id="termComboBox" promptText="Select term" styleClass="term-combo-box"
+                          GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+            </GridPane>
+
+            <!-- Help text -->
+            <HBox spacing="5" alignment="CENTER_LEFT" style="-fx-padding: 10 0 0 0;">
+                <Label text="💡" styleClass="hint-icon"/>
+                <Label text="Select term and year once, then enroll or withdraw multiple learners" styleClass="hint-text"/>
+            </HBox>
+
+            <!-- Enrollment Count Information -->
+            <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 10 0 0 0;">
+                <Label text="📊" styleClass="stats-icon"/>
+                <Label fx:id="enrolledCountLabel" text="Enrolled: 0 learners" styleClass="stats-label"/>
+            </HBox>
+        </VBox>
+
+        <!-- Enrollment Action Section -->
+        <VBox styleClass="input-card">
+            <Label text="Enroll New Learner" styleClass="section-title"/>
+
+            <GridPane hgap="15" vgap="15">
+                <columnConstraints>
+                    <ColumnConstraints prefWidth="120" halignment="RIGHT"/>
+                    <ColumnConstraints prefWidth="350"/>
+                </columnConstraints>
+
+                <!-- Learner Selection -->
+                <Label text="Select Learner:*" styleClass="input-label"
+                       GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <HBox spacing="10" GridPane.rowIndex="0" GridPane.columnIndex="1" alignment="CENTER_LEFT">
+                    <ComboBox fx:id="learnerComboBox" promptText="Search or select learner"
+                              prefWidth="280" styleClass="learner-combo-box"/>
+                    <Button text="🔍 Search" onAction="#handleSearchLearners" styleClass="search-button"/>
+                </HBox>
+
+                <!-- Learner Information Display -->
+                <Label text="Learner Info:" styleClass="input-label"
+                       GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <VBox spacing="5" GridPane.rowIndex="1" GridPane.columnIndex="1">
+                    <HBox spacing="10">
+                        <Label text="Name:" styleClass="info-field-label"/>
+                        <Label fx:id="selectedLearnerName" text="Not selected" styleClass="info-field-value"/>
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label text="Grade:" styleClass="info-field-label"/>
+                        <Label fx:id="selectedLearnerGrade" text="-" styleClass="info-field-value"/>
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label text="Admission:" styleClass="info-field-label"/>
+                        <Label fx:id="selectedLearnerAdmission" text="-" styleClass="info-field-value"/>
+                    </HBox>
+                </VBox>
+            </GridPane>
+
+            <!-- Action Buttons -->
+            <HBox spacing="10" style="-fx-padding: 15 0 0 0;" alignment="CENTER_LEFT">
+                <Button text="Enroll Learner" onAction="#handleEnrollLearner" styleClass="primary-button"/>
+                <Button text="Refresh List" onAction="#handleRefresh" styleClass="secondary-button"/>
+                <Button text="Clear Learner" onAction="#handleClearSelections" styleClass="secondary-button"/>
+                <Button text="View History" onAction="#handleViewHistory" styleClass="secondary-button"/>
+            </HBox>
+        </VBox>
+
+        <!-- Current Enrollments Section -->
+        <VBox styleClass="data-card">
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label text="📋" styleClass="section-icon"/>
+                <Label text="Current Enrollments" styleClass="section-title"/>
+                <Button text="Load Enrollments" onAction="#loadEnrollments" styleClass="primary-button"/>
+                <Button text="Withdraw Selected" onAction="#handleWithdrawEnrollment" styleClass="danger-button"/>
+                <Button text="Refresh" onAction="#handleRefresh" styleClass="refresh-button"/>
+            </HBox>
+
+            <!-- Enrollments Table -->
+            <TableView fx:id="enrollmentsTable" prefHeight="300" VBox.vgrow="ALWAYS" styleClass="enrollments-table">
+                <columns>
+                    <TableColumn text="Admission No." prefWidth="120" fx:id="admissionNumberColumn">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="admissionNumber" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Learner Name" prefWidth="200" fx:id="learnerNameColumn">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="learnerName" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Club Name" prefWidth="150" fx:id="clubNameColumn">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="clubName" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Grade" prefWidth="100">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="gradeName" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Gender" prefWidth="80">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="gender" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Term" prefWidth="60">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="termNumber" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Year" prefWidth="80">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="academicYear" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Status" prefWidth="100" fx:id="statusColumn">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="status" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Enrollment Date" prefWidth="120">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="enrollmentDate" />
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+
+            <!-- Table Information -->
+            <HBox spacing="5" alignment="CENTER_LEFT">
+                <Label text="ℹ️" styleClass="hint-icon"/>
+                <Label text="Double-click to view learner details. Right-click for actions. Select a row and click 'Withdraw Selected' to withdraw enrollment." styleClass="hint-text"/>
+            </HBox>
+        </VBox>
+
+        <!-- Quick Actions Footer -->
+        <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-padding: 10 0 0 0;">
+            <Button text="Generate Report" onAction="#handleGenerateReport" styleClass="tertiary-button"/>
+            <Button text="Export to Excel" onAction="#handleExportExcel" styleClass="tertiary-button"/>
+            <Button text="Clear Selections" onAction="#handleClearSelections" styleClass="secondary-button"/>
+        </HBox>
+
+        <!-- Footer Section -->
+        <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-padding: 10 0 0 0;">
+            <Label text="* Required fields" styleClass="footer-text required-field"/>
+            <Label text="Tip: Learners can only be enrolled in one club per term. Withdrawn enrollments can be viewed in the history." styleClass="footer-text"/>
+        </HBox>
+    </VBox>
+</ScrollPane>

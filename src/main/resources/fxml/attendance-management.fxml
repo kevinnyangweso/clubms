@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.cms.clubmanagementsystem.controller.AttendanceController"
+      spacing="15" style="-fx-padding: 20;">
+
+    <Label text="Attendance Management" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <!-- Instructions -->
+    <VBox spacing="5" style="-fx-background-color: #f8f9fa; -fx-padding: 10; -fx-border-color: #dee2e6; -fx-border-width: 1;">
+        <Label text="How to mark attendance:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        <Label text="1. Select a date and schedule" style="-fx-text-fill: #495057;"/>
+        <Label text="2. Create a new session or select existing one" style="-fx-text-fill: #495057;"/>
+        <Label text="3. Click on the Status cell for each learner to mark Present/Absent" style="-fx-text-fill: #495057;"/>
+        <Label text="4. Double-Click on a learner to change the status" style="-fx-text-fill: #495057;"/>
+        <Label text="5. Click Save Attendance when done" style="-fx-text-fill: #495057;"/>
+    </VBox>
+
+    <!-- Session Information -->
+    <Label fx:id="sessionInfoLabel" text="Select a session to take attendance" style="-fx-font-weight: bold;"/>
+
+    <!-- Attendance Summary -->
+    <Label fx:id="attendanceSummaryLabel" text="No attendance data loaded" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+    <!-- Refresh Button -->
+    <Button text="Refresh Data" onAction="#refreshData" style="-fx-background-color: #2196F3; -fx-text-fill: white;"/>
+
+    <!-- Date and Schedule Selection -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Date:" style="-fx-font-weight: bold;"/>
+        <DatePicker fx:id="sessionDatePicker" prefWidth="150"/>
+
+        <Label text="Schedule:" style="-fx-font-weight: bold; -fx-padding-left: 20;"/>
+        <ComboBox fx:id="scheduleComboBox" promptText="Select Schedule" prefWidth="250"/>
+
+        <Button text="Create New Session" onAction="#createNewSession"
+                style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold;"/>
+    </HBox>
+
+    <!-- Session Selection -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Select Session:" style="-fx-font-weight: bold;"/>
+        <ComboBox fx:id="sessionComboBox" promptText="Select Session" prefWidth="300"/>
+    </HBox>
+
+    <!-- Attendance Table with Instructions -->
+    <VBox spacing="5">
+        <Label text="Attendance List (Click on Status to change):" style="-fx-font-weight: bold;"/>
+        <TableView fx:id="attendanceTable" prefHeight="400">
+            <columns>
+                <TableColumn fx:id="fullNameColumn" text="Full Name" prefWidth="250"/>
+                <TableColumn fx:id="gradeColumn" text="Grade" prefWidth="100"/>
+                <TableColumn fx:id="statusColumn" text="Status" prefWidth="150"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+    <!-- Action Buttons -->
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Save Attendance" onAction="#saveAttendance"
+                style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px;"/>
+        <Button text="Close" onAction="#closeWindow"
+                style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-size: 14px;"/>
+    </HBox>
+
+</VBox>

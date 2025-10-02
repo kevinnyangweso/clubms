@@ -1,0 +1,488 @@
+2025-09-19 04:34:04 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-19 04:34:04 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=pam userId=5858b2a0-a8b6-40f6-9e14-ef50ba3071f0 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=teacher
+2025-09-19 04:34:04 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 04:34:05 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook HMAC validation enabled
+2025-09-19 04:34:05 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook API authentication enabled
+2025-09-19 04:34:08 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Excel School Server initialized:
+2025-09-19 04:34:08 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   File: C:\Users\user\Desktop\learners.xlsx
+2025-09-19 04:34:08 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Webhook URL: http://localhost:8080/webhook
+2025-09-19 04:34:08 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   HMAC Signature: ENABLED
+2025-09-19 04:34:08 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Lock retry settings: 5 attempts with 3000ms delay
+2025-09-19 04:34:08 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Webhook service started successfully on port 8080 - Authentication: true
+2025-09-19 04:34:08 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Excel import attempted by user: 5858b2a0-a8b6-40f6-9e14-ef50ba3071f0, school: 9d47203f-4e54-47ac-a560-eeb277794e76, authorized: false
+2025-09-19 04:34:08 ERROR [JavaFX Application Thread] c.c.c.utils.SessionManager - Failed to log audit entry
+org.postgresql.util.PSQLException: ERROR: relation "audit_log" does not exist
+  Position: 13
+	at org.postgresql.jdbc@42.7.3/org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2725)
+	at org.postgresql.jdbc@42.7.3/org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2412)
+	at org.postgresql.jdbc@42.7.3/org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:371)
+	at org.postgresql.jdbc@42.7.3/org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:502)
+	at org.postgresql.jdbc@42.7.3/org.postgresql.jdbc.PgStatement.execute(PgStatement.java:419)
+	at org.postgresql.jdbc@42.7.3/org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+	at org.postgresql.jdbc@42.7.3/org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:155)
+	at com.zaxxer.hikari@5.1.0/com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari@5.1.0/com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.utils.SessionManager.logToAuditTable(SessionManager.java:349)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.utils.SessionManager.logImportAttempt(SessionManager.java:336)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.service.ExcelSchoolServer.start(ExcelSchoolServer.java:139)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.Main.startExcelSchoolServer(Main.java:249)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.Main.onSchoolLogin(Main.java:83)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.controller.LoginController.handleLogin(LoginController.java:188)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at javafx.base@21.0.2/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:270)
+	at javafx.fxml@21.0.2/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml@21.0.2/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1853)
+	at javafx.fxml@21.0.2/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1726)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@21.0.2/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.2/javafx.scene.Node.fireEvent(Node.java:8875)
+	at javafx.controls@21.0.2/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@21.0.2/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@21.0.2/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@21.0.2/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.2/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+	at javafx.graphics@21.0.2/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+	at javafx.graphics@21.0.2/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics@21.0.2/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics@21.0.2/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics@21.0.2/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@21.0.2/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-09-19 04:34:08 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - ❌ User not authorized to import Excel - failing silently
+2025-09-19 04:34:09 WARN  [qtp1355148021-51] c.c.c.service.WebhookService - Unauthorized webhook attempt - missing API key from IP: 127.0.0.1, User-Agent: Java-http-client/21.0.7
+2025-09-19 04:34:10 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Successfully registered webhook with school server
+2025-09-19 04:35:18 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 04:35:27 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 04:35:27 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 04:51:33 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-19 04:51:33 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=pam userId=5858b2a0-a8b6-40f6-9e14-ef50ba3071f0 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=teacher
+2025-09-19 04:51:33 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 04:51:33 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook HMAC validation enabled
+2025-09-19 04:51:33 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook API authentication enabled
+2025-09-19 04:51:35 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Webhook service started successfully on port 8080 - Authentication: true
+2025-09-19 04:51:35 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Excel School Server initialized:
+2025-09-19 04:51:35 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   File: C:\Users\user\Desktop\learners.xlsx
+2025-09-19 04:51:35 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Webhook URL: http://localhost:8080/webhook
+2025-09-19 04:51:35 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   HMAC Signature: ENABLED
+2025-09-19 04:51:35 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Lock retry settings: 5 attempts with 3000ms delay
+2025-09-19 04:51:35 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Excel import attempted by user: 5858b2a0-a8b6-40f6-9e14-ef50ba3071f0, school: 9d47203f-4e54-47ac-a560-eeb277794e76, authorized: false
+2025-09-19 04:51:36 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - Audit log entry created successfully for action: EXCEL_IMPORT_ATTEMPT_UNAUTHORIZED
+2025-09-19 04:51:36 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - ❌ User not authorized to import Excel - failing silently
+2025-09-19 04:51:36 WARN  [qtp754517272-50] c.c.c.service.WebhookService - Unauthorized webhook attempt - missing API key from IP: 127.0.0.1, User-Agent: Java-http-client/21.0.7
+2025-09-19 04:51:36 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Successfully registered webhook with school server
+2025-09-19 04:51:41 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 04:51:49 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 04:51:49 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 05:13:16 WARN  [qtp754517272-58] c.c.c.service.WebhookService - Unauthorized webhook attempt - missing API key from IP: 127.0.0.1, User-Agent: Java-http-client/21.0.7
+2025-09-19 05:13:22 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Successfully unregistered webhook from school server
+2025-09-19 05:13:35 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook service stopped
+2025-09-19 05:13:35 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-19 05:13:35 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-19 05:53:11 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-19 05:53:11 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=pam userId=5858b2a0-a8b6-40f6-9e14-ef50ba3071f0 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=teacher
+2025-09-19 05:53:11 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 05:53:12 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook HMAC validation enabled
+2025-09-19 05:53:12 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook API authentication enabled
+2025-09-19 05:53:19 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Excel School Server initialized:
+2025-09-19 05:53:19 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   File: C:\Users\user\Desktop\learners.xlsx
+2025-09-19 05:53:19 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Webhook URL: http://localhost:8080/webhook
+2025-09-19 05:53:19 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   HMAC Signature: ENABLED
+2025-09-19 05:53:19 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Lock retry settings: 5 attempts with 3000ms delay
+2025-09-19 05:53:19 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Excel import attempted by user: 5858b2a0-a8b6-40f6-9e14-ef50ba3071f0, school: 9d47203f-4e54-47ac-a560-eeb277794e76, authorized: false
+2025-09-19 05:53:20 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Webhook service started successfully on port 8080 - Authentication: true
+2025-09-19 05:53:22 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - Audit log entry created successfully for action: EXCEL_IMPORT_ATTEMPT_UNAUTHORIZED
+2025-09-19 05:53:22 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - ❌ User not authorized to import Excel - failing silently
+2025-09-19 05:53:23 WARN  [qtp33075355-50] c.c.c.service.WebhookService - Unauthorized webhook attempt - missing API key from IP: 127.0.0.1, User-Agent: Java-http-client/21.0.7
+2025-09-19 05:53:23 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Successfully registered webhook with school server
+2025-09-19 05:54:51 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 05:54:59 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 05:55:01 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 05:55:04 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 05:55:04 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 05:55:07 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 05:55:07 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 05:55:10 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 05:55:10 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 05:55:14 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 05:55:16 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 05:55:16 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 05:55:47 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 05:55:47 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 05:55:59 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 05:55:59 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 06:03:29 WARN  [qtp33075355-57] c.c.c.service.WebhookService - Unauthorized webhook attempt - missing API key from IP: 127.0.0.1, User-Agent: Java-http-client/21.0.7
+2025-09-19 06:03:29 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Successfully unregistered webhook from school server
+2025-09-19 06:03:30 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook service stopped
+2025-09-19 06:03:30 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-19 06:03:30 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-19 06:28:16 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-19 06:28:16 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=pam userId=5858b2a0-a8b6-40f6-9e14-ef50ba3071f0 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=teacher
+2025-09-19 06:28:16 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 06:28:17 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook HMAC validation enabled
+2025-09-19 06:28:17 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook API authentication enabled
+2025-09-19 06:28:19 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Webhook service started successfully on port 8080 - Authentication: true
+2025-09-19 06:28:19 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Excel School Server initialized:
+2025-09-19 06:28:19 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   File: C:\Users\user\Desktop\learners.xlsx
+2025-09-19 06:28:19 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Webhook URL: http://localhost:8080/webhook
+2025-09-19 06:28:19 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   HMAC Signature: ENABLED
+2025-09-19 06:28:19 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Lock retry settings: 5 attempts with 3000ms delay
+2025-09-19 06:28:19 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Excel import attempted by user: 5858b2a0-a8b6-40f6-9e14-ef50ba3071f0, school: 9d47203f-4e54-47ac-a560-eeb277794e76, authorized: false
+2025-09-19 06:28:19 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - Audit log entry created successfully for action: EXCEL_IMPORT_ATTEMPT_UNAUTHORIZED
+2025-09-19 06:28:19 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - ❌ User not authorized to import Excel - failing silently
+2025-09-19 06:28:20 WARN  [qtp264257047-50] c.c.c.service.WebhookService - Unauthorized webhook attempt - missing API key from IP: 127.0.0.1, User-Agent: Java-http-client/21.0.7
+2025-09-19 06:28:20 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Successfully registered webhook with school server
+2025-09-19 06:28:32 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 06:28:45 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 06:29:15 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 06:29:15 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 06:30:28 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 06:30:28 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 06:30:36 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 06:30:37 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 06:30:37 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 06:37:05 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-19 06:37:05 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=pam userId=5858b2a0-a8b6-40f6-9e14-ef50ba3071f0 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=teacher
+2025-09-19 06:37:05 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 06:37:05 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook HMAC validation enabled
+2025-09-19 06:37:05 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook API authentication enabled
+2025-09-19 06:37:07 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Webhook service started successfully on port 8080 - Authentication: true
+2025-09-19 06:37:07 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Excel School Server initialized:
+2025-09-19 06:37:07 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   File: C:\Users\user\Desktop\learners.xlsx
+2025-09-19 06:37:07 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Webhook URL: http://localhost:8080/webhook
+2025-09-19 06:37:07 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   HMAC Signature: ENABLED
+2025-09-19 06:37:07 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Lock retry settings: 5 attempts with 3000ms delay
+2025-09-19 06:37:07 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Excel import attempted by user: 5858b2a0-a8b6-40f6-9e14-ef50ba3071f0, school: 9d47203f-4e54-47ac-a560-eeb277794e76, authorized: false
+2025-09-19 06:37:08 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - Audit log entry created successfully for action: EXCEL_IMPORT_ATTEMPT_UNAUTHORIZED
+2025-09-19 06:37:08 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - ❌ User not authorized to import Excel - failing silently
+2025-09-19 06:37:13 WARN  [qtp1062269497-50] c.c.c.service.WebhookService - Unauthorized webhook attempt - missing API key from IP: 127.0.0.1, User-Agent: Java-http-client/21.0.7
+2025-09-19 06:37:14 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Successfully registered webhook with school server
+2025-09-19 06:37:19 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 06:37:26 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 06:37:26 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 06:37:36 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 06:37:36 ERROR [JavaFX Application Thread] c.c.c.c.EnrollmentController - Error loading enrollments for term 1 year 2025: ERROR: column l.first_name does not exist
+  Position: 14
+org.postgresql.util.PSQLException: ERROR: column l.first_name does not exist
+  Position: 14
+	at org.postgresql.jdbc@42.7.3/org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2725)
+	at org.postgresql.jdbc@42.7.3/org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2412)
+	at org.postgresql.jdbc@42.7.3/org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:371)
+	at org.postgresql.jdbc@42.7.3/org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:502)
+	at org.postgresql.jdbc@42.7.3/org.postgresql.jdbc.PgStatement.execute(PgStatement.java:419)
+	at org.postgresql.jdbc@42.7.3/org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+	at org.postgresql.jdbc@42.7.3/org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:137)
+	at com.zaxxer.hikari@5.1.0/com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+	at com.zaxxer.hikari@5.1.0/com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.service.EnrollmentService.getEnrollmentsByClub(EnrollmentService.java:141)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.controller.EnrollmentController.loadEnrollmentsForTerm(EnrollmentController.java:615)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.controller.EnrollmentController.loadEnrollments(EnrollmentController.java:385)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.controller.EnrollmentController.handleRefresh(EnrollmentController.java:884)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at javafx.base@21.0.2/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:270)
+	at javafx.fxml@21.0.2/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml@21.0.2/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1855)
+	at javafx.fxml@21.0.2/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1726)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@21.0.2/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.2/javafx.scene.Node.fireEvent(Node.java:8875)
+	at javafx.controls@21.0.2/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@21.0.2/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@21.0.2/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@21.0.2/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.2/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+	at javafx.graphics@21.0.2/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+	at javafx.graphics@21.0.2/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics@21.0.2/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics@21.0.2/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics@21.0.2/com.sun.glass.ui.win.WinApplication._enterNestedEventLoopImpl(Native Method)
+	at javafx.graphics@21.0.2/com.sun.glass.ui.win.WinApplication._enterNestedEventLoop(WinApplication.java:212)
+	at javafx.graphics@21.0.2/com.sun.glass.ui.Application.enterNestedEventLoop(Application.java:515)
+	at javafx.graphics@21.0.2/com.sun.glass.ui.EventLoop.enter(EventLoop.java:107)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.QuantumToolkit.enterNestedEventLoop(QuantumToolkit.java:650)
+	at javafx.graphics@21.0.2/javafx.stage.Stage.showAndWait(Stage.java:469)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.controller.TeacherDashboardController.handleEnrollment(TeacherDashboardController.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at javafx.base@21.0.2/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:270)
+	at javafx.fxml@21.0.2/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml@21.0.2/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1855)
+	at javafx.fxml@21.0.2/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1726)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@21.0.2/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.2/javafx.scene.Node.fireEvent(Node.java:8875)
+	at javafx.controls@21.0.2/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@21.0.2/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@21.0.2/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@21.0.2/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.2/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+	at javafx.graphics@21.0.2/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+	at javafx.graphics@21.0.2/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics@21.0.2/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics@21.0.2/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics@21.0.2/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@21.0.2/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-09-19 06:37:44 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 06:37:44 ERROR [JavaFX Application Thread] c.c.c.c.EnrollmentController - Error loading enrollments for term 1 year 2025: ERROR: column l.first_name does not exist
+  Position: 14
+org.postgresql.util.PSQLException: ERROR: column l.first_name does not exist
+  Position: 14
+	at org.postgresql.jdbc@42.7.3/org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2725)
+	at org.postgresql.jdbc@42.7.3/org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2412)
+	at org.postgresql.jdbc@42.7.3/org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:371)
+	at org.postgresql.jdbc@42.7.3/org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:502)
+	at org.postgresql.jdbc@42.7.3/org.postgresql.jdbc.PgStatement.execute(PgStatement.java:419)
+	at org.postgresql.jdbc@42.7.3/org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+	at org.postgresql.jdbc@42.7.3/org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:137)
+	at com.zaxxer.hikari@5.1.0/com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+	at com.zaxxer.hikari@5.1.0/com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.service.EnrollmentService.getEnrollmentsByClub(EnrollmentService.java:141)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.controller.EnrollmentController.loadEnrollmentsForTerm(EnrollmentController.java:615)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.controller.EnrollmentController.loadEnrollments(EnrollmentController.java:385)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.controller.EnrollmentController.handleRefresh(EnrollmentController.java:884)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at javafx.base@21.0.2/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:270)
+	at javafx.fxml@21.0.2/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml@21.0.2/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1855)
+	at javafx.fxml@21.0.2/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1726)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@21.0.2/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.2/javafx.scene.Node.fireEvent(Node.java:8875)
+	at javafx.controls@21.0.2/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@21.0.2/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@21.0.2/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@21.0.2/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.2/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+	at javafx.graphics@21.0.2/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+	at javafx.graphics@21.0.2/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics@21.0.2/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics@21.0.2/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics@21.0.2/com.sun.glass.ui.win.WinApplication._enterNestedEventLoopImpl(Native Method)
+	at javafx.graphics@21.0.2/com.sun.glass.ui.win.WinApplication._enterNestedEventLoop(WinApplication.java:212)
+	at javafx.graphics@21.0.2/com.sun.glass.ui.Application.enterNestedEventLoop(Application.java:515)
+	at javafx.graphics@21.0.2/com.sun.glass.ui.EventLoop.enter(EventLoop.java:107)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.QuantumToolkit.enterNestedEventLoop(QuantumToolkit.java:650)
+	at javafx.graphics@21.0.2/javafx.stage.Stage.showAndWait(Stage.java:469)
+	at com.cms.clubmanagementsystem/com.cms.clubmanagementsystem.controller.TeacherDashboardController.handleEnrollment(TeacherDashboardController.java:87)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at javafx.base@21.0.2/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:270)
+	at javafx.fxml@21.0.2/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84)
+	at javafx.fxml@21.0.2/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1855)
+	at javafx.fxml@21.0.2/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1726)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@21.0.2/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.2/javafx.scene.Node.fireEvent(Node.java:8875)
+	at javafx.controls@21.0.2/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@21.0.2/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@21.0.2/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@21.0.2/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@21.0.2/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@21.0.2/javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.graphics@21.0.2/javafx.scene.Scene$MouseHandler.process(Scene.java:3984)
+	at javafx.graphics@21.0.2/javafx.scene.Scene.processMouseEvent(Scene.java:1890)
+	at javafx.graphics@21.0.2/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@21.0.2/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449)
+	at javafx.graphics@21.0.2/com.sun.glass.ui.View.handleMouseEvent(View.java:551)
+	at javafx.graphics@21.0.2/com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at javafx.graphics@21.0.2/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@21.0.2/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-09-19 06:50:15 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-19 06:50:15 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=pam userId=5858b2a0-a8b6-40f6-9e14-ef50ba3071f0 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=teacher
+2025-09-19 06:50:15 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 06:50:15 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook HMAC validation enabled
+2025-09-19 06:50:15 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook API authentication enabled
+2025-09-19 06:50:18 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Excel School Server initialized:
+2025-09-19 06:50:18 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   File: C:\Users\user\Desktop\learners.xlsx
+2025-09-19 06:50:18 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Webhook URL: http://localhost:8080/webhook
+2025-09-19 06:50:18 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   HMAC Signature: ENABLED
+2025-09-19 06:50:18 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer -   Lock retry settings: 5 attempts with 3000ms delay
+2025-09-19 06:50:18 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Webhook service started successfully on port 8080 - Authentication: true
+2025-09-19 06:50:19 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Excel import attempted by user: 5858b2a0-a8b6-40f6-9e14-ef50ba3071f0, school: 9d47203f-4e54-47ac-a560-eeb277794e76, authorized: false
+2025-09-19 06:50:19 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - Audit log entry created successfully for action: EXCEL_IMPORT_ATTEMPT_UNAUTHORIZED
+2025-09-19 06:50:19 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - ❌ User not authorized to import Excel - failing silently
+2025-09-19 06:50:20 WARN  [qtp156763260-50] c.c.c.service.WebhookService - Unauthorized webhook attempt - missing API key from IP: 127.0.0.1, User-Agent: Java-http-client/21.0.7
+2025-09-19 06:50:21 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Successfully registered webhook with school server
+2025-09-19 06:50:29 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 06:50:34 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 06:50:34 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 06:50:38 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 06:50:40 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 06:50:40 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 06:50:43 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 06:50:43 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-19 06:50:51 DEBUG [JavaFX Application Thread] c.c.c.service.LearnerService - LearnerService initialized for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76

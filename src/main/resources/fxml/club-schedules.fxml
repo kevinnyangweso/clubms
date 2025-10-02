@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.cms.clubmanagementsystem.controller.ClubSchedulesController"
+      stylesheets="@../css/schedules.css"
+      spacing="15" prefWidth="900" prefHeight="600" style="-fx-background-color: #f8f9fa;">
+
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <!-- Header Section -->
+    <HBox alignment="CENTER_LEFT" spacing="15">
+        <Label text="📅" style="-fx-font-size: 28px;"/>
+        <VBox spacing="5">
+            <Label fx:id="clubNameLabel" text="Club Schedules"
+                   style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            <Label fx:id="statusLabel" style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d; -fx-font-style: italic;"/>
+        </VBox>
+    </HBox>
+
+    <Separator style="-fx-background-color: #bdc3c7; -fx-padding: 5 0 0 0;"/>
+
+    <!-- Schedules Table -->
+    <TableView fx:id="schedulesTable" VBox.vgrow="ALWAYS" style="-fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 5;">
+        <columns>
+            <TableColumn fx:id="targetColumn" text="Target Group" prefWidth="250"/>
+            <TableColumn fx:id="dayColumn" text="Day" prefWidth="100"/>
+            <TableColumn fx:id="timeColumn" text="Time Slot" prefWidth="150"/>
+            <TableColumn fx:id="venueColumn" text="Venue" prefWidth="150"/>
+            <TableColumn fx:id="actionsColumn" text="Actions" prefWidth="150"/>
+        </columns>
+    </TableView>
+
+    <!-- Footer -->
+    <HBox spacing="15" alignment="CENTER_RIGHT" style="-fx-padding: 10 0 0 0;">
+        <Button text="Close" onAction="#handleClose"
+                style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16;"/>
+    </HBox>
+
+</VBox>
