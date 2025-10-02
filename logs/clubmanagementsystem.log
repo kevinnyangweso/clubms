@@ -14214,3 +14214,191 @@ org.postgresql.util.PSQLException: ERROR: function max(uuid) does not exist
 2025-10-03 00:17:12 INFO  ExcelSchoolServer:702 - Watching directory for Excel file changes: C:\Users\user\Desktop
 2025-10-03 00:17:13 INFO  OverviewController:52 - === OVERVIEW CONTROLLER INITIALIZATION ===
 2025-10-03 00:17:13 INFO  OverviewController:60 - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-10-03 01:53:36 INFO  Main:112 - Environment variables loaded successfully
+2025-10-03 01:53:40 INFO  Main:138 - Application UI launched successfully
+2025-10-03 02:01:37 INFO  HikariDataSource:79 - CMS-Pool - Starting...
+2025-10-03 02:01:38 INFO  HikariPool:554 - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@5b53d0c4
+2025-10-03 02:01:38 INFO  HikariDataSource:81 - CMS-Pool - Start completed.
+2025-10-03 02:01:40 INFO  SessionManager:61 - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-10-03 02:01:40 INFO  LoginController:190 - Tenant context verified - School: 9d47203f-4e54-47ac-a560-eeb277794e76, User: 6748e77d-a21d-4fee-94ad-a0532bd88c68
+2025-10-03 02:01:40 INFO  Main:89 - Testing Excel integration...
+2025-10-03 02:01:40 INFO  Main:93 - Found 17 learners in database
+2025-10-03 02:01:40 INFO  Main:98 - Excel file exists: true
+2025-10-03 02:01:40 INFO  Main:101 - Excel file size: 9335 bytes
+2025-10-03 02:01:40 INFO  Main:179 - Started periodic cleanup scheduler for expired transient data
+2025-10-03 02:01:40 INFO  WebhookService:56 - Webhook HMAC validation enabled
+2025-10-03 02:01:40 INFO  WebhookService:60 - Webhook API authentication enabled
+2025-10-03 02:01:40 INFO  Main:212 - Webhook listener service initializing on port 8080
+2025-10-03 02:01:41 INFO  log:170 - Logging initialized @500645ms to org.eclipse.jetty.util.log.Slf4jLog
+2025-10-03 02:01:42 INFO  EmbeddedJettyServer:147 - == Spark has ignited ...
+2025-10-03 02:01:42 INFO  EmbeddedJettyServer:151 - >> Listening on 0.0.0.0:8080
+2025-10-03 02:01:42 INFO  Server:375 - jetty-9.4.48.v20220622; built: 2022-06-21T20:42:25.880Z; git: 6b67c5719d1f4371b33655ff2d047d24e171e49a; jvm 21.0.7+8-LTS-245
+2025-10-03 02:01:42 INFO  session:334 - DefaultSessionIdManager workerName=node0
+2025-10-03 02:01:42 INFO  session:339 - No SessionScavenger set, using defaults
+2025-10-03 02:01:42 INFO  session:132 - node0 Scavenging every 660000ms
+2025-10-03 02:01:42 INFO  AbstractConnector:333 - Started ServerConnector@726246b6{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-10-03 02:01:42 INFO  Server:415 - Started @502074ms
+2025-10-03 02:01:42 INFO  WebhookService:75 - Webhook service started successfully on port 8080 - Authentication: true
+2025-10-03 02:01:42 INFO  ExcelSchoolServer:125 - Excel School Server initialized:
+2025-10-03 02:01:42 INFO  ExcelSchoolServer:126 -   File: C:\Users\user\Desktop\learners.xlsx
+2025-10-03 02:01:42 INFO  ExcelSchoolServer:127 -   Webhook URL: http://localhost:8080/webhook
+2025-10-03 02:01:42 INFO  ExcelSchoolServer:128 -   HMAC Signature: ENABLED
+2025-10-03 02:01:42 INFO  ExcelSchoolServer:129 -   Lock retry settings: 5 attempts with 3000ms delay
+2025-10-03 02:01:42 INFO  SessionManager:250 - Excel import attempted by user: 6748e77d-a21d-4fee-94ad-a0532bd88c68, school: 9d47203f-4e54-47ac-a560-eeb277794e76, authorized: true
+2025-10-03 02:01:43 INFO  ExcelSchoolServer:147 - Starting Excel School Server monitor for file: C:\Users\user\Desktop\learners.xlsx
+2025-10-03 02:01:43 INFO  ExcelSchoolServer:190 - 🔄 Attempting to load Excel data from: C:\Users\user\Desktop\learners.xlsx
+2025-10-03 02:01:43 INFO  ExcelSchoolServer:212 - File changed detected, reading Excel data...
+2025-10-03 02:01:43 INFO  ExcelSchoolServer:257 - 📖 Reading Excel file: C:\Users\user\Desktop\learners.xlsx
+2025-10-03 02:01:43 WARN  WebhookService:115 - Unauthorized webhook attempt - missing API key from IP: 127.0.0.1, User-Agent: Java-http-client/21.0.7
+2025-10-03 02:01:44 INFO  WebhookService:320 - Successfully registered webhook with school server
+2025-10-03 02:01:44 INFO  Main:264 - Webhook registered successfully with school server
+2025-10-03 02:01:46 INFO  ExcelSchoolServer:271 - 📊 Excel file has 18 rows
+2025-10-03 02:01:46 INFO  ExcelSchoolServer:282 - 📋 Headers: admission_number, full_name, grade_name, date_joined_school, gender
+2025-10-03 02:01:46 INFO  ExcelSchoolServer:327 - ✅ Parsed 17 valid records from 17 rows (0 duplicates skipped)
+2025-10-03 02:01:46 INFO  ExcelSchoolServer:219 - Read 17 learners from Excel file
+2025-10-03 02:01:46 INFO  ExcelSchoolServer:500 - Validating 17 new learner records...
+2025-10-03 02:01:46 INFO  ExcelSchoolServer:526 - NEW student detected: adm001
+2025-10-03 02:01:46 INFO  ExcelSchoolServer:526 - NEW student detected: adm002
+2025-10-03 02:01:46 INFO  ExcelSchoolServer:526 - NEW student detected: adm003
+2025-10-03 02:01:46 INFO  ExcelSchoolServer:526 - NEW student detected: adm004
+2025-10-03 02:01:46 INFO  ExcelSchoolServer:526 - NEW student detected: adm005
+2025-10-03 02:01:46 INFO  ExcelSchoolServer:526 - NEW student detected: adm006
+2025-10-03 02:01:46 INFO  ExcelSchoolServer:526 - NEW student detected: adm0010
+2025-10-03 02:01:46 INFO  ExcelSchoolServer:526 - NEW student detected: adm0011
+2025-10-03 02:01:46 INFO  ExcelSchoolServer:526 - NEW student detected: adm0012
+2025-10-03 02:01:46 INFO  ExcelSchoolServer:526 - NEW student detected: adm0013
+2025-10-03 02:01:46 INFO  ExcelSchoolServer:526 - NEW student detected: adm0020
+2025-10-03 02:01:46 INFO  ExcelSchoolServer:526 - NEW student detected: adm007
+2025-10-03 02:01:46 INFO  ExcelSchoolServer:526 - NEW student detected: adm0014
+2025-10-03 02:01:46 INFO  ExcelSchoolServer:526 - NEW student detected: adm0023
+2025-10-03 02:01:46 INFO  ExcelSchoolServer:526 - NEW student detected: adm0022
+2025-10-03 02:01:46 INFO  ExcelSchoolServer:526 - NEW student detected: adm0021
+2025-10-03 02:01:46 INFO  ExcelSchoolServer:526 - NEW student detected: adm0025
+2025-10-03 02:01:46 INFO  ExcelSchoolServer:551 - Change detection: 17 new, 0 updated, 0 removed, 0 duplicates, 0 invalid skipped
+2025-10-03 02:01:46 INFO  ExcelSchoolServer:556 - Processing 17 changes in database
+2025-10-03 02:01:46 INFO  ExcelSchoolServer:599 - Attempting to process 17 records in database
+2025-10-03 02:01:46 INFO  LearnerService:228 - Cleaning up duplicate records in database for school: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-10-03 02:01:48 ERROR LearnerService:250 - Error cleaning up database duplicates
+org.postgresql.util.PSQLException: ERROR: function max(uuid) does not exist
+  Hint: No function matches the given name and argument types. You might need to add explicit type casts.
+  Position: 59
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2725) ~[postgresql-42.7.3.jar:?]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2412) ~[postgresql-42.7.3.jar:?]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:371) ~[postgresql-42.7.3.jar:?]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:502) ~[postgresql-42.7.3.jar:?]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:419) ~[postgresql-42.7.3.jar:?]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194) ~[postgresql-42.7.3.jar:?]
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:155) ~[postgresql-42.7.3.jar:?]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-5.1.0.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-5.1.0.jar:?]
+	at com.cms.clubmanagementsystem.service.LearnerService.cleanupDuplicates(LearnerService.java:246) ~[classes/:?]
+	at com.cms.clubmanagementsystem.service.ExcelSchoolServer.cleanupDatabaseDuplicates(ExcelSchoolServer.java:585) ~[classes/:?]
+	at com.cms.clubmanagementsystem.service.ExcelSchoolServer.processChangesInDatabase(ExcelSchoolServer.java:604) ~[classes/:?]
+	at com.cms.clubmanagementsystem.service.ExcelSchoolServer.detectChanges(ExcelSchoolServer.java:557) ~[classes/:?]
+	at com.cms.clubmanagementsystem.service.ExcelSchoolServer.loadExcelData(ExcelSchoolServer.java:224) ~[classes/:?]
+	at com.cms.clubmanagementsystem.service.ExcelSchoolServer.loadExcelDataWithRetryOnLock(ExcelSchoolServer.java:241) ~[classes/:?]
+	at com.cms.clubmanagementsystem.service.ExcelSchoolServer.start(ExcelSchoolServer.java:151) ~[classes/:?]
+	at com.cms.clubmanagementsystem.Main.startExcelSchoolServer(Main.java:249) ~[classes/:?]
+	at com.cms.clubmanagementsystem.Main.onSchoolLogin(Main.java:83) ~[classes/:?]
+	at com.cms.clubmanagementsystem.controller.LoginController.handleLogin(LoginController.java:197) ~[classes/:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:72) ~[javafx-base-21.0.2-win.jar:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:270) ~[javafx-base-21.0.2-win.jar:?]
+	at com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:84) ~[javafx-fxml-21.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1853) ~[javafx-fxml-21.0.2-win.jar:?]
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1726) ~[javafx-fxml-21.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86) ~[javafx-base-21.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232) ~[javafx-base-21.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189) ~[javafx-base-21.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-21.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-21.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-21.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-21.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-21.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-21.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-21.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-21.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49) ~[javafx-base-21.0.2-win.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-21.0.2-win.jar:?]
+	at javafx.scene.Node.fireEvent(Node.java:8875) ~[javafx-graphics-21.0.2-win.jar:?]
+	at javafx.scene.control.Button.fire(Button.java:203) ~[javafx-controls-21.0.2-win.jar:?]
+	at com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207) ~[javafx-controls-21.0.2-win.jar:?]
+	at com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274) ~[javafx-controls-21.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247) ~[javafx-base-21.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80) ~[javafx-base-21.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232) ~[javafx-base-21.0.2-win.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189) ~[javafx-base-21.0.2-win.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-21.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-21.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-21.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-21.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-21.0.2-win.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-21.0.2-win.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-21.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-21.0.2-win.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54) ~[javafx-base-21.0.2-win.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-21.0.2-win.jar:?]
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3984) ~[javafx-graphics-21.0.2-win.jar:?]
+	at javafx.scene.Scene.processMouseEvent(Scene.java:1890) ~[javafx-graphics-21.0.2-win.jar:?]
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708) ~[javafx-graphics-21.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411) ~[javafx-graphics-21.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301) ~[javafx-graphics-21.0.2-win.jar:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:400) ~[?:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450) ~[javafx-graphics-21.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424) ~[javafx-graphics-21.0.2-win.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449) ~[javafx-graphics-21.0.2-win.jar:?]
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:551) ~[javafx-graphics-21.0.2-win.jar:?]
+	at com.sun.glass.ui.View.notifyMouse(View.java:937) ~[javafx-graphics-21.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx-graphics-21.0.2-win.jar:?]
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185) ~[javafx-graphics-21.0.2-win.jar:?]
+	at java.lang.Thread.run(Thread.java:1583) [?:?]
+2025-10-03 02:01:48 INFO  ExcelSchoolServer:586 - Removed 0 duplicate records from database
+2025-10-03 02:01:48 INFO  ExcelSchoolServer:608 - Raw date strings from Excel:
+2025-10-03 02:01:48 INFO  ExcelSchoolServer:610 -   adm001: '2020-02-02'
+2025-10-03 02:01:48 INFO  ExcelSchoolServer:610 -   adm002: '2023-04-08'
+2025-10-03 02:01:48 INFO  ExcelSchoolServer:610 -   adm003: '2030-04-05'
+2025-10-03 02:01:48 INFO  ExcelSchoolServer:610 -   adm004: '1990-06-06'
+2025-10-03 02:01:48 INFO  ExcelSchoolServer:610 -   adm005: '2025-06-09'
+2025-10-03 02:01:48 INFO  ExcelSchoolServer:610 -   adm006: '2023-09-09'
+2025-10-03 02:01:48 INFO  ExcelSchoolServer:610 -   adm0010: '2018-08-16'
+2025-10-03 02:01:48 INFO  ExcelSchoolServer:610 -   adm0011: '2019-12-03'
+2025-10-03 02:01:48 INFO  ExcelSchoolServer:610 -   adm0012: '2014-12-30'
+2025-10-03 02:01:48 INFO  ExcelSchoolServer:610 -   adm0013: '2025-09-15'
+2025-10-03 02:01:48 INFO  ExcelSchoolServer:610 -   adm0020: '2021-01-01'
+2025-10-03 02:01:48 INFO  ExcelSchoolServer:610 -   adm007: '2022-11-02'
+2025-10-03 02:01:48 INFO  ExcelSchoolServer:610 -   adm0014: '2020-12-01'
+2025-10-03 02:01:48 INFO  ExcelSchoolServer:610 -   adm0023: '2012-02-02'
+2025-10-03 02:01:48 INFO  ExcelSchoolServer:610 -   adm0022: '2019-11-23'
+2025-10-03 02:01:48 INFO  ExcelSchoolServer:610 -   adm0021: '2009-01-01'
+2025-10-03 02:01:48 INFO  ExcelSchoolServer:610 -   adm0025: '2008-02-02'
+2025-10-03 02:01:48 INFO  LearnerService:659 - School validation: OK - School: main campus
+2025-10-03 02:01:49 INFO  LearnerService:680 - Found 12 grades for school
+2025-10-03 02:01:50 INFO  LearnerService:587 - Import results: 17 total, 17 successful, 0 failed
+2025-10-03 02:01:50 INFO  ExcelSchoolServer:623 - ✅ Successfully processed 17 changes in database
+2025-10-03 02:01:50 INFO  ExcelSchoolServer:228 - Successfully processed 17 learners from Excel
+2025-10-03 02:01:50 INFO  ExcelSchoolServer:159 - Excel School Server started successfully
+2025-10-03 02:01:50 INFO  Main:250 - Excel School Server started for file: C:/Users/user/Desktop/learners.xlsx
+2025-10-03 02:01:50 INFO  Main:85 - Services started for school ID: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-10-03 02:01:50 INFO  LoginController:208 - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-10-03 02:01:50 WARN  LoginController:306 - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-10-03 02:01:50 INFO  ExcelSchoolServer:702 - Watching directory for Excel file changes: C:\Users\user\Desktop
+2025-10-03 02:01:51 INFO  OverviewController:52 - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-10-03 02:01:51 INFO  OverviewController:60 - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-10-03 02:15:12 INFO  Main:414 - Application shutdown initiated
+2025-10-03 02:15:12 WARN  WebhookService:115 - Unauthorized webhook attempt - missing API key from IP: 127.0.0.1, User-Agent: Java-http-client/21.0.7
+2025-10-03 02:15:12 INFO  WebhookService:349 - Successfully unregistered webhook from school server
+2025-10-03 02:15:12 INFO  EmbeddedJettyServer:171 - >>> Spark shutting down ...
+2025-10-03 02:15:12 INFO  AbstractConnector:383 - Stopped ServerConnector@726246b6{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-10-03 02:15:12 INFO  session:149 - node0 Stopped scavenging
+2025-10-03 02:15:12 INFO  EmbeddedJettyServer:180 - done
+2025-10-03 02:15:12 INFO  WebhookService:389 - Webhook service stopped
+2025-10-03 02:15:12 INFO  Main:347 - Shutting down cleanup scheduler...
+2025-10-03 02:15:12 INFO  ExcelSchoolServer:178 - Excel School Server stopped gracefully
+2025-10-03 02:15:12 INFO  Main:405 - Excel School Server stopped
+2025-10-03 02:15:12 INFO  SessionManager:119 - Session closed
+2025-10-03 02:15:13 INFO  HikariDataSource:349 - CMS-Pool - Shutdown initiated...
+2025-10-03 02:15:13 INFO  HikariDataSource:351 - CMS-Pool - Shutdown completed.
+2025-10-03 02:15:13 INFO  Main:429 - Application stopped successfully
