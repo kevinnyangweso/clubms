@@ -1,6 +1,6 @@
 package com.cms.clubmanagementsystem.service;
 
-import com.cms.clubmanagementsystem.controller.EnrollmentController.ClubInfo;
+import com.cms.clubmanagementsystem.model.ClubInfo;
 import com.cms.clubmanagementsystem.model.ClubSchedule;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;

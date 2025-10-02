@@ -92,3 +92,31 @@
     -fx-background-color: #3498db;
     -fx-text-fill: white;
 }
+
+/* Reports specific styles */
+.chart {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+}
+
+.metric-card {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+}
+
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5;
+}
+
+.button {
+    -fx-cursor: hand;
+}
+
+.table-view {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+}

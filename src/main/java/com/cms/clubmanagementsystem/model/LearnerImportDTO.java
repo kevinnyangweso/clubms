@@ -9,7 +9,8 @@ public class LearnerImportDTO {
     private String gradeName;
     private UUID gradeId;
     private LocalDate dateJoined;
-    private String gender; // Added gender field
+    private String gender;
+    private String status;
     private boolean isValid;
     private String errorMessage;
 
@@ -29,7 +30,6 @@ public class LearnerImportDTO {
     public LocalDate getDateJoined() { return dateJoined; }
     public void setDateJoined(LocalDate dateJoined) { this.dateJoined = dateJoined; }
 
-    // Added gender getter and setter
     public String getGender() { return gender; }
     public void setGender(String gender) { this.gender = gender; }
 

@@ -1,0 +1,286 @@
+2025-09-12 07:49:38 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Environment variables loaded successfully
+2025-09-12 07:49:38 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Started periodic cleanup scheduler for expired transient data
+2025-09-12 07:49:38 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook HMAC validation enabled
+2025-09-12 07:49:38 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook API authentication enabled
+2025-09-12 07:49:38 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Webhook listener service initializing on port 8080
+2025-09-12 07:49:40 INFO  [Thread-3] org.eclipse.jetty.util.log - Logging initialized @41085ms to org.eclipse.jetty.util.log.Slf4jLog
+2025-09-12 07:49:42 INFO  [Thread-3] s.e.jetty.EmbeddedJettyServer - == Spark has ignited ...
+2025-09-12 07:49:42 INFO  [Thread-3] s.e.jetty.EmbeddedJettyServer - >> Listening on 0.0.0.0:8080
+2025-09-12 07:49:43 INFO  [Thread-3] org.eclipse.jetty.server.Server - jetty-9.4.48.v20220622; built: 2022-06-21T20:42:25.880Z; git: 6b67c5719d1f4371b33655ff2d047d24e171e49a; jvm 21.0.7+8-LTS-245
+2025-09-12 07:49:43 INFO  [Thread-3] org.eclipse.jetty.server.session - DefaultSessionIdManager workerName=node0
+2025-09-12 07:49:43 INFO  [Thread-3] org.eclipse.jetty.server.session - No SessionScavenger set, using defaults
+2025-09-12 07:49:43 INFO  [Thread-3] org.eclipse.jetty.server.session - node0 Scavenging every 660000ms
+2025-09-12 07:49:44 INFO  [Thread-3] o.e.jetty.server.AbstractConnector - Started ServerConnector@6a6ae762{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-09-12 07:49:44 INFO  [Thread-3] org.eclipse.jetty.server.Server - Started @44845ms
+2025-09-12 07:49:44 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Webhook service started successfully on port 8080 - Authentication: true
+2025-09-12 07:49:44 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Starting Excel School Server monitor for file: C:\Users\user\Desktop\learners.xlsx
+2025-09-12 07:49:47 WARN  [qtp223491039-44] c.c.c.service.WebhookService - Unauthorized webhook attempt - missing API key from IP: 127.0.0.1, User-Agent: Java-http-client/21.0.7
+2025-09-12 07:49:47 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Successfully registered webhook with school server
+2025-09-12 07:49:47 INFO  [Webhook-Service-Thread] com.cms.clubmanagementsystem.Main - Webhook registered successfully with school server
+2025-09-12 07:49:53 WARN  [qtp223491039-39] c.c.c.service.WebhookService - Missing HMAC signature from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0
+2025-09-12 07:49:53 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm003 - Status: 200
+2025-09-12 07:49:53 WARN  [qtp223491039-44] c.c.c.service.WebhookService - Missing HMAC signature from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0
+2025-09-12 07:49:53 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm002 - Status: 200
+2025-09-12 07:49:53 WARN  [qtp223491039-45] c.c.c.service.WebhookService - Missing HMAC signature from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0
+2025-09-12 07:49:53 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm005 - Status: 200
+2025-09-12 07:49:53 WARN  [qtp223491039-34] c.c.c.service.WebhookService - Missing HMAC signature from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0
+2025-09-12 07:49:53 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm004 - Status: 200
+2025-09-12 07:49:53 WARN  [qtp223491039-44] c.c.c.service.WebhookService - Missing HMAC signature from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0
+2025-09-12 07:49:53 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm006 - Status: 200
+2025-09-12 07:49:53 WARN  [qtp223491039-45] c.c.c.service.WebhookService - Missing HMAC signature from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0
+2025-09-12 07:49:53 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm001 - Status: 200
+2025-09-12 07:49:53 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Loaded 6 learners from Excel
+2025-09-12 07:49:53 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Excel School Server started for file: C:/Users/user/Desktop/learners.xlsx
+2025-09-12 07:49:54 INFO  [Excel-File-Watcher] c.c.c.service.ExcelSchoolServer - Watching directory for Excel file changes: C:\Users\user\Desktop
+2025-09-12 07:50:02 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Application UI launched successfully
+2025-09-12 07:50:34 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-09-12 07:50:43 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@17674be6
+2025-09-12 07:50:43 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-09-12 07:50:49 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-12 07:50:49 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-09-12 07:50:49 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-09-12 07:50:49 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-09-12 07:50:49 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-12 07:50:49 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-12 08:00:57 INFO  [Excel-File-Watcher] c.c.c.service.ExcelSchoolServer - Excel file changed via file system events
+2025-09-12 08:00:58 WARN  [qtp223491039-63] c.c.c.service.WebhookService - Missing HMAC signature from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0
+2025-09-12 08:00:58 INFO  [Excel-File-Watcher] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm0010 - Status: 200
+2025-09-12 08:00:58 INFO  [Excel-File-Watcher] c.c.c.service.ExcelSchoolServer - Loaded 7 learners from Excel
+2025-09-12 08:00:58 INFO  [Excel-File-Watcher] c.c.c.service.ExcelSchoolServer - Excel file changed via file system events
+2025-09-12 08:00:59 INFO  [Excel-File-Watcher] c.c.c.service.ExcelSchoolServer - Loaded 7 learners from Excel
+2025-09-12 08:00:59 INFO  [Excel-File-Watcher] c.c.c.service.ExcelSchoolServer - Excel file changed via file system events
+2025-09-12 08:01:00 INFO  [Excel-File-Watcher] c.c.c.service.ExcelSchoolServer - Loaded 7 learners from Excel
+2025-09-12 08:19:04 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Environment variables loaded successfully
+2025-09-12 08:19:04 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Started periodic cleanup scheduler for expired transient data
+2025-09-12 08:19:06 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook HMAC validation enabled
+2025-09-12 08:19:06 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook API authentication enabled
+2025-09-12 08:19:06 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Webhook listener service initializing on port 8080
+2025-09-12 08:19:08 INFO  [Thread-3] org.eclipse.jetty.util.log - Logging initialized @47031ms to org.eclipse.jetty.util.log.Slf4jLog
+2025-09-12 08:19:16 INFO  [Thread-3] s.e.jetty.EmbeddedJettyServer - == Spark has ignited ...
+2025-09-12 08:19:16 INFO  [Thread-3] s.e.jetty.EmbeddedJettyServer - >> Listening on 0.0.0.0:8080
+2025-09-12 08:19:17 INFO  [Thread-3] org.eclipse.jetty.server.Server - jetty-9.4.48.v20220622; built: 2022-06-21T20:42:25.880Z; git: 6b67c5719d1f4371b33655ff2d047d24e171e49a; jvm 21.0.7+8-LTS-245
+2025-09-12 08:19:17 INFO  [Thread-3] org.eclipse.jetty.server.session - DefaultSessionIdManager workerName=node0
+2025-09-12 08:19:17 INFO  [Thread-3] org.eclipse.jetty.server.session - No SessionScavenger set, using defaults
+2025-09-12 08:19:17 INFO  [Thread-3] org.eclipse.jetty.server.session - node0 Scavenging every 600000ms
+2025-09-12 08:19:22 INFO  [Thread-3] o.e.jetty.server.AbstractConnector - Started ServerConnector@46c8dbd5{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-09-12 08:19:22 INFO  [Thread-3] org.eclipse.jetty.server.Server - Started @60417ms
+2025-09-12 08:19:22 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Webhook service started successfully on port 8080 - Authentication: true
+2025-09-12 08:19:24 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Starting Excel School Server monitor for file: C:\Users\user\Desktop\learners.xlsx
+2025-09-12 08:19:30 WARN  [qtp685702634-43] c.c.c.service.WebhookService - Unauthorized webhook attempt - missing API key from IP: 127.0.0.1, User-Agent: Java-http-client/21.0.7
+2025-09-12 08:19:31 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Successfully registered webhook with school server
+2025-09-12 08:19:31 INFO  [Webhook-Service-Thread] com.cms.clubmanagementsystem.Main - Webhook registered successfully with school server
+2025-09-12 08:19:43 WARN  [qtp685702634-41] c.c.c.service.WebhookService - Missing HMAC signature from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0
+2025-09-12 08:19:43 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm003 - Status: 200
+2025-09-12 08:19:43 WARN  [qtp685702634-43] c.c.c.service.WebhookService - Missing HMAC signature from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0
+2025-09-12 08:19:43 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm002 - Status: 200
+2025-09-12 08:19:43 WARN  [qtp685702634-44] c.c.c.service.WebhookService - Missing HMAC signature from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0
+2025-09-12 08:19:43 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm005 - Status: 200
+2025-09-12 08:19:43 WARN  [qtp685702634-33] c.c.c.service.WebhookService - Missing HMAC signature from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0
+2025-09-12 08:19:43 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm004 - Status: 200
+2025-09-12 08:19:43 WARN  [qtp685702634-41] c.c.c.service.WebhookService - Missing HMAC signature from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0
+2025-09-12 08:19:43 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm006 - Status: 200
+2025-09-12 08:19:43 WARN  [qtp685702634-43] c.c.c.service.WebhookService - Missing HMAC signature from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0
+2025-09-12 08:19:43 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm001 - Status: 200
+2025-09-12 08:19:43 WARN  [qtp685702634-44] c.c.c.service.WebhookService - Missing HMAC signature from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0
+2025-09-12 08:19:43 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm0010 - Status: 200
+2025-09-12 08:19:43 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Loaded 7 learners from Excel
+2025-09-12 08:19:43 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Excel School Server started for file: C:/Users/user/Desktop/learners.xlsx
+2025-09-12 08:19:43 INFO  [Excel-File-Watcher] c.c.c.service.ExcelSchoolServer - Watching directory for Excel file changes: C:\Users\user\Desktop
+2025-09-12 08:19:55 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Application UI launched successfully
+2025-09-12 08:20:50 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-09-12 08:20:55 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@63a8f33
+2025-09-12 08:20:55 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-09-12 08:20:58 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-12 08:20:58 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-09-12 08:20:58 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-09-12 08:20:58 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-09-12 08:20:58 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-12 08:20:58 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-12 08:24:41 INFO  [Excel-File-Watcher] c.c.c.service.ExcelSchoolServer - Excel file changed via file system events
+2025-09-12 08:24:43 WARN  [qtp685702634-63] c.c.c.service.WebhookService - Missing HMAC signature from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0
+2025-09-12 08:24:43 INFO  [Excel-File-Watcher] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm0011 - Status: 200
+2025-09-12 08:24:43 INFO  [Excel-File-Watcher] c.c.c.service.ExcelSchoolServer - Loaded 8 learners from Excel
+2025-09-12 08:24:43 INFO  [Excel-File-Watcher] c.c.c.service.ExcelSchoolServer - Excel file changed via file system events
+2025-09-12 08:24:44 INFO  [Excel-File-Watcher] c.c.c.service.ExcelSchoolServer - Loaded 8 learners from Excel
+2025-09-12 08:24:44 INFO  [Excel-File-Watcher] c.c.c.service.ExcelSchoolServer - Excel file changed via file system events
+2025-09-12 08:24:45 INFO  [Excel-File-Watcher] c.c.c.service.ExcelSchoolServer - Loaded 8 learners from Excel
+2025-09-12 08:41:46 INFO  [Thread-11] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown initiated...
+2025-09-12 08:50:01 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Environment variables loaded successfully
+2025-09-12 08:50:01 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Started periodic cleanup scheduler for expired transient data
+2025-09-12 08:50:06 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook HMAC validation enabled
+2025-09-12 08:50:06 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook API authentication enabled
+2025-09-12 08:50:06 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Webhook listener service initializing on port 8080
+2025-09-12 08:50:09 INFO  [Thread-3] org.eclipse.jetty.util.log - Logging initialized @65974ms to org.eclipse.jetty.util.log.Slf4jLog
+2025-09-12 08:50:12 INFO  [Thread-3] s.e.jetty.EmbeddedJettyServer - == Spark has ignited ...
+2025-09-12 08:50:12 INFO  [Thread-3] s.e.jetty.EmbeddedJettyServer - >> Listening on 0.0.0.0:8080
+2025-09-12 08:50:13 INFO  [Thread-3] org.eclipse.jetty.server.Server - jetty-9.4.48.v20220622; built: 2022-06-21T20:42:25.880Z; git: 6b67c5719d1f4371b33655ff2d047d24e171e49a; jvm 21.0.7+8-LTS-245
+2025-09-12 08:50:14 INFO  [Thread-3] org.eclipse.jetty.server.session - DefaultSessionIdManager workerName=node0
+2025-09-12 08:50:14 INFO  [Thread-3] org.eclipse.jetty.server.session - No SessionScavenger set, using defaults
+2025-09-12 08:50:14 INFO  [Thread-3] org.eclipse.jetty.server.session - node0 Scavenging every 660000ms
+2025-09-12 08:50:23 INFO  [Thread-3] o.e.jetty.server.AbstractConnector - Started ServerConnector@bd7ae18{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-09-12 08:50:23 INFO  [Thread-3] org.eclipse.jetty.server.Server - Started @79520ms
+2025-09-12 08:50:23 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Webhook service started successfully on port 8080 - Authentication: true
+2025-09-12 08:50:25 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - HMAC signature support enabled
+2025-09-12 08:50:25 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Starting Excel School Server monitor for file: C:\Users\user\Desktop\learners.xlsx
+2025-09-12 08:50:28 WARN  [qtp1432686853-43] c.c.c.service.WebhookService - Unauthorized webhook attempt - missing API key from IP: 127.0.0.1, User-Agent: Java-http-client/21.0.7
+2025-09-12 08:50:29 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Successfully registered webhook with school server
+2025-09-12 08:50:29 INFO  [Webhook-Service-Thread] com.cms.clubmanagementsystem.Main - Webhook registered successfully with school server
+2025-09-12 08:50:57 INFO  [qtp1432686853-38] c.c.c.service.WebhookService - Webhook processed successfully from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0 in 315 ms - Event: new_student, Admission: adm003
+2025-09-12 08:50:57 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm003 - Status: 200
+2025-09-12 08:50:57 INFO  [qtp1432686853-43] c.c.c.service.WebhookService - Webhook processed successfully from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0 in 0 ms - Event: new_student, Admission: adm002
+2025-09-12 08:50:57 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm002 - Status: 200
+2025-09-12 08:50:57 INFO  [qtp1432686853-44] c.c.c.service.WebhookService - Webhook processed successfully from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0 in 1 ms - Event: new_student, Admission: adm005
+2025-09-12 08:50:57 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm005 - Status: 200
+2025-09-12 08:50:57 INFO  [qtp1432686853-33] c.c.c.service.WebhookService - Webhook processed successfully from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0 in 0 ms - Event: new_student, Admission: adm004
+2025-09-12 08:50:57 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm004 - Status: 200
+2025-09-12 08:50:57 INFO  [qtp1432686853-38] c.c.c.service.WebhookService - Webhook processed successfully from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0 in 1 ms - Event: new_student, Admission: adm006
+2025-09-12 08:50:57 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm006 - Status: 200
+2025-09-12 08:50:57 INFO  [qtp1432686853-43] c.c.c.service.WebhookService - Webhook processed successfully from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0 in 1 ms - Event: new_student, Admission: adm0011
+2025-09-12 08:50:57 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm0011 - Status: 200
+2025-09-12 08:50:57 INFO  [qtp1432686853-44] c.c.c.service.WebhookService - Webhook processed successfully from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0 in 1 ms - Event: new_student, Admission: adm001
+2025-09-12 08:50:57 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm001 - Status: 200
+2025-09-12 08:50:57 INFO  [qtp1432686853-33] c.c.c.service.WebhookService - Webhook processed successfully from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0 in 0 ms - Event: new_student, Admission: adm0010
+2025-09-12 08:50:57 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm0010 - Status: 200
+2025-09-12 08:50:57 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Loaded 8 learners from Excel
+2025-09-12 08:50:57 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Excel School Server started for file: C:/Users/user/Desktop/learners.xlsx
+2025-09-12 08:50:57 INFO  [Excel-File-Watcher] c.c.c.service.ExcelSchoolServer - Watching directory for Excel file changes: C:\Users\user\Desktop
+2025-09-12 08:51:15 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Application UI launched successfully
+2025-09-12 08:51:15 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Webhook received - Event: new_student, Admission: adm003
+2025-09-12 08:51:15 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Refreshing student data due to webhook notification
+2025-09-12 08:51:15 WARN  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - No school ID in session, cannot fetch students
+2025-09-12 08:51:15 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Webhook received - Event: new_student, Admission: adm002
+2025-09-12 08:51:15 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Refreshing student data due to webhook notification
+2025-09-12 08:51:15 WARN  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - No school ID in session, cannot fetch students
+2025-09-12 08:51:15 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Webhook received - Event: new_student, Admission: adm005
+2025-09-12 08:51:15 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Refreshing student data due to webhook notification
+2025-09-12 08:51:15 WARN  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - No school ID in session, cannot fetch students
+2025-09-12 08:51:15 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Webhook received - Event: new_student, Admission: adm004
+2025-09-12 08:51:15 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Refreshing student data due to webhook notification
+2025-09-12 08:51:15 WARN  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - No school ID in session, cannot fetch students
+2025-09-12 08:51:15 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Webhook received - Event: new_student, Admission: adm006
+2025-09-12 08:51:15 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Refreshing student data due to webhook notification
+2025-09-12 08:51:15 WARN  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - No school ID in session, cannot fetch students
+2025-09-12 08:51:15 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Webhook received - Event: new_student, Admission: adm0011
+2025-09-12 08:51:15 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Refreshing student data due to webhook notification
+2025-09-12 08:51:15 WARN  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - No school ID in session, cannot fetch students
+2025-09-12 08:51:15 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Webhook received - Event: new_student, Admission: adm001
+2025-09-12 08:51:15 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Refreshing student data due to webhook notification
+2025-09-12 08:51:15 WARN  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - No school ID in session, cannot fetch students
+2025-09-12 08:51:15 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Webhook received - Event: new_student, Admission: adm0010
+2025-09-12 08:51:15 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Refreshing student data due to webhook notification
+2025-09-12 08:51:15 WARN  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - No school ID in session, cannot fetch students
+2025-09-12 08:52:12 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Starting...
+2025-09-12 08:52:19 INFO  [JavaFX Application Thread] com.zaxxer.hikari.pool.HikariPool - CMS-Pool - Added connection org.postgresql.jdbc.PgConnection@27fdb277
+2025-09-12 08:52:19 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Start completed.
+2025-09-12 08:52:24 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - Invalid password attempt for username=mw1
+2025-09-12 08:52:33 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-12 08:52:33 INFO  [JavaFX Application Thread] c.c.c.utils.SessionManager - Session created for username=mw1 userId=6748e77d-a21d-4fee-94ad-a0532bd88c68 schoolId=9d47203f-4e54-47ac-a560-eeb277794e76 schoolName=main campus role=club_coordinator
+2025-09-12 08:52:33 INFO  [JavaFX Application Thread] c.c.c.controller.LoginController - User 'mw1' logged in successfully (userId=6748e77d-a21d-4fee-94ad-a0532bd88c68, schoolId=9d47203f-4e54-47ac-a560-eeb277794e76, role=club_coordinator)
+2025-09-12 08:52:33 WARN  [JavaFX Application Thread] c.c.c.controller.LoginController - Unknown role 'club_coordinator', redirecting to coordinator dashboard
+2025-09-12 08:52:33 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - === OVERVIEW CONTROLLER INITIALIZATION ===
+2025-09-12 08:52:33 INFO  [JavaFX Application Thread] c.c.c.controller.OverviewController - ✅ School ID found: 9d47203f-4e54-47ac-a560-eeb277794e76
+2025-09-12 08:55:50 INFO  [Excel-File-Watcher] c.c.c.service.ExcelSchoolServer - Excel file changed via file system events
+2025-09-12 08:55:52 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Webhook received - Event: student_updated, Admission: adm0011
+2025-09-12 08:55:52 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Refreshing student data due to webhook notification
+2025-09-12 08:55:52 INFO  [qtp1432686853-63] c.c.c.service.WebhookService - Webhook processed successfully from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0 in 2 ms - Event: student_updated, Admission: adm0011
+2025-09-12 08:55:52 INFO  [Excel-File-Watcher] c.c.c.service.ExcelSchoolServer - Sent student_updated webhook for adm0011 - Status: 200
+2025-09-12 08:55:52 INFO  [Excel-File-Watcher] c.c.c.service.ExcelSchoolServer - Loaded 8 learners from Excel
+2025-09-12 08:55:52 INFO  [Excel-File-Watcher] c.c.c.service.ExcelSchoolServer - Excel file changed via file system events
+2025-09-12 08:55:53 INFO  [Excel-File-Watcher] c.c.c.service.ExcelSchoolServer - Loaded 8 learners from Excel
+2025-09-12 08:55:53 INFO  [Excel-File-Watcher] c.c.c.service.ExcelSchoolServer - Excel file changed via file system events
+2025-09-12 08:55:54 INFO  [Excel-File-Watcher] c.c.c.service.ExcelSchoolServer - Loaded 8 learners from Excel
+2025-09-12 08:55:54 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Refreshed student data with 10 learners
+2025-09-12 09:07:45 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Application shutdown initiated
+2025-09-12 09:07:47 WARN  [qtp1432686853-71] c.c.c.service.WebhookService - Unauthorized webhook attempt - missing API key from IP: 127.0.0.1, User-Agent: Java-http-client/21.0.7
+2025-09-12 09:07:47 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Successfully unregistered webhook from school server
+2025-09-12 09:07:47 INFO  [Thread-18] s.e.jetty.EmbeddedJettyServer - >>> Spark shutting down ...
+2025-09-12 09:07:50 INFO  [Thread-18] o.e.jetty.server.AbstractConnector - Stopped ServerConnector@bd7ae18{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-09-12 09:07:50 INFO  [Thread-18] org.eclipse.jetty.server.session - node0 Stopped scavenging
+2025-09-12 09:07:51 INFO  [Thread-18] s.e.jetty.EmbeddedJettyServer - done
+2025-09-12 09:07:51 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook service stopped
+2025-09-12 09:07:51 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Shutting down cleanup scheduler...
+2025-09-12 09:07:51 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Excel School Server stopped
+2025-09-12 09:07:51 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Excel School Server stopped
+2025-09-12 09:07:51 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-12 09:07:51 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-12 09:07:52 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown initiated...
+2025-09-12 09:07:53 INFO  [JavaFX Application Thread] com.zaxxer.hikari.HikariDataSource - CMS-Pool - Shutdown completed.
+2025-09-12 09:07:53 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Application stopped successfully
+2025-09-12 09:35:24 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Environment variables loaded successfully
+2025-09-12 09:35:24 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Started periodic cleanup scheduler for expired transient data
+2025-09-12 09:35:25 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook HMAC validation enabled
+2025-09-12 09:35:25 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook API authentication enabled
+2025-09-12 09:35:25 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Webhook listener service initializing on port 8080
+2025-09-12 09:35:25 INFO  [Thread-3] org.eclipse.jetty.util.log - Logging initialized @22571ms to org.eclipse.jetty.util.log.Slf4jLog
+2025-09-12 09:35:26 INFO  [Thread-3] s.e.jetty.EmbeddedJettyServer - == Spark has ignited ...
+2025-09-12 09:35:26 INFO  [Thread-3] s.e.jetty.EmbeddedJettyServer - >> Listening on 0.0.0.0:8080
+2025-09-12 09:35:27 INFO  [Thread-3] org.eclipse.jetty.server.Server - jetty-9.4.48.v20220622; built: 2022-06-21T20:42:25.880Z; git: 6b67c5719d1f4371b33655ff2d047d24e171e49a; jvm 21.0.7+8-LTS-245
+2025-09-12 09:35:27 INFO  [Thread-3] org.eclipse.jetty.server.session - DefaultSessionIdManager workerName=node0
+2025-09-12 09:35:27 INFO  [Thread-3] org.eclipse.jetty.server.session - No SessionScavenger set, using defaults
+2025-09-12 09:35:27 INFO  [Thread-3] org.eclipse.jetty.server.session - node0 Scavenging every 600000ms
+2025-09-12 09:35:30 INFO  [Thread-3] o.e.jetty.server.AbstractConnector - Started ServerConnector@168e0689{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-09-12 09:35:30 INFO  [Thread-3] org.eclipse.jetty.server.Server - Started @27315ms
+2025-09-12 09:35:30 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Webhook service started successfully on port 8080 - Authentication: true
+2025-09-12 09:35:31 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - HMAC signature support enabled
+2025-09-12 09:35:31 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Starting Excel School Server monitor for file: C:\Users\user\Desktop\learners.xlsx
+2025-09-12 09:35:33 WARN  [qtp492099857-43] c.c.c.service.WebhookService - Unauthorized webhook attempt - missing API key from IP: 127.0.0.1, User-Agent: Java-http-client/21.0.7
+2025-09-12 09:35:33 INFO  [Webhook-Service-Thread] c.c.c.service.WebhookService - Successfully registered webhook with school server
+2025-09-12 09:35:33 INFO  [Webhook-Service-Thread] com.cms.clubmanagementsystem.Main - Webhook registered successfully with school server
+2025-09-12 09:35:38 INFO  [qtp492099857-33] c.c.c.service.WebhookService - Webhook processed successfully from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0 in 8 ms - Event: new_student, Admission: adm003
+2025-09-12 09:35:38 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm003 - Status: 200
+2025-09-12 09:35:38 INFO  [qtp492099857-38] c.c.c.service.WebhookService - Webhook processed successfully from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0 in 1 ms - Event: new_student, Admission: adm002
+2025-09-12 09:35:38 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm002 - Status: 200
+2025-09-12 09:35:38 INFO  [qtp492099857-43] c.c.c.service.WebhookService - Webhook processed successfully from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0 in 0 ms - Event: new_student, Admission: adm005
+2025-09-12 09:35:38 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm005 - Status: 200
+2025-09-12 09:35:38 INFO  [qtp492099857-33] c.c.c.service.WebhookService - Webhook processed successfully from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0 in 0 ms - Event: new_student, Admission: adm004
+2025-09-12 09:35:38 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm004 - Status: 200
+2025-09-12 09:35:38 INFO  [qtp492099857-38] c.c.c.service.WebhookService - Webhook processed successfully from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0 in 0 ms - Event: new_student, Admission: adm006
+2025-09-12 09:35:38 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm006 - Status: 200
+2025-09-12 09:35:38 INFO  [qtp492099857-43] c.c.c.service.WebhookService - Webhook processed successfully from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0 in 0 ms - Event: new_student, Admission: adm0011
+2025-09-12 09:35:38 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm0011 - Status: 200
+2025-09-12 09:35:38 INFO  [qtp492099857-33] c.c.c.service.WebhookService - Webhook processed successfully from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0 in 0 ms - Event: new_student, Admission: adm001
+2025-09-12 09:35:38 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm001 - Status: 200
+2025-09-12 09:35:38 INFO  [qtp492099857-38] c.c.c.service.WebhookService - Webhook processed successfully from IP: 127.0.0.1, User-Agent: Excel-School-Server/1.0 in 0 ms - Event: new_student, Admission: adm0010
+2025-09-12 09:35:38 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Sent new_student webhook for adm0010 - Status: 200
+2025-09-12 09:35:38 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Loaded 8 learners from Excel
+2025-09-12 09:35:38 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Excel School Server started for file: C:/Users/user/Desktop/learners.xlsx
+2025-09-12 09:35:38 INFO  [Excel-File-Watcher] c.c.c.service.ExcelSchoolServer - Watching directory for Excel file changes: C:\Users\user\Desktop
+2025-09-12 09:35:43 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Application UI launched successfully
+2025-09-12 09:35:43 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Webhook received - Event: new_student, Admission: adm003
+2025-09-12 09:35:43 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Refreshing student data due to webhook notification
+2025-09-12 09:35:43 WARN  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - No school ID in session, cannot fetch students
+2025-09-12 09:35:43 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Webhook received - Event: new_student, Admission: adm002
+2025-09-12 09:35:43 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Refreshing student data due to webhook notification
+2025-09-12 09:35:43 WARN  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - No school ID in session, cannot fetch students
+2025-09-12 09:35:43 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Webhook received - Event: new_student, Admission: adm005
+2025-09-12 09:35:43 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Refreshing student data due to webhook notification
+2025-09-12 09:35:43 WARN  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - No school ID in session, cannot fetch students
+2025-09-12 09:35:43 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Webhook received - Event: new_student, Admission: adm004
+2025-09-12 09:35:43 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Refreshing student data due to webhook notification
+2025-09-12 09:35:43 WARN  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - No school ID in session, cannot fetch students
+2025-09-12 09:35:43 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Webhook received - Event: new_student, Admission: adm006
+2025-09-12 09:35:43 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Refreshing student data due to webhook notification
+2025-09-12 09:35:43 WARN  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - No school ID in session, cannot fetch students
+2025-09-12 09:35:43 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Webhook received - Event: new_student, Admission: adm0011
+2025-09-12 09:35:43 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Refreshing student data due to webhook notification
+2025-09-12 09:35:43 WARN  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - No school ID in session, cannot fetch students
+2025-09-12 09:35:43 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Webhook received - Event: new_student, Admission: adm001
+2025-09-12 09:35:43 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Refreshing student data due to webhook notification
+2025-09-12 09:35:43 WARN  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - No school ID in session, cannot fetch students
+2025-09-12 09:35:43 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Webhook received - Event: new_student, Admission: adm0010
+2025-09-12 09:35:43 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Refreshing student data due to webhook notification
+2025-09-12 09:35:43 WARN  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - No school ID in session, cannot fetch students
+2025-09-12 09:38:36 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Application shutdown initiated
+2025-09-12 09:38:37 WARN  [qtp492099857-59] c.c.c.service.WebhookService - Unauthorized webhook attempt - missing API key from IP: 127.0.0.1, User-Agent: Java-http-client/21.0.7
+2025-09-12 09:38:37 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Successfully unregistered webhook from school server
+2025-09-12 09:38:37 INFO  [Thread-12] s.e.jetty.EmbeddedJettyServer - >>> Spark shutting down ...
+2025-09-12 09:38:37 INFO  [Thread-12] o.e.jetty.server.AbstractConnector - Stopped ServerConnector@168e0689{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-09-12 09:38:37 INFO  [Thread-12] org.eclipse.jetty.server.session - node0 Stopped scavenging
+2025-09-12 09:38:37 INFO  [Thread-12] s.e.jetty.EmbeddedJettyServer - done
+2025-09-12 09:38:37 INFO  [JavaFX Application Thread] c.c.c.service.WebhookService - Webhook service stopped
+2025-09-12 09:38:37 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Shutting down cleanup scheduler...
+2025-09-12 09:38:37 INFO  [JavaFX Application Thread] c.c.c.service.ExcelSchoolServer - Excel School Server stopped
+2025-09-12 09:38:37 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Excel School Server stopped
+2025-09-12 09:38:37 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-12 09:38:37 DEBUG [JavaFX Application Thread] c.c.c.utils.SessionManager - All transient data cleared.
+2025-09-12 09:38:37 INFO  [JavaFX Application Thread] com.cms.clubmanagementsystem.Main - Application stopped successfully

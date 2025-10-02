@@ -300,3 +300,88 @@
         -fx-background-color: transparent;
     }
 }
+
+.enrollments-table {
+    -fx-font-size: 12px;
+}
+.status-column {
+    -fx-alignment: center;
+}
+
+/* Add to your enrollment-management.css */
+
+.danger-button {
+    -fx-background-color: #dc3545;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4;
+}
+
+.danger-button:hover {
+    -fx-background-color: #c82333;
+}
+
+.danger-button:disabled {
+    -fx-background-color: #e0a0a5;
+    -fx-text-fill: #8a8a8a;
+}
+
+/* Status column styling */
+.status-column {
+    -fx-alignment: CENTER;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell:active {
+    -fx-background-color: #f0fff0;
+}
+
+.table-row-cell:withdrawn {
+    -fx-background-color: #fff0f0;
+}
+
+.table-row-cell:selected:active {
+    -fx-background-color: #d4edda;
+}
+
+.table-row-cell:selected:withdrawn {
+    -fx-background-color: #f8d7da;
+}
+
+/* ScrollPane styling */
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: #f8f9fa;
+}
+
+.scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .track {
+    -fx-background-color: #e9ecef;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #adb5bd;
+    -fx-background-radius: 5px;
+}
+
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #6c757d;
+}
+
+.year-combo-box, .term-combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 4px;
+}
+
+.year-combo-box:error, .term-combo-box:error {
+    -fx-border-color: #dc3545;
+    -fx-border-width: 2px;
+}

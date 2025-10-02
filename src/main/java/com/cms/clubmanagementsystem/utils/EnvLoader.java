@@ -51,4 +51,19 @@ public final class EnvLoader {
         }
         return System.getProperty(key);
     }
+
+    /**
+     * Retrieves the value of an environment variable with a default fallback.
+     *
+     * @param key The environment variable name
+     * @param defaultValue The default value to return if the key is not found
+     * @return The value, or the defaultValue if not found
+     */
+    public static String get(String key, String defaultValue) {
+        if (!loaded) {
+            loadEnv();
+        }
+        String value = System.getProperty(key);
+        return (value != null && !value.isEmpty()) ? value : defaultValue;
+    }
 }

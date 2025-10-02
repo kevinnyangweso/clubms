@@ -43,7 +43,6 @@ public class OverviewController implements Initializable {
     @FXML private Label systemStatusLabel;
     @FXML private ScrollPane scrollPane;
 
-    private UUID currentSchoolId;
     private Timeline refreshTimeline;
     private final SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
     private boolean isFirstLoad = true;
@@ -52,7 +51,7 @@ public class OverviewController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         logger.info("=== OVERVIEW CONTROLLER INITIALIZATION ===");
 
-        currentSchoolId = SessionManager.getCurrentSchoolId();
+        UUID currentSchoolId = SessionManager.getCurrentSchoolId();
 
         if (currentSchoolId == null) {
             logger.error("❌ CURRENT SCHOOL ID IS NULL - Cannot load stats");
@@ -230,9 +229,7 @@ public class OverviewController implements Initializable {
 
                 PauseTransition pause = new PauseTransition(Duration.millis(300));
                 pause.setOnFinished(event -> {
-                    if (label != null) {
-                        label.getStyleClass().remove("stat-update-animation");
-                    }
+                    label.getStyleClass().remove("stat-update-animation");
                 });
                 pause.play();
             }
@@ -258,4 +255,5 @@ public class OverviewController implements Initializable {
             refreshTimeline.stop();
         }
     }
+
 }

@@ -4,10 +4,7 @@ import com.cms.clubmanagementsystem.utils.SessionManager;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.UUID;
 import java.util.Objects;
 
@@ -90,28 +87,40 @@ public class DatabaseConnector {
         }
 
         Connection conn = dataSource.getConnection();
-        applyTenantContext(conn);
+
+        // Only apply tenant context if we have a logged-in user
+        if (SessionManager.isUserLoggedIn()) {
+            applyTenantContext(conn);
+        } else {
+            System.out.println("⚠️  No tenant context applied - no user logged in");
+        }
+
         return conn;
     }
 
-    private static void applyTenantContext(Connection conn) throws SQLException {
+    public static void applyTenantContext(Connection conn) throws SQLException {
         UUID currentSchoolId = SessionManager.getCurrentSchoolId();
         UUID currentUserId = SessionManager.getCurrentUserId();
 
-        if (currentSchoolId != null) {
-            try (PreparedStatement stmt = conn.prepareStatement(
-                    "SELECT set_config('app.current_school_id', ?, false)")) {
-                stmt.setString(1, currentSchoolId.toString());
-                stmt.execute();
-            }
+        System.out.println("🔧 Applying tenant context - School: " + currentSchoolId + ", User: " + currentUserId);
+
+        if (currentSchoolId == null || currentUserId == null) {
+            System.out.println("⚠️  Skipping tenant context - no user logged in");
+            return; // Just return instead of throwing an exception
         }
 
-        if (currentUserId != null) {
-            try (PreparedStatement stmt = conn.prepareStatement(
-                    "SELECT set_config('app.current_user_id', ?, false)")) {
-                stmt.setString(1, currentUserId.toString());
-                stmt.execute();
-            }
+        try (Statement stmt = conn.createStatement()) {
+            // Set school ID
+            stmt.execute("SET app.current_school_id = '" + currentSchoolId.toString() + "'");
+            System.out.println("✅ Set app.current_school_id = " + currentSchoolId);
+
+            // Set user ID
+            stmt.execute("SET app.current_user_id = '" + currentUserId.toString() + "'");
+            System.out.println("✅ Set app.current_user_id = " + currentUserId);
+
+        } catch (SQLException e) {
+            System.err.println("❌ Failed to set tenant context: " + e.getMessage());
+            throw e;
         }
     }
 
@@ -159,5 +168,23 @@ public class DatabaseConnector {
                 shutdown();
             }
         }));
+    }
+
+    // Add this method to your DatabaseConnector class
+    public static int executeUpdate(String sql, Object... params) throws SQLException {
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            // Set parameters
+            for (int i = 0; i < params.length; i++) {
+                stmt.setObject(i + 1, params[i]);
+            }
+
+            return stmt.executeUpdate();
+        } catch (SQLException e) {
+            System.err.println("❌ Error executing update: " + sql);
+            e.printStackTrace();
+            throw e;
+        }
     }
 }

@@ -112,7 +112,7 @@ public class StatsService {
     }
 
     private int getTotalLearners(Connection conn, UUID schoolId) throws SQLException {
-        String sql = "SELECT COUNT(*) FROM learners WHERE school_id = ? AND is_active = TRUE";
+        String sql = "SELECT COUNT(*) FROM learners WHERE school_id = ?";
         return executeCountQuery(conn, sql, schoolId);
     }
 
@@ -191,7 +191,6 @@ public class StatsService {
             }
         }
     }
-
 
     // Helper method
     private int executeCountQuery(Connection conn, String sql, UUID schoolId) throws SQLException {

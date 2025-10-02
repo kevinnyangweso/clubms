@@ -38,3 +38,59 @@
     -fx-border-radius: 10;
     -fx-border-color: #e0e0e0;
 }
+
+/* Attendance Tab Styles */
+.attendance-present {
+    -fx-text-fill: #27ae60;
+    -fx-font-weight: bold;
+}
+
+.attendance-absent {
+    -fx-text-fill: #e74c3c;
+    -fx-font-weight: bold;
+}
+
+.attendance-late {
+    -fx-text-fill: #f39c12;
+    -fx-font-weight: bold;
+}
+
+.session-summary {
+    -fx-background-color: #f8f9fa;
+    -fx-padding: 10;
+    -fx-border-color: #dee2e6;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+}
+
+.filter-controls {
+    -fx-background-color: #ecf0f1;
+    -fx-padding: 10;
+    -fx-border-radius: 5;
+}
+
+/* Learners Tab Styles */
+.learners-table {
+    -fx-font-size: 12px;
+}
+
+.learners-table .table-row-cell:selected {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+.learners-table .table-row-cell:odd {
+    -fx-background-color: #f9f9f9;
+}
+
+.learners-table .table-row-cell:even {
+    -fx-background-color: white;
+}
+
+.stat-card {
+    -fx-background-color: #f5f5f5;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);
+}

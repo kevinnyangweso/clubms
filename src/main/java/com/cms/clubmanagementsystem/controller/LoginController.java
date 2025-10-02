@@ -1,5 +1,6 @@
 package com.cms.clubmanagementsystem.controller;
 
+import com.cms.clubmanagementsystem.Main;
 import com.cms.clubmanagementsystem.utils.DatabaseConnector;
 import com.cms.clubmanagementsystem.utils.SessionManager;
 import com.cms.clubmanagementsystem.utils.TenantContext;
@@ -19,15 +20,14 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ResourceBundle;
 import java.util.UUID;
 
 public class LoginController implements Initializable {
     private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
+
+    private Main mainApp;
 
     @FXML private TextField usernameField;
     @FXML private PasswordField passwordField;
@@ -37,6 +37,9 @@ public class LoginController implements Initializable {
     @FXML private Hyperlink forgotPasswordLink;
     @FXML private Label messageLabel;
 
+    public void setMainApp(Main mainApp) {
+        this.mainApp = mainApp;
+    }
 
     public void initialize(URL location, ResourceBundle resources) {
         passwordVisibleField.setVisible(false);
@@ -169,13 +172,38 @@ public class LoginController implements Initializable {
                     return;
                 }
 
-                // Set the tenant context using the proper method
+                // ✅ CRITICAL FIX: Create session FIRST before any tenant context operations
+                SessionManager.createSession(username, userId, schoolId, schoolName, role);
+
+                // ✅ Now that session is created, get a NEW connection with proper tenant context
                 try (Connection tenantConn = DatabaseConnector.getConnection()) {
-                    TenantContext.setTenant(tenantConn, schoolId.toString(), userId.toString());
+                    // This will now work because SessionManager has the user info
+                    DatabaseConnector.applyTenantContext(tenantConn);
+
+                    // Verify the tenant context was set correctly
+                    try (Statement verifyStmt = tenantConn.createStatement();
+                         ResultSet rs = verifyStmt.executeQuery(
+                                 "SELECT current_setting('app.current_school_id'), current_setting('app.current_user_id')")) {
+                        if (rs.next()) {
+                            String actualSchoolId = rs.getString(1);
+                            String actualUserId = rs.getString(2);
+                            logger.info("Tenant context verified - School: {}, User: {}", actualSchoolId, actualUserId);
+                        }
+                    }
                 }
 
-                // Create session WITHOUT storing the connection (let DatabaseConnector handle it)
-                SessionManager.createSession(username, userId, schoolId, schoolName, role);
+                // ✅ ADD THIS: Call onSchoolLogin to start Excel Server and other services
+                if (mainApp != null) {
+                    mainApp.onSchoolLogin(schoolId);
+                } else {
+                    // Try to get Main from stage as fallback
+                    Main fallbackMain = getMainAppFromStage(event);
+                    if (fallbackMain != null) {
+                        fallbackMain.onSchoolLogin(schoolId);
+                    } else {
+                        logger.error("Cannot start Excel services: Main application reference not available");
+                    }
+                }
 
                 logger.info("User '{}' logged in successfully (userId={}, schoolId={}, role={})",
                         username, userId, schoolId, role);
@@ -210,6 +238,16 @@ public class LoginController implements Initializable {
 
             PasswordChangeController controller = loader.getController();
             controller.initialize(username, userId, () -> {
+                // Password changed successfully - restart services with the same school ID
+                UUID schoolId = SessionManager.getCurrentSchoolId();
+                if (schoolId != null && mainApp != null) {
+                    mainApp.onSchoolLogin(schoolId); // ✅ Restart services
+                }
+
+                // Redirect to dashboard
+                String role = SessionManager.getCurrentUserRole();
+                redirectBasedOnRole(event, role);
+
                 // Password changed successfully - logout and redirect to login page
                 SessionManager.logout();
 
@@ -243,6 +281,19 @@ public class LoginController implements Initializable {
             logger.error("Error loading password change screen: {}", e.getMessage(), e);
             messageLabel.setText("Error loading password change screen.");
         }
+    }
+
+    private Main getMainAppFromStage(ActionEvent event) {
+        try {
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Object userData = stage.getUserData();
+            if (userData instanceof Main) {
+                return (Main) userData;
+            }
+        } catch (Exception e) {
+            logger.warn("Could not get Main application from stage: {}", e.getMessage());
+        }
+        return null;
     }
 
     private void redirectBasedOnRole(ActionEvent event, String role) {

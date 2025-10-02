@@ -6,17 +6,24 @@ import com.cms.clubmanagementsystem.utils.SessionManager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.geometry.Side;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
-import javafx.stage.FileChooser;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -25,7 +32,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.UUID;
 
 public class CoordinatorDashboardController implements Initializable {
 
@@ -40,15 +46,76 @@ public class CoordinatorDashboardController implements Initializable {
     @FXML private Button overviewButton;
     @FXML private Button clubManagementButton;
     @FXML private Button teacherManagementButton;
-    @FXML private Button attendanceButton;
+    @FXML private Button studentsButton;
+    @FXML private Button attendanceSummaryButton;
     @FXML private Button reportsButton;
     @FXML private Button coordinatorManagementButton;
+
+    private ContextMenu studentsContextMenu;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setupUserInfo();
         loadOverview();
         loadStatistics();
+        setupStudentsContextMenu();
+    }
+
+    private void setupStudentsContextMenu() {
+        studentsContextMenu = new ContextMenu();
+
+        MenuItem formatRequirementsItem = new MenuItem("See Format Requirements");
+        formatRequirementsItem.setOnAction(e -> showExcelFormatInfo());
+
+        MenuItem viewStudentsItem = new MenuItem("View Students");
+        viewStudentsItem.setOnAction(e -> viewStudents());
+
+        studentsContextMenu.getItems().addAll(formatRequirementsItem, viewStudentsItem);
+    }
+
+    @FXML
+    private void showStudentsOptions() {
+        // Show context menu below the students button
+        studentsContextMenu.show(studentsButton, Side.BOTTOM, 0, 0);
+    }
+
+    private void showExcelFormatInfo() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Excel File Format Requirements");
+        alert.setHeaderText("Required Columns for Student Import");
+        alert.setGraphic(null);
+
+        VBox content = new VBox(10);
+        content.setPadding(new Insets(15));
+
+        Text title = new Text("Your Excel file must contain these exact column names:");
+        title.setFont(Font.font("System", FontWeight.BOLD, 12));
+
+        Text columns = new Text(
+                "• admission_number (Text)\n" +
+                        "• full_name (Text)\n" +
+                        "• grade_name (Text)\n" +
+                        "• date_joined_school (Date: YYYY-MM-DD)\n" +
+                        "• gender (Text: Male/Female/Other - optional)\n"
+        );
+        columns.setFont(Font.font("System", 12));
+
+        Text note = new Text("Important: The first row must be column headers. Save your file as .xlsx format.");
+        note.setFont(Font.font("System", FontWeight.NORMAL, 10));
+        note.setStyle("-fx-fill: #666;");
+
+        content.getChildren().addAll(title, columns, note);
+        alert.getDialogPane().setContent(content);
+        alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+
+        alert.showAndWait();
+    }
+
+    private void viewStudents() {
+        // Load the student list view
+        loadModule("/fxml/student-list.fxml");
+        clearButtonStyles();
+        studentsButton.setStyle("-fx-background-color: #3498db; -fx-text-fill: white;");
     }
 
     private void setupUserInfo() {
@@ -99,24 +166,10 @@ public class CoordinatorDashboardController implements Initializable {
     }
 
     @FXML
-    private void showTeacherManagement() {
-        loadModuleWithController("/fxml/teacher-management.fxml");
+    private void showCoordinatorManagement() {
+        loadModuleWithController("/fxml/coordinator-management.fxml");
         clearButtonStyles();
-        teacherManagementButton.setStyle("-fx-background-color: #3498db; -fx-text-fill: white;");
-    }
-
-    @FXML
-    private void showAttendance() {
-        loadModule("/fxml/attendance.fxml");
-        clearButtonStyles();
-        attendanceButton.setStyle("-fx-background-color: #3498db; -fx-text-fill: white;");
-    }
-
-    @FXML
-    private void showReports() {
-        loadModule("/fxml/reports.fxml");
-        clearButtonStyles();
-        reportsButton.setStyle("-fx-background-color: #3498db; -fx-text-fill: white;");
+        coordinatorManagementButton.setStyle("-fx-background-color: #3498db; -fx-text-fill: white;");
     }
 
     @FXML
@@ -127,10 +180,24 @@ public class CoordinatorDashboardController implements Initializable {
     }
 
     @FXML
-    private void showCoordinatorManagement() {
-        loadModuleWithController("/fxml/coordinator-management.fxml");
+    private void showAttendanceSummary() {
+        loadModule("/fxml/attendance-summary.fxml");
         clearButtonStyles();
-        coordinatorManagementButton.setStyle("-fx-background-color: #3498db; -fx-text-fill: white;");
+        attendanceSummaryButton.setStyle("-fx-background-color: #3498db; -fx-text-fill: white;");
+    }
+
+    @FXML
+    private void showTeacherManagement() {
+        loadModuleWithController("/fxml/teacher-management.fxml");
+        clearButtonStyles();
+        teacherManagementButton.setStyle("-fx-background-color: #3498db; -fx-text-fill: white;");
+    }
+
+    @FXML
+    private void showReports() {
+        loadModule("/fxml/reports.fxml");
+        clearButtonStyles();
+        reportsButton.setStyle("-fx-background-color: #3498db; -fx-text-fill: white;");
     }
 
     // NEW METHOD: Show club creation form in modal dialog
@@ -193,58 +260,12 @@ public class CoordinatorDashboardController implements Initializable {
 
     private void clearButtonStyles() {
         Button[] buttons = {overviewButton, clubManagementButton, teacherManagementButton,
-                 attendanceButton, reportsButton, coordinatorManagementButton};
+                studentsButton, attendanceSummaryButton, reportsButton, coordinatorManagementButton};
         for (Button button : buttons) {
             if (button != null) {
                 button.setStyle("-fx-background-color: transparent; -fx-text-fill: #ecf0f1;");
             }
         }
-    }
-
-    @FXML
-    private void handleImportLearners() {
-        System.out.println("DEBUG: Import Learners clicked!");
-        try {
-            URL url = getClass().getResource("/fxml/learner-import.fxml");
-            if (url == null) {
-                System.err.println("ERROR: FXML file not found at /fxml/learner-import.fxml");
-                showAlert("Error", "Import feature file not found");
-                return;
-            }
-            System.out.println("DEBUG: FXML file found: " + url);
-
-            loadModule("/fxml/learner-import.fxml");
-            clearButtonStyles();
-            System.out.println("DEBUG: Module loaded successfully");
-        } catch (Exception e) {
-            System.err.println("ERROR loading import module: " + e.getMessage());
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
-    private void handleDownloadTemplate() {
-        System.out.println("DEBUG: Download Template clicked!");
-
-        try {
-            UUID schoolId = SessionManager.getCurrentSchoolId();
-            // Now only pass schoolId, not connection
-            LearnersController learnersController = new LearnersController(schoolId);
-            learnersController.generateCSVTemplate();
-            showAlert("Success", "Template downloaded successfully!");
-
-        } catch (Exception e) {
-            System.err.println("Template download error: " + e.getMessage());
-            showErrorAlert("Template download error: " + e.getMessage());
-        }
-    }
-
-    @FXML
-    private void handleViewStudents() {
-        System.out.println("DEBUG: View Students clicked!");
-        // Load student list view
-        loadModule("/fxml/student-list.fxml");
-        clearButtonStyles();
     }
 
     private void showImportPreviewDialog(List<LearnerImportDTO> learners) {

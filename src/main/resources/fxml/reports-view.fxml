@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.cms.clubmanagementsystem.controller.ReportsController"
+      spacing="20" alignment="TOP_CENTER" prefWidth="900" prefHeight="600"
+      style="-fx-padding: 20;">
+    <children>
+        <Label text="Club Attendance Reports" style="-fx-font-size: 24; -fx-font-weight: bold;" />
+
+        <Label fx:id="reportTitleLabel" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+
+        <TableView fx:id="reportTable" prefHeight="400" prefWidth="860">
+            <columns>
+                <TableColumn fx:id="fullNameColumn" text="Full Name" prefWidth="250" />
+                <TableColumn fx:id="admissionNumberColumn" text="Admission Number" prefWidth="150" />
+                <TableColumn fx:id="gradeColumn" text="Grade" prefWidth="100" />
+                <TableColumn fx:id="sessionsAttendedColumn" text="Sessions Attended" prefWidth="120" />
+                <TableColumn fx:id="totalSessionsColumn" text="Total Sessions" prefWidth="120" />
+                <TableColumn fx:id="attendanceRateColumn" text="Attendance Rate" prefWidth="120" />
+            </columns>
+        </TableView>
+
+        <HBox spacing="20" alignment="CENTER">
+            <Button text="Export to CSV" onAction="#exportToCSV"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;" />
+            <Button text="Close" onAction="#close"
+                    style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-weight: bold;" />
+        </HBox>
+    </children>
+</VBox>

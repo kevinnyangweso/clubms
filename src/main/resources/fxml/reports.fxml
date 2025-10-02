@@ -1,14 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="fxml.Reports"
-            prefHeight="400.0" prefWidth="600.0">
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<VBox xmlns="http://javafx.com/javafx/8.0.171"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.cms.clubmanagementsystem.controller.ReportsCoordinatorController"
+      spacing="20"
+      style="-fx-padding: 20;">
 
-</AnchorPane>
+    <Label text="📊 Reports &amp; Analytics" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+    <!-- Report Configuration Section -->
+    <VBox spacing="15" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10;">
+        <Label text="Generate Report" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+        <HBox spacing="20" alignment="CENTER_LEFT">
+            <!-- Report Type Selection -->
+            <VBox spacing="5">
+                <Label text="Report Type"/>
+                <ComboBox fx:id="reportTypeCombo" prefWidth="200"/>
+            </VBox>
+
+            <!-- Time Period -->
+            <VBox spacing="5">
+                <Label text="Time Period"/>
+                <ComboBox fx:id="timePeriodCombo" prefWidth="150"/>
+            </VBox>
+
+            <!-- Club Selection -->
+            <VBox spacing="5">
+                <Label text="Club (Optional)"/>
+                <ComboBox fx:id="clubCombo" prefWidth="200"/>
+            </VBox>
+
+            <!-- Format Selection -->
+            <VBox spacing="5">
+                <Label text="Format"/>
+                <ComboBox fx:id="formatCombo" prefWidth="120"/>
+            </VBox>
+        </HBox>
+
+        <!-- Date Range (for custom periods) -->
+        <HBox spacing="20" alignment="CENTER_LEFT" fx:id="dateRangeBox" visible="false">
+            <VBox spacing="5">
+                <Label text="Start Date"/>
+                <DatePicker fx:id="startDatePicker" prefWidth="150"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="End Date"/>
+                <DatePicker fx:id="endDatePicker" prefWidth="150"/>
+            </VBox>
+        </HBox>
+
+        <!-- Action Buttons -->
+        <HBox spacing="15">
+            <Button text="📈 Generate Report" onAction="#generateReport"
+                    style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            <Button text="📊 View Analytics" onAction="#showAnalytics"
+                    style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            <Button text="🔄 Refresh Data" onAction="#refreshData"
+                    style="-fx-background-color: #95a5a6; -fx-text-fill: white;"/>
+        </HBox>
+    </VBox>
+
+    <!-- Analytics Dashboard -->
+    <VBox spacing="15" fx:id="analyticsSection" visible="false">
+        <Label text="📈 Analytics Dashboard" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+        <HBox spacing="20">
+            <!-- Key Metrics Cards -->
+            <VBox style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 10;" spacing="10">
+                <Label text="Overall Attendance Rate" style="-fx-font-weight: bold;"/>
+                <Label fx:id="overallAttendanceLabel" text="0%" style="-fx-font-size: 24px; -fx-text-fill: #27ae60;"/>
+                <Label fx:id="attendanceTrendLabel" text="→ No change" style="-fx-font-size: 12px;"/>
+            </VBox>
+
+            <VBox style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 10;" spacing="10">
+                <Label text="Active Clubs" style="-fx-font-weight: bold;"/>
+                <Label fx:id="activeClubsLabel" text="0" style="-fx-font-size: 24px; -fx-text-fill: #3498db;"/>
+                <Label text="Total sessions this month" style="-fx-font-size: 12px;"/>
+            </VBox>
+
+            <VBox style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 10;" spacing="10">
+                <Label text="Enrolled Learners" style="-fx-font-weight: bold;"/>
+                <Label fx:id="enrolledLearnersLabel" text="0" style="-fx-font-size: 24px; -fx-text-fill: #e74c3c;"/>
+                <Label text="Across all clubs" style="-fx-font-size: 12px;"/>
+            </VBox>
+        </HBox>
+
+        <!-- Charts Section -->
+        <GridPane hgap="20" vgap="20">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="50"/>
+                <ColumnConstraints percentWidth="50"/>
+            </columnConstraints>
+
+            <rowConstraints>
+                <RowConstraints percentHeight="50"/>
+                <RowConstraints percentHeight="50"/>
+            </rowConstraints>
+
+            <!-- Attendance Trend Chart -->
+            <VBox style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 10;" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <Label text="Attendance Trend (Last 30 Days)" style="-fx-font-weight: bold;"/>
+                <!-- Chart will be created programmatically -->
+                <VBox fx:id="attendanceTrendChartContainer" prefHeight="250" prefWidth="400"/>
+            </VBox>
+
+            <!-- Club Performance Chart -->
+            <VBox style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <Label text="Club Performance" style="-fx-font-weight: bold;"/>
+                <!-- Chart will be created programmatically -->
+                <VBox fx:id="clubPerformanceChartContainer" prefHeight="250" prefWidth="400"/>
+            </VBox>
+
+            <!-- Session Frequency -->
+            <VBox style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 10;" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <Label text="Session Frequency by Day" style="-fx-font-weight: bold;"/>
+                <!-- Chart will be created programmatically -->
+                <VBox fx:id="sessionDayChartContainer" prefHeight="250" prefWidth="400"/>
+            </VBox>
+
+            <!-- Teacher Engagement -->
+            <VBox style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <Label text="Teacher Engagement" style="-fx-font-weight: bold;"/>
+                <!-- Chart will be created programmatically -->
+                <VBox fx:id="teacherEngagementChartContainer" prefHeight="250" prefWidth="400"/>
+            </VBox>
+        </GridPane>
+    </VBox>
+
+    <!-- Report History -->
+    <VBox spacing="15">
+        <Label text="📋 Recent Reports" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+        <TableView fx:id="reportsTable" prefHeight="200">
+            <columns>
+                <TableColumn text="Report Name" prefWidth="200">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="name" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Type" prefWidth="100">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="type" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Generated" prefWidth="150">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="formattedDate" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Format" prefWidth="80">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="format" />
+                    </cellValueFactory>
+                </TableColumn>
+                <!-- Actions column will be added programmatically -->
+            </columns>
+        </TableView>
+    </VBox>
+
+</VBox>
